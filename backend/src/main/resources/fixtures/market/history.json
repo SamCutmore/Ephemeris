@@ -1,0 +1,1682 @@
+[
+  {
+    "typeId": 2001,
+    "locationId": 1,
+    "date": "2026-10-04",
+    "lowPrice": 161.71,
+    "highPrice": 206.63,
+    "avgPrice": 184.17,
+    "volume": 0,
+    "orders": 0
+  },
+  {
+    "typeId": 2001,
+    "locationId": 1,
+    "date": "2026-10-05",
+    "lowPrice": 151.05,
+    "highPrice": 193.01,
+    "avgPrice": 172.03,
+    "volume": 2,
+    "orders": 1
+  },
+  {
+    "typeId": 2001,
+    "locationId": 1,
+    "date": "2026-10-06",
+    "lowPrice": 167.06,
+    "highPrice": 213.47,
+    "avgPrice": 190.26,
+    "volume": 3,
+    "orders": 1
+  },
+  {
+    "typeId": 2001,
+    "locationId": 1,
+    "date": "2026-10-07",
+    "lowPrice": 169.7,
+    "highPrice": 216.83,
+    "avgPrice": 193.26,
+    "volume": 0,
+    "orders": 0
+  },
+  {
+    "typeId": 2001,
+    "locationId": 1,
+    "date": "2026-10-08",
+    "lowPrice": 173.53,
+    "highPrice": 221.73,
+    "avgPrice": 197.63,
+    "volume": 3,
+    "orders": 1
+  },
+  {
+    "typeId": 2001,
+    "locationId": 1,
+    "date": "2026-10-09",
+    "lowPrice": 166.25,
+    "highPrice": 212.44,
+    "avgPrice": 189.34,
+    "volume": 0,
+    "orders": 0
+  },
+  {
+    "typeId": 2001,
+    "locationId": 1,
+    "date": "2026-10-10",
+    "lowPrice": 167.22,
+    "highPrice": 213.67,
+    "avgPrice": 190.44,
+    "volume": 3,
+    "orders": 2
+  },
+  {
+    "typeId": 2001,
+    "locationId": 1,
+    "date": "2026-10-11",
+    "lowPrice": 167.61,
+    "highPrice": 214.17,
+    "avgPrice": 190.89,
+    "volume": 2,
+    "orders": 2
+  },
+  {
+    "typeId": 2001,
+    "locationId": 1,
+    "date": "2026-10-12",
+    "lowPrice": 173.42,
+    "highPrice": 221.59,
+    "avgPrice": 197.5,
+    "volume": 2,
+    "orders": 2
+  },
+  {
+    "typeId": 2001,
+    "locationId": 1,
+    "date": "2026-10-13",
+    "lowPrice": 164.88,
+    "highPrice": 210.67,
+    "avgPrice": 187.77,
+    "volume": 3,
+    "orders": 3
+  },
+  {
+    "typeId": 2001,
+    "locationId": 1,
+    "date": "2026-10-14",
+    "lowPrice": 154.7,
+    "highPrice": 197.67,
+    "avgPrice": 176.19,
+    "volume": 2,
+    "orders": 2
+  },
+  {
+    "typeId": 2001,
+    "locationId": 1,
+    "date": "2026-10-15",
+    "lowPrice": 168.18,
+    "highPrice": 214.89,
+    "avgPrice": 191.53,
+    "volume": 3,
+    "orders": 2
+  },
+  {
+    "typeId": 2001,
+    "locationId": 1,
+    "date": "2026-10-16",
+    "lowPrice": 172.8,
+    "highPrice": 220.8,
+    "avgPrice": 196.8,
+    "volume": 3,
+    "orders": 3
+  },
+  {
+    "typeId": 2001,
+    "locationId": 1,
+    "date": "2026-10-17",
+    "lowPrice": 153.35,
+    "highPrice": 195.95,
+    "avgPrice": 174.65,
+    "volume": 3,
+    "orders": 1
+  },
+  {
+    "typeId": 2001,
+    "locationId": 4,
+    "date": "2026-10-04",
+    "lowPrice": 142.21,
+    "highPrice": 177.76,
+    "avgPrice": 159.99,
+    "volume": 8,
+    "orders": 10
+  },
+  {
+    "typeId": 2001,
+    "locationId": 4,
+    "date": "2026-10-05",
+    "lowPrice": 151.49,
+    "highPrice": 189.37,
+    "avgPrice": 170.43,
+    "volume": 10,
+    "orders": 10
+  },
+  {
+    "typeId": 2001,
+    "locationId": 4,
+    "date": "2026-10-06",
+    "lowPrice": 153.43,
+    "highPrice": 191.79,
+    "avgPrice": 172.61,
+    "volume": 16,
+    "orders": 10
+  },
+  {
+    "typeId": 2001,
+    "locationId": 4,
+    "date": "2026-10-07",
+    "lowPrice": 152.98,
+    "highPrice": 191.22,
+    "avgPrice": 172.1,
+    "volume": 8,
+    "orders": 5
+  },
+  {
+    "typeId": 2001,
+    "locationId": 4,
+    "date": "2026-10-08",
+    "lowPrice": 140.6,
+    "highPrice": 175.75,
+    "avgPrice": 158.18,
+    "volume": 9,
+    "orders": 14
+  },
+  {
+    "typeId": 2001,
+    "locationId": 4,
+    "date": "2026-10-09",
+    "lowPrice": 141.5,
+    "highPrice": 176.88,
+    "avgPrice": 159.19,
+    "volume": 13,
+    "orders": 13
+  },
+  {
+    "typeId": 2001,
+    "locationId": 4,
+    "date": "2026-10-10",
+    "lowPrice": 140.7,
+    "highPrice": 175.87,
+    "avgPrice": 158.28,
+    "volume": 10,
+    "orders": 4
+  },
+  {
+    "typeId": 2001,
+    "locationId": 4,
+    "date": "2026-10-11",
+    "lowPrice": 140.12,
+    "highPrice": 175.14,
+    "avgPrice": 157.63,
+    "volume": 14,
+    "orders": 9
+  },
+  {
+    "typeId": 2001,
+    "locationId": 4,
+    "date": "2026-10-12",
+    "lowPrice": 147.47,
+    "highPrice": 184.33,
+    "avgPrice": 165.9,
+    "volume": 11,
+    "orders": 6
+  },
+  {
+    "typeId": 2001,
+    "locationId": 4,
+    "date": "2026-10-13",
+    "lowPrice": 148.75,
+    "highPrice": 185.93,
+    "avgPrice": 167.34,
+    "volume": 14,
+    "orders": 13
+  },
+  {
+    "typeId": 2001,
+    "locationId": 4,
+    "date": "2026-10-14",
+    "lowPrice": 148.18,
+    "highPrice": 185.23,
+    "avgPrice": 166.7,
+    "volume": 17,
+    "orders": 4
+  },
+  {
+    "typeId": 2001,
+    "locationId": 4,
+    "date": "2026-10-15",
+    "lowPrice": 145.04,
+    "highPrice": 181.3,
+    "avgPrice": 163.17,
+    "volume": 19,
+    "orders": 14
+  },
+  {
+    "typeId": 2001,
+    "locationId": 4,
+    "date": "2026-10-16",
+    "lowPrice": 150.45,
+    "highPrice": 188.06,
+    "avgPrice": 169.25,
+    "volume": 12,
+    "orders": 10
+  },
+  {
+    "typeId": 2001,
+    "locationId": 4,
+    "date": "2026-10-17",
+    "lowPrice": 144.13,
+    "highPrice": 180.16,
+    "avgPrice": 162.14,
+    "volume": 7,
+    "orders": 11
+  },
+  {
+    "typeId": 2002,
+    "locationId": 1,
+    "date": "2026-10-04",
+    "lowPrice": 11.49,
+    "highPrice": 14.68,
+    "avgPrice": 13.09,
+    "volume": 5,
+    "orders": 9
+  },
+  {
+    "typeId": 2002,
+    "locationId": 1,
+    "date": "2026-10-05",
+    "lowPrice": 10.47,
+    "highPrice": 13.38,
+    "avgPrice": 11.93,
+    "volume": 10,
+    "orders": 17
+  },
+  {
+    "typeId": 2002,
+    "locationId": 1,
+    "date": "2026-10-06",
+    "lowPrice": 10.64,
+    "highPrice": 13.6,
+    "avgPrice": 12.12,
+    "volume": 14,
+    "orders": 4
+  },
+  {
+    "typeId": 2002,
+    "locationId": 1,
+    "date": "2026-10-07",
+    "lowPrice": 10.53,
+    "highPrice": 13.46,
+    "avgPrice": 12.0,
+    "volume": 22,
+    "orders": 7
+  },
+  {
+    "typeId": 2002,
+    "locationId": 1,
+    "date": "2026-10-08",
+    "lowPrice": 11.32,
+    "highPrice": 14.46,
+    "avgPrice": 12.89,
+    "volume": 15,
+    "orders": 3
+  },
+  {
+    "typeId": 2002,
+    "locationId": 1,
+    "date": "2026-10-09",
+    "lowPrice": 10.48,
+    "highPrice": 13.39,
+    "avgPrice": 11.94,
+    "volume": 10,
+    "orders": 15
+  },
+  {
+    "typeId": 2002,
+    "locationId": 1,
+    "date": "2026-10-10",
+    "lowPrice": 10.62,
+    "highPrice": 13.57,
+    "avgPrice": 12.09,
+    "volume": 12,
+    "orders": 14
+  },
+  {
+    "typeId": 2002,
+    "locationId": 1,
+    "date": "2026-10-11",
+    "lowPrice": 11.43,
+    "highPrice": 14.61,
+    "avgPrice": 13.02,
+    "volume": 19,
+    "orders": 6
+  },
+  {
+    "typeId": 2002,
+    "locationId": 1,
+    "date": "2026-10-12",
+    "lowPrice": 10.56,
+    "highPrice": 13.49,
+    "avgPrice": 12.03,
+    "volume": 19,
+    "orders": 17
+  },
+  {
+    "typeId": 2002,
+    "locationId": 1,
+    "date": "2026-10-13",
+    "lowPrice": 11.21,
+    "highPrice": 14.33,
+    "avgPrice": 12.77,
+    "volume": 13,
+    "orders": 5
+  },
+  {
+    "typeId": 2002,
+    "locationId": 1,
+    "date": "2026-10-14",
+    "lowPrice": 10.61,
+    "highPrice": 13.56,
+    "avgPrice": 12.09,
+    "volume": 27,
+    "orders": 13
+  },
+  {
+    "typeId": 2002,
+    "locationId": 1,
+    "date": "2026-10-15",
+    "lowPrice": 11.68,
+    "highPrice": 14.93,
+    "avgPrice": 13.3,
+    "volume": 19,
+    "orders": 8
+  },
+  {
+    "typeId": 2002,
+    "locationId": 1,
+    "date": "2026-10-16",
+    "lowPrice": 11.28,
+    "highPrice": 14.41,
+    "avgPrice": 12.84,
+    "volume": 10,
+    "orders": 14
+  },
+  {
+    "typeId": 2002,
+    "locationId": 1,
+    "date": "2026-10-17",
+    "lowPrice": 10.61,
+    "highPrice": 13.56,
+    "avgPrice": 12.09,
+    "volume": 21,
+    "orders": 3
+  },
+  {
+    "typeId": 2003,
+    "locationId": 1,
+    "date": "2026-10-04",
+    "lowPrice": 26.24,
+    "highPrice": 33.53,
+    "avgPrice": 29.88,
+    "volume": 13,
+    "orders": 5
+  },
+  {
+    "typeId": 2003,
+    "locationId": 1,
+    "date": "2026-10-05",
+    "lowPrice": 25.99,
+    "highPrice": 33.21,
+    "avgPrice": 29.6,
+    "volume": 12,
+    "orders": 14
+  },
+  {
+    "typeId": 2003,
+    "locationId": 1,
+    "date": "2026-10-06",
+    "lowPrice": 26.85,
+    "highPrice": 34.3,
+    "avgPrice": 30.57,
+    "volume": 15,
+    "orders": 10
+  },
+  {
+    "typeId": 2003,
+    "locationId": 1,
+    "date": "2026-10-07",
+    "lowPrice": 25.33,
+    "highPrice": 32.37,
+    "avgPrice": 28.85,
+    "volume": 28,
+    "orders": 13
+  },
+  {
+    "typeId": 2003,
+    "locationId": 1,
+    "date": "2026-10-08",
+    "lowPrice": 25.75,
+    "highPrice": 32.9,
+    "avgPrice": 29.32,
+    "volume": 23,
+    "orders": 9
+  },
+  {
+    "typeId": 2003,
+    "locationId": 1,
+    "date": "2026-10-09",
+    "lowPrice": 26.43,
+    "highPrice": 33.78,
+    "avgPrice": 30.11,
+    "volume": 16,
+    "orders": 10
+  },
+  {
+    "typeId": 2003,
+    "locationId": 1,
+    "date": "2026-10-10",
+    "lowPrice": 23.99,
+    "highPrice": 30.65,
+    "avgPrice": 27.32,
+    "volume": 19,
+    "orders": 14
+  },
+  {
+    "typeId": 2003,
+    "locationId": 1,
+    "date": "2026-10-11",
+    "lowPrice": 26.13,
+    "highPrice": 33.39,
+    "avgPrice": 29.76,
+    "volume": 4,
+    "orders": 11
+  },
+  {
+    "typeId": 2003,
+    "locationId": 1,
+    "date": "2026-10-12",
+    "lowPrice": 25.09,
+    "highPrice": 32.06,
+    "avgPrice": 28.58,
+    "volume": 10,
+    "orders": 14
+  },
+  {
+    "typeId": 2003,
+    "locationId": 1,
+    "date": "2026-10-13",
+    "lowPrice": 24.99,
+    "highPrice": 31.93,
+    "avgPrice": 28.46,
+    "volume": 27,
+    "orders": 14
+  },
+  {
+    "typeId": 2003,
+    "locationId": 1,
+    "date": "2026-10-14",
+    "lowPrice": 27.03,
+    "highPrice": 34.54,
+    "avgPrice": 30.79,
+    "volume": 15,
+    "orders": 5
+  },
+  {
+    "typeId": 2003,
+    "locationId": 1,
+    "date": "2026-10-15",
+    "lowPrice": 24.07,
+    "highPrice": 30.76,
+    "avgPrice": 27.41,
+    "volume": 11,
+    "orders": 18
+  },
+  {
+    "typeId": 2003,
+    "locationId": 1,
+    "date": "2026-10-16",
+    "lowPrice": 23.98,
+    "highPrice": 30.64,
+    "avgPrice": 27.31,
+    "volume": 10,
+    "orders": 18
+  },
+  {
+    "typeId": 2003,
+    "locationId": 1,
+    "date": "2026-10-17",
+    "lowPrice": 25.7,
+    "highPrice": 32.84,
+    "avgPrice": 29.27,
+    "volume": 23,
+    "orders": 3
+  },
+  {
+    "typeId": 3001,
+    "locationId": 1,
+    "date": "2026-10-04",
+    "lowPrice": 5.83,
+    "highPrice": 7.45,
+    "avgPrice": 6.64,
+    "volume": 24,
+    "orders": 14
+  },
+  {
+    "typeId": 3001,
+    "locationId": 1,
+    "date": "2026-10-05",
+    "lowPrice": 6.13,
+    "highPrice": 7.83,
+    "avgPrice": 6.98,
+    "volume": 6,
+    "orders": 6
+  },
+  {
+    "typeId": 3001,
+    "locationId": 1,
+    "date": "2026-10-06",
+    "lowPrice": 6.23,
+    "highPrice": 7.97,
+    "avgPrice": 7.1,
+    "volume": 26,
+    "orders": 9
+  },
+  {
+    "typeId": 3001,
+    "locationId": 1,
+    "date": "2026-10-07",
+    "lowPrice": 5.83,
+    "highPrice": 7.45,
+    "avgPrice": 6.64,
+    "volume": 9,
+    "orders": 16
+  },
+  {
+    "typeId": 3001,
+    "locationId": 1,
+    "date": "2026-10-08",
+    "lowPrice": 6.12,
+    "highPrice": 7.82,
+    "avgPrice": 6.97,
+    "volume": 14,
+    "orders": 5
+  },
+  {
+    "typeId": 3001,
+    "locationId": 1,
+    "date": "2026-10-09",
+    "lowPrice": 6.13,
+    "highPrice": 7.83,
+    "avgPrice": 6.98,
+    "volume": 27,
+    "orders": 15
+  },
+  {
+    "typeId": 3001,
+    "locationId": 1,
+    "date": "2026-10-10",
+    "lowPrice": 5.82,
+    "highPrice": 7.43,
+    "avgPrice": 6.62,
+    "volume": 27,
+    "orders": 5
+  },
+  {
+    "typeId": 3001,
+    "locationId": 1,
+    "date": "2026-10-11",
+    "lowPrice": 6.06,
+    "highPrice": 7.74,
+    "avgPrice": 6.9,
+    "volume": 9,
+    "orders": 7
+  },
+  {
+    "typeId": 3001,
+    "locationId": 1,
+    "date": "2026-10-12",
+    "lowPrice": 5.41,
+    "highPrice": 6.91,
+    "avgPrice": 6.16,
+    "volume": 22,
+    "orders": 17
+  },
+  {
+    "typeId": 3001,
+    "locationId": 1,
+    "date": "2026-10-13",
+    "lowPrice": 6.14,
+    "highPrice": 7.84,
+    "avgPrice": 6.99,
+    "volume": 8,
+    "orders": 18
+  },
+  {
+    "typeId": 3001,
+    "locationId": 1,
+    "date": "2026-10-14",
+    "lowPrice": 6.0,
+    "highPrice": 7.66,
+    "avgPrice": 6.83,
+    "volume": 15,
+    "orders": 7
+  },
+  {
+    "typeId": 3001,
+    "locationId": 1,
+    "date": "2026-10-15",
+    "lowPrice": 5.9,
+    "highPrice": 7.53,
+    "avgPrice": 6.71,
+    "volume": 8,
+    "orders": 3
+  },
+  {
+    "typeId": 3001,
+    "locationId": 1,
+    "date": "2026-10-16",
+    "lowPrice": 5.4,
+    "highPrice": 6.89,
+    "avgPrice": 6.14,
+    "volume": 27,
+    "orders": 6
+  },
+  {
+    "typeId": 3001,
+    "locationId": 1,
+    "date": "2026-10-17",
+    "lowPrice": 5.87,
+    "highPrice": 7.51,
+    "avgPrice": 6.69,
+    "volume": 8,
+    "orders": 16
+  },
+  {
+    "typeId": 3002,
+    "locationId": 1,
+    "date": "2026-10-04",
+    "lowPrice": 21.34,
+    "highPrice": 27.27,
+    "avgPrice": 24.3,
+    "volume": 10,
+    "orders": 9
+  },
+  {
+    "typeId": 3002,
+    "locationId": 1,
+    "date": "2026-10-05",
+    "lowPrice": 18.3,
+    "highPrice": 23.39,
+    "avgPrice": 20.84,
+    "volume": 10,
+    "orders": 12
+  },
+  {
+    "typeId": 3002,
+    "locationId": 1,
+    "date": "2026-10-06",
+    "lowPrice": 19.8,
+    "highPrice": 25.3,
+    "avgPrice": 22.55,
+    "volume": 28,
+    "orders": 13
+  },
+  {
+    "typeId": 3002,
+    "locationId": 1,
+    "date": "2026-10-07",
+    "lowPrice": 19.04,
+    "highPrice": 24.33,
+    "avgPrice": 21.68,
+    "volume": 17,
+    "orders": 7
+  },
+  {
+    "typeId": 3002,
+    "locationId": 1,
+    "date": "2026-10-08",
+    "lowPrice": 18.41,
+    "highPrice": 23.52,
+    "avgPrice": 20.96,
+    "volume": 27,
+    "orders": 14
+  },
+  {
+    "typeId": 3002,
+    "locationId": 1,
+    "date": "2026-10-09",
+    "lowPrice": 21.06,
+    "highPrice": 26.91,
+    "avgPrice": 23.98,
+    "volume": 25,
+    "orders": 16
+  },
+  {
+    "typeId": 3002,
+    "locationId": 1,
+    "date": "2026-10-10",
+    "lowPrice": 20.84,
+    "highPrice": 26.62,
+    "avgPrice": 23.73,
+    "volume": 20,
+    "orders": 7
+  },
+  {
+    "typeId": 3002,
+    "locationId": 1,
+    "date": "2026-10-11",
+    "lowPrice": 19.9,
+    "highPrice": 25.43,
+    "avgPrice": 22.66,
+    "volume": 20,
+    "orders": 3
+  },
+  {
+    "typeId": 3002,
+    "locationId": 1,
+    "date": "2026-10-12",
+    "lowPrice": 20.98,
+    "highPrice": 26.81,
+    "avgPrice": 23.89,
+    "volume": 28,
+    "orders": 8
+  },
+  {
+    "typeId": 3002,
+    "locationId": 1,
+    "date": "2026-10-13",
+    "lowPrice": 20.14,
+    "highPrice": 25.74,
+    "avgPrice": 22.94,
+    "volume": 28,
+    "orders": 7
+  },
+  {
+    "typeId": 3002,
+    "locationId": 1,
+    "date": "2026-10-14",
+    "lowPrice": 18.76,
+    "highPrice": 23.97,
+    "avgPrice": 21.37,
+    "volume": 19,
+    "orders": 6
+  },
+  {
+    "typeId": 3002,
+    "locationId": 1,
+    "date": "2026-10-15",
+    "lowPrice": 19.98,
+    "highPrice": 25.53,
+    "avgPrice": 22.76,
+    "volume": 14,
+    "orders": 18
+  },
+  {
+    "typeId": 3002,
+    "locationId": 1,
+    "date": "2026-10-16",
+    "lowPrice": 20.7,
+    "highPrice": 26.45,
+    "avgPrice": 23.57,
+    "volume": 7,
+    "orders": 4
+  },
+  {
+    "typeId": 3002,
+    "locationId": 1,
+    "date": "2026-10-17",
+    "lowPrice": 19.0,
+    "highPrice": 24.28,
+    "avgPrice": 21.64,
+    "volume": 12,
+    "orders": 4
+  },
+  {
+    "typeId": 4001,
+    "locationId": 1,
+    "date": "2026-10-04",
+    "lowPrice": 32.87,
+    "highPrice": 42.0,
+    "avgPrice": 37.44,
+    "volume": 20,
+    "orders": 17
+  },
+  {
+    "typeId": 4001,
+    "locationId": 1,
+    "date": "2026-10-05",
+    "lowPrice": 31.81,
+    "highPrice": 40.65,
+    "avgPrice": 36.23,
+    "volume": 28,
+    "orders": 5
+  },
+  {
+    "typeId": 4001,
+    "locationId": 1,
+    "date": "2026-10-06",
+    "lowPrice": 31.21,
+    "highPrice": 39.88,
+    "avgPrice": 35.55,
+    "volume": 23,
+    "orders": 9
+  },
+  {
+    "typeId": 4001,
+    "locationId": 1,
+    "date": "2026-10-07",
+    "lowPrice": 32.47,
+    "highPrice": 41.49,
+    "avgPrice": 36.98,
+    "volume": 18,
+    "orders": 18
+  },
+  {
+    "typeId": 4001,
+    "locationId": 1,
+    "date": "2026-10-08",
+    "lowPrice": 31.54,
+    "highPrice": 40.3,
+    "avgPrice": 35.92,
+    "volume": 11,
+    "orders": 11
+  },
+  {
+    "typeId": 4001,
+    "locationId": 1,
+    "date": "2026-10-09",
+    "lowPrice": 33.63,
+    "highPrice": 42.97,
+    "avgPrice": 38.3,
+    "volume": 10,
+    "orders": 17
+  },
+  {
+    "typeId": 4001,
+    "locationId": 1,
+    "date": "2026-10-10",
+    "lowPrice": 29.67,
+    "highPrice": 37.91,
+    "avgPrice": 33.79,
+    "volume": 7,
+    "orders": 15
+  },
+  {
+    "typeId": 4001,
+    "locationId": 1,
+    "date": "2026-10-11",
+    "lowPrice": 31.21,
+    "highPrice": 39.88,
+    "avgPrice": 35.55,
+    "volume": 6,
+    "orders": 10
+  },
+  {
+    "typeId": 4001,
+    "locationId": 1,
+    "date": "2026-10-12",
+    "lowPrice": 31.14,
+    "highPrice": 39.79,
+    "avgPrice": 35.47,
+    "volume": 10,
+    "orders": 12
+  },
+  {
+    "typeId": 4001,
+    "locationId": 1,
+    "date": "2026-10-13",
+    "lowPrice": 32.93,
+    "highPrice": 42.08,
+    "avgPrice": 37.5,
+    "volume": 28,
+    "orders": 7
+  },
+  {
+    "typeId": 4001,
+    "locationId": 1,
+    "date": "2026-10-14",
+    "lowPrice": 33.72,
+    "highPrice": 43.08,
+    "avgPrice": 38.4,
+    "volume": 24,
+    "orders": 14
+  },
+  {
+    "typeId": 4001,
+    "locationId": 1,
+    "date": "2026-10-15",
+    "lowPrice": 29.7,
+    "highPrice": 37.95,
+    "avgPrice": 33.83,
+    "volume": 8,
+    "orders": 17
+  },
+  {
+    "typeId": 4001,
+    "locationId": 1,
+    "date": "2026-10-16",
+    "lowPrice": 30.09,
+    "highPrice": 38.44,
+    "avgPrice": 34.27,
+    "volume": 7,
+    "orders": 15
+  },
+  {
+    "typeId": 4001,
+    "locationId": 1,
+    "date": "2026-10-17",
+    "lowPrice": 33.44,
+    "highPrice": 42.73,
+    "avgPrice": 38.08,
+    "volume": 9,
+    "orders": 10
+  },
+  {
+    "typeId": 4002,
+    "locationId": 1,
+    "date": "2026-10-04",
+    "lowPrice": 212.81,
+    "highPrice": 271.93,
+    "avgPrice": 242.37,
+    "volume": 17,
+    "orders": 15
+  },
+  {
+    "typeId": 4002,
+    "locationId": 1,
+    "date": "2026-10-05",
+    "lowPrice": 219.21,
+    "highPrice": 280.1,
+    "avgPrice": 249.66,
+    "volume": 10,
+    "orders": 14
+  },
+  {
+    "typeId": 4002,
+    "locationId": 1,
+    "date": "2026-10-06",
+    "lowPrice": 218.47,
+    "highPrice": 279.15,
+    "avgPrice": 248.81,
+    "volume": 27,
+    "orders": 14
+  },
+  {
+    "typeId": 4002,
+    "locationId": 1,
+    "date": "2026-10-07",
+    "lowPrice": 207.7,
+    "highPrice": 265.4,
+    "avgPrice": 236.55,
+    "volume": 21,
+    "orders": 17
+  },
+  {
+    "typeId": 4002,
+    "locationId": 1,
+    "date": "2026-10-08",
+    "lowPrice": 222.86,
+    "highPrice": 284.76,
+    "avgPrice": 253.81,
+    "volume": 4,
+    "orders": 15
+  },
+  {
+    "typeId": 4002,
+    "locationId": 1,
+    "date": "2026-10-09",
+    "lowPrice": 218.93,
+    "highPrice": 279.75,
+    "avgPrice": 249.34,
+    "volume": 23,
+    "orders": 12
+  },
+  {
+    "typeId": 4002,
+    "locationId": 1,
+    "date": "2026-10-10",
+    "lowPrice": 225.44,
+    "highPrice": 288.06,
+    "avgPrice": 256.75,
+    "volume": 6,
+    "orders": 6
+  },
+  {
+    "typeId": 4002,
+    "locationId": 1,
+    "date": "2026-10-11",
+    "lowPrice": 242.46,
+    "highPrice": 309.81,
+    "avgPrice": 276.13,
+    "volume": 11,
+    "orders": 6
+  },
+  {
+    "typeId": 4002,
+    "locationId": 1,
+    "date": "2026-10-12",
+    "lowPrice": 210.03,
+    "highPrice": 268.37,
+    "avgPrice": 239.2,
+    "volume": 12,
+    "orders": 4
+  },
+  {
+    "typeId": 4002,
+    "locationId": 1,
+    "date": "2026-10-13",
+    "lowPrice": 239.61,
+    "highPrice": 306.17,
+    "avgPrice": 272.89,
+    "volume": 9,
+    "orders": 11
+  },
+  {
+    "typeId": 4002,
+    "locationId": 1,
+    "date": "2026-10-14",
+    "lowPrice": 234.21,
+    "highPrice": 299.27,
+    "avgPrice": 266.74,
+    "volume": 17,
+    "orders": 11
+  },
+  {
+    "typeId": 4002,
+    "locationId": 1,
+    "date": "2026-10-15",
+    "lowPrice": 221.61,
+    "highPrice": 283.17,
+    "avgPrice": 252.39,
+    "volume": 21,
+    "orders": 18
+  },
+  {
+    "typeId": 4002,
+    "locationId": 1,
+    "date": "2026-10-16",
+    "lowPrice": 232.22,
+    "highPrice": 296.72,
+    "avgPrice": 264.47,
+    "volume": 6,
+    "orders": 11
+  },
+  {
+    "typeId": 4002,
+    "locationId": 1,
+    "date": "2026-10-17",
+    "lowPrice": 209.07,
+    "highPrice": 267.15,
+    "avgPrice": 238.11,
+    "volume": 26,
+    "orders": 8
+  },
+  {
+    "typeId": 5001,
+    "locationId": 1,
+    "date": "2026-10-04",
+    "lowPrice": 40.02,
+    "highPrice": 51.13,
+    "avgPrice": 45.58,
+    "volume": 6,
+    "orders": 11
+  },
+  {
+    "typeId": 5001,
+    "locationId": 1,
+    "date": "2026-10-05",
+    "lowPrice": 43.34,
+    "highPrice": 55.38,
+    "avgPrice": 49.36,
+    "volume": 24,
+    "orders": 5
+  },
+  {
+    "typeId": 5001,
+    "locationId": 1,
+    "date": "2026-10-06",
+    "lowPrice": 42.45,
+    "highPrice": 54.25,
+    "avgPrice": 48.35,
+    "volume": 6,
+    "orders": 10
+  },
+  {
+    "typeId": 5001,
+    "locationId": 1,
+    "date": "2026-10-07",
+    "lowPrice": 37.69,
+    "highPrice": 48.16,
+    "avgPrice": 42.92,
+    "volume": 7,
+    "orders": 17
+  },
+  {
+    "typeId": 5001,
+    "locationId": 1,
+    "date": "2026-10-08",
+    "lowPrice": 37.33,
+    "highPrice": 47.71,
+    "avgPrice": 42.52,
+    "volume": 21,
+    "orders": 16
+  },
+  {
+    "typeId": 5001,
+    "locationId": 1,
+    "date": "2026-10-09",
+    "lowPrice": 43.26,
+    "highPrice": 55.28,
+    "avgPrice": 49.27,
+    "volume": 12,
+    "orders": 7
+  },
+  {
+    "typeId": 5001,
+    "locationId": 1,
+    "date": "2026-10-10",
+    "lowPrice": 37.54,
+    "highPrice": 47.97,
+    "avgPrice": 42.75,
+    "volume": 26,
+    "orders": 10
+  },
+  {
+    "typeId": 5001,
+    "locationId": 1,
+    "date": "2026-10-11",
+    "lowPrice": 43.34,
+    "highPrice": 55.38,
+    "avgPrice": 49.36,
+    "volume": 9,
+    "orders": 11
+  },
+  {
+    "typeId": 5001,
+    "locationId": 1,
+    "date": "2026-10-12",
+    "lowPrice": 37.59,
+    "highPrice": 48.03,
+    "avgPrice": 42.81,
+    "volume": 10,
+    "orders": 12
+  },
+  {
+    "typeId": 5001,
+    "locationId": 1,
+    "date": "2026-10-13",
+    "lowPrice": 41.33,
+    "highPrice": 52.82,
+    "avgPrice": 47.08,
+    "volume": 20,
+    "orders": 9
+  },
+  {
+    "typeId": 5001,
+    "locationId": 1,
+    "date": "2026-10-14",
+    "lowPrice": 39.14,
+    "highPrice": 50.01,
+    "avgPrice": 44.58,
+    "volume": 20,
+    "orders": 8
+  },
+  {
+    "typeId": 5001,
+    "locationId": 1,
+    "date": "2026-10-15",
+    "lowPrice": 39.01,
+    "highPrice": 49.85,
+    "avgPrice": 44.43,
+    "volume": 4,
+    "orders": 11
+  },
+  {
+    "typeId": 5001,
+    "locationId": 1,
+    "date": "2026-10-16",
+    "lowPrice": 37.5,
+    "highPrice": 47.92,
+    "avgPrice": 42.71,
+    "volume": 4,
+    "orders": 9
+  },
+  {
+    "typeId": 5001,
+    "locationId": 1,
+    "date": "2026-10-17",
+    "lowPrice": 40.59,
+    "highPrice": 51.87,
+    "avgPrice": 46.23,
+    "volume": 11,
+    "orders": 17
+  },
+  {
+    "typeId": 5002,
+    "locationId": 1,
+    "date": "2026-10-04",
+    "lowPrice": 3.79,
+    "highPrice": 4.85,
+    "avgPrice": 4.32,
+    "volume": 24,
+    "orders": 16
+  },
+  {
+    "typeId": 5002,
+    "locationId": 1,
+    "date": "2026-10-05",
+    "lowPrice": 4.15,
+    "highPrice": 5.3,
+    "avgPrice": 4.72,
+    "volume": 21,
+    "orders": 15
+  },
+  {
+    "typeId": 5002,
+    "locationId": 1,
+    "date": "2026-10-06",
+    "lowPrice": 4.35,
+    "highPrice": 5.56,
+    "avgPrice": 4.96,
+    "volume": 13,
+    "orders": 9
+  },
+  {
+    "typeId": 5002,
+    "locationId": 1,
+    "date": "2026-10-07",
+    "lowPrice": 4.36,
+    "highPrice": 5.57,
+    "avgPrice": 4.96,
+    "volume": 14,
+    "orders": 9
+  },
+  {
+    "typeId": 5002,
+    "locationId": 1,
+    "date": "2026-10-08",
+    "lowPrice": 4.27,
+    "highPrice": 5.45,
+    "avgPrice": 4.86,
+    "volume": 26,
+    "orders": 7
+  },
+  {
+    "typeId": 5002,
+    "locationId": 1,
+    "date": "2026-10-09",
+    "lowPrice": 3.99,
+    "highPrice": 5.1,
+    "avgPrice": 4.54,
+    "volume": 15,
+    "orders": 4
+  },
+  {
+    "typeId": 5002,
+    "locationId": 1,
+    "date": "2026-10-10",
+    "lowPrice": 4.27,
+    "highPrice": 5.45,
+    "avgPrice": 4.86,
+    "volume": 4,
+    "orders": 5
+  },
+  {
+    "typeId": 5002,
+    "locationId": 1,
+    "date": "2026-10-11",
+    "lowPrice": 4.13,
+    "highPrice": 5.28,
+    "avgPrice": 4.71,
+    "volume": 12,
+    "orders": 16
+  },
+  {
+    "typeId": 5002,
+    "locationId": 1,
+    "date": "2026-10-12",
+    "lowPrice": 3.83,
+    "highPrice": 4.9,
+    "avgPrice": 4.37,
+    "volume": 6,
+    "orders": 15
+  },
+  {
+    "typeId": 5002,
+    "locationId": 1,
+    "date": "2026-10-13",
+    "lowPrice": 4.29,
+    "highPrice": 5.48,
+    "avgPrice": 4.88,
+    "volume": 25,
+    "orders": 12
+  },
+  {
+    "typeId": 5002,
+    "locationId": 1,
+    "date": "2026-10-14",
+    "lowPrice": 4.11,
+    "highPrice": 5.26,
+    "avgPrice": 4.69,
+    "volume": 26,
+    "orders": 12
+  },
+  {
+    "typeId": 5002,
+    "locationId": 1,
+    "date": "2026-10-15",
+    "lowPrice": 3.76,
+    "highPrice": 4.8,
+    "avgPrice": 4.28,
+    "volume": 9,
+    "orders": 8
+  },
+  {
+    "typeId": 5002,
+    "locationId": 1,
+    "date": "2026-10-16",
+    "lowPrice": 3.9,
+    "highPrice": 4.98,
+    "avgPrice": 4.44,
+    "volume": 4,
+    "orders": 11
+  },
+  {
+    "typeId": 5002,
+    "locationId": 1,
+    "date": "2026-10-17",
+    "lowPrice": 3.96,
+    "highPrice": 5.06,
+    "avgPrice": 4.51,
+    "volume": 14,
+    "orders": 13
+  },
+  {
+    "typeId": 1001,
+    "locationId": 1,
+    "date": "2026-10-04",
+    "lowPrice": 155.38,
+    "highPrice": 198.54,
+    "avgPrice": 176.96,
+    "volume": 13,
+    "orders": 9
+  },
+  {
+    "typeId": 1001,
+    "locationId": 1,
+    "date": "2026-10-05",
+    "lowPrice": 158.28,
+    "highPrice": 202.25,
+    "avgPrice": 180.26,
+    "volume": 4,
+    "orders": 13
+  },
+  {
+    "typeId": 1001,
+    "locationId": 1,
+    "date": "2026-10-06",
+    "lowPrice": 158.93,
+    "highPrice": 203.08,
+    "avgPrice": 181.0,
+    "volume": 19,
+    "orders": 11
+  },
+  {
+    "typeId": 1001,
+    "locationId": 1,
+    "date": "2026-10-07",
+    "lowPrice": 162.07,
+    "highPrice": 207.09,
+    "avgPrice": 184.58,
+    "volume": 10,
+    "orders": 10
+  },
+  {
+    "typeId": 1001,
+    "locationId": 1,
+    "date": "2026-10-08",
+    "lowPrice": 162.12,
+    "highPrice": 207.16,
+    "avgPrice": 184.64,
+    "volume": 4,
+    "orders": 5
+  },
+  {
+    "typeId": 1001,
+    "locationId": 1,
+    "date": "2026-10-09",
+    "lowPrice": 155.89,
+    "highPrice": 199.19,
+    "avgPrice": 177.54,
+    "volume": 6,
+    "orders": 7
+  },
+  {
+    "typeId": 1001,
+    "locationId": 1,
+    "date": "2026-10-10",
+    "lowPrice": 159.4,
+    "highPrice": 203.67,
+    "avgPrice": 181.53,
+    "volume": 5,
+    "orders": 15
+  },
+  {
+    "typeId": 1001,
+    "locationId": 1,
+    "date": "2026-10-11",
+    "lowPrice": 149.62,
+    "highPrice": 191.19,
+    "avgPrice": 170.41,
+    "volume": 13,
+    "orders": 10
+  },
+  {
+    "typeId": 1001,
+    "locationId": 1,
+    "date": "2026-10-12",
+    "lowPrice": 151.23,
+    "highPrice": 193.24,
+    "avgPrice": 172.24,
+    "volume": 20,
+    "orders": 7
+  },
+  {
+    "typeId": 1001,
+    "locationId": 1,
+    "date": "2026-10-13",
+    "lowPrice": 166.08,
+    "highPrice": 212.22,
+    "avgPrice": 189.15,
+    "volume": 26,
+    "orders": 15
+  },
+  {
+    "typeId": 1001,
+    "locationId": 1,
+    "date": "2026-10-14",
+    "lowPrice": 168.85,
+    "highPrice": 215.75,
+    "avgPrice": 192.3,
+    "volume": 27,
+    "orders": 18
+  },
+  {
+    "typeId": 1001,
+    "locationId": 1,
+    "date": "2026-10-15",
+    "lowPrice": 152.91,
+    "highPrice": 195.39,
+    "avgPrice": 174.15,
+    "volume": 27,
+    "orders": 7
+  },
+  {
+    "typeId": 1001,
+    "locationId": 1,
+    "date": "2026-10-16",
+    "lowPrice": 150.17,
+    "highPrice": 191.89,
+    "avgPrice": 171.03,
+    "volume": 26,
+    "orders": 16
+  },
+  {
+    "typeId": 1001,
+    "locationId": 1,
+    "date": "2026-10-17",
+    "lowPrice": 168.06,
+    "highPrice": 214.75,
+    "avgPrice": 191.41,
+    "volume": 20,
+    "orders": 7
+  },
+  {
+    "typeId": 1008,
+    "locationId": 1,
+    "date": "2026-10-04",
+    "lowPrice": 249.35,
+    "highPrice": 318.61,
+    "avgPrice": 283.98,
+    "volume": 28,
+    "orders": 3
+  },
+  {
+    "typeId": 1008,
+    "locationId": 1,
+    "date": "2026-10-05",
+    "lowPrice": 246.22,
+    "highPrice": 314.62,
+    "avgPrice": 280.42,
+    "volume": 22,
+    "orders": 10
+  },
+  {
+    "typeId": 1008,
+    "locationId": 1,
+    "date": "2026-10-06",
+    "lowPrice": 218.47,
+    "highPrice": 279.15,
+    "avgPrice": 248.81,
+    "volume": 5,
+    "orders": 7
+  },
+  {
+    "typeId": 1008,
+    "locationId": 1,
+    "date": "2026-10-07",
+    "lowPrice": 239.13,
+    "highPrice": 305.56,
+    "avgPrice": 272.35,
+    "volume": 7,
+    "orders": 15
+  },
+  {
+    "typeId": 1008,
+    "locationId": 1,
+    "date": "2026-10-08",
+    "lowPrice": 246.57,
+    "highPrice": 315.07,
+    "avgPrice": 280.82,
+    "volume": 21,
+    "orders": 4
+  },
+  {
+    "typeId": 1008,
+    "locationId": 1,
+    "date": "2026-10-09",
+    "lowPrice": 238.78,
+    "highPrice": 305.11,
+    "avgPrice": 271.94,
+    "volume": 24,
+    "orders": 10
+  },
+  {
+    "typeId": 1008,
+    "locationId": 1,
+    "date": "2026-10-10",
+    "lowPrice": 233.6,
+    "highPrice": 298.49,
+    "avgPrice": 266.05,
+    "volume": 4,
+    "orders": 17
+  },
+  {
+    "typeId": 1008,
+    "locationId": 1,
+    "date": "2026-10-11",
+    "lowPrice": 245.15,
+    "highPrice": 313.24,
+    "avgPrice": 279.19,
+    "volume": 27,
+    "orders": 5
+  },
+  {
+    "typeId": 1008,
+    "locationId": 1,
+    "date": "2026-10-12",
+    "lowPrice": 239.96,
+    "highPrice": 306.62,
+    "avgPrice": 273.29,
+    "volume": 6,
+    "orders": 18
+  },
+  {
+    "typeId": 1008,
+    "locationId": 1,
+    "date": "2026-10-13",
+    "lowPrice": 224.72,
+    "highPrice": 287.14,
+    "avgPrice": 255.93,
+    "volume": 6,
+    "orders": 11
+  },
+  {
+    "typeId": 1008,
+    "locationId": 1,
+    "date": "2026-10-14",
+    "lowPrice": 224.07,
+    "highPrice": 286.31,
+    "avgPrice": 255.19,
+    "volume": 28,
+    "orders": 9
+  },
+  {
+    "typeId": 1008,
+    "locationId": 1,
+    "date": "2026-10-15",
+    "lowPrice": 223.92,
+    "highPrice": 286.12,
+    "avgPrice": 255.02,
+    "volume": 24,
+    "orders": 17
+  },
+  {
+    "typeId": 1008,
+    "locationId": 1,
+    "date": "2026-10-16",
+    "lowPrice": 233.77,
+    "highPrice": 298.71,
+    "avgPrice": 266.24,
+    "volume": 16,
+    "orders": 5
+  },
+  {
+    "typeId": 1008,
+    "locationId": 1,
+    "date": "2026-10-17",
+    "lowPrice": 233.21,
+    "highPrice": 298.0,
+    "avgPrice": 265.61,
+    "volume": 25,
+    "orders": 12
+  }
+]

@@ -1,0 +1,206 @@
+{
+  "groups": [
+    {
+      "marketGroupId": 20,
+      "parentGroupId": null,
+      "name": "Automotive",
+      "description": "Vehicles and parts",
+      "hasTypes": false
+    },
+    {
+      "marketGroupId": 21,
+      "parentGroupId": 20,
+      "name": "Motorcycle parts",
+      "description": "Bike-specific parts",
+      "hasTypes": true
+    },
+    {
+      "marketGroupId": 22,
+      "parentGroupId": 20,
+      "name": "Car parts",
+      "description": "Car-specific and shared parts",
+      "hasTypes": true
+    },
+    {
+      "marketGroupId": 30,
+      "parentGroupId": null,
+      "name": "Books",
+      "description": "Print books",
+      "hasTypes": false
+    },
+    {
+      "marketGroupId": 31,
+      "parentGroupId": 30,
+      "name": "Fiction",
+      "description": "Fiction by ISBN",
+      "hasTypes": true
+    },
+    {
+      "marketGroupId": 32,
+      "parentGroupId": 30,
+      "name": "Technical",
+      "description": "Textbooks and technical",
+      "hasTypes": true
+    },
+    {
+      "marketGroupId": 40,
+      "parentGroupId": null,
+      "name": "Collectibles",
+      "description": "Collector markets",
+      "hasTypes": false
+    },
+    {
+      "marketGroupId": 41,
+      "parentGroupId": 40,
+      "name": "Vinyl",
+      "description": "Records",
+      "hasTypes": true
+    },
+    {
+      "marketGroupId": 42,
+      "parentGroupId": 40,
+      "name": "Trading cards",
+      "description": "TCG singles",
+      "hasTypes": true
+    },
+    {
+      "marketGroupId": 50,
+      "parentGroupId": null,
+      "name": "Standardised",
+      "description": "Model / part-number goods",
+      "hasTypes": false
+    },
+    {
+      "marketGroupId": 51,
+      "parentGroupId": 50,
+      "name": "Tools",
+      "description": "Hand and workshop tools",
+      "hasTypes": true
+    },
+    {
+      "marketGroupId": 52,
+      "parentGroupId": 50,
+      "name": "Fasteners",
+      "description": "Nuts, bolts, packs",
+      "hasTypes": true
+    },
+    {
+      "marketGroupId": 10,
+      "parentGroupId": null,
+      "name": "Electronics",
+      "description": "Consumer electronics",
+      "hasTypes": false
+    },
+    {
+      "marketGroupId": 11,
+      "parentGroupId": 10,
+      "name": "Phones",
+      "description": "Mobile phones",
+      "hasTypes": false
+    },
+    {
+      "marketGroupId": 12,
+      "parentGroupId": 11,
+      "name": "Apple",
+      "description": "Apple phones",
+      "hasTypes": true
+    },
+    {
+      "marketGroupId": 14,
+      "parentGroupId": 11,
+      "name": "Google",
+      "description": "Google phones",
+      "hasTypes": true
+    }
+  ],
+  "types": [
+    {
+      "typeId": 2001,
+      "typeName": "Triumph Street Triple 675 (2010) exhaust header",
+      "description": "3-1 exhaust header for 2007\u20132012 Street Triple 675. Scarce in UK; more common on EU marketplaces.",
+      "basePrice": 180.0,
+      "published": true,
+      "marketGroupId": 21
+    },
+    {
+      "typeId": 2002,
+      "typeName": "Triumph Street Triple 675 oil filter (OEM-style)",
+      "description": "Spin-on oil filter compatible with Street Triple 675.",
+      "basePrice": 12.5,
+      "published": true,
+      "marketGroupId": 21
+    },
+    {
+      "typeId": 2003,
+      "typeName": "BMW E46 rear brake pad set",
+      "description": "Standardised rear pad set for BMW 3 Series E46.",
+      "basePrice": 28.0,
+      "published": true,
+      "marketGroupId": 22
+    },
+    {
+      "typeId": 3001,
+      "typeName": "The Hitchhiker's Guide to the Galaxy (ISBN 9780345391803)",
+      "description": "Douglas Adams \u2014 paperback, ISBN-normalised.",
+      "basePrice": 6.5,
+      "published": true,
+      "marketGroupId": 31
+    },
+    {
+      "typeId": 3002,
+      "typeName": "Clean Code (ISBN 9780132350884)",
+      "description": "Robert C. Martin \u2014 technical paperback.",
+      "basePrice": 22.0,
+      "published": true,
+      "marketGroupId": 32
+    },
+    {
+      "typeId": 4001,
+      "typeName": "Pink Floyd \u2014 The Dark Side of the Moon (UK vinyl)",
+      "description": "12\" vinyl pressing (collector condition varies).",
+      "basePrice": 35.0,
+      "published": true,
+      "marketGroupId": 41
+    },
+    {
+      "typeId": 4002,
+      "typeName": "Pok\u00e9mon TCG \u2014 Charizard Base Set (shadowless proxy SKU)",
+      "description": "Demo collectible single SKU for price dispersion.",
+      "basePrice": 250.0,
+      "published": true,
+      "marketGroupId": 42
+    },
+    {
+      "typeId": 5001,
+      "typeName": "Torque wrench 1/2\" 40\u2013210 Nm (generic calibrated)",
+      "description": "Standardised tool model for cross-source compare.",
+      "basePrice": 45.0,
+      "published": true,
+      "marketGroupId": 51
+    },
+    {
+      "typeId": 5002,
+      "typeName": "M8\u00d71.25 flange nut pack (10)",
+      "description": "Standard metric fasteners \u2014 part-number style SKU.",
+      "basePrice": 4.5,
+      "published": true,
+      "marketGroupId": 52
+    },
+    {
+      "typeId": 1001,
+      "typeName": "iPhone 13 128GB",
+      "description": "Used iPhone 13 128GB",
+      "basePrice": 180.0,
+      "published": true,
+      "marketGroupId": 12
+    },
+    {
+      "typeId": 1008,
+      "typeName": "Google Pixel 8 128GB",
+      "description": "Used Pixel 8 128GB",
+      "basePrice": 260.0,
+      "published": true,
+      "marketGroupId": 14
+    }
+  ]
+}

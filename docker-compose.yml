@@ -1,0 +1,28 @@
+services:
+  frontend:
+    image: ${NEXUS_REGISTRY:-registry.negativeone.xyz}/negativeone-frontend:${IMAGE_TAG:-latest}
+    container_name: negativeone_frontend
+    restart: always
+    ports:
+      - "127.0.0.1:8088:80"
+
+  backend:
+    image: ${NEXUS_REGISTRY:-registry.negativeone.xyz}/negativeone-backend:${IMAGE_TAG:-latest}
+    container_name: negativeone_backend
+    restart: always
+    ports:
+      - "127.0.0.1:8080:8080"
+    networks:
+      - default
+      - postgres_default
+    environment:
+      SPRING_PROFILES_ACTIVE: prod
+      SPRING_DATASOURCE_URL: ${SPRING_DATASOURCE_URL}
+      SPRING_DATASOURCE_USERNAME: ${SPRING_DATASOURCE_USERNAME}
+      SPRING_DATASOURCE_PASSWORD: ${SPRING_DATASOURCE_PASSWORD}
+      NEGATIVEONE_INGEST_TOKEN: ${NEGATIVEONE_INGEST_TOKEN}
+      NEGATIVEONE_FIXTURES_LOAD: ${NEGATIVEONE_FIXTURES_LOAD:-true}
+
+networks:
+  postgres_default:
+    external: true
