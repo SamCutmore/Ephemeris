@@ -24,12 +24,12 @@ jobs:
           envs: NEXUS_REGISTRY,NEXUS_USERNAME,NEXUS_PASSWORD,GH_TOKEN
           script: |
             set -e
-            REPO_URL="https://x-access-token:${GH_TOKEN}@github.com/SamCutmore/DYHTG2026.git"
-            if [ ! -d /opt/negativeone/.git ]; then
-              rm -rf /opt/negativeone
-              git clone "$REPO_URL" /opt/negativeone
+            REPO_URL="https://x-access-token:${GH_TOKEN}@github.com/OWNER/Ephemeris.git"
+            if [ ! -d /opt/ephemeris/.git ]; then
+              rm -rf /opt/ephemeris
+              git clone "$REPO_URL" /opt/ephemeris
             fi
-            cd /opt/negativeone
+            cd /opt/ephemeris
             git remote set-url origin "$REPO_URL"
             git fetch origin
             git reset --hard origin/main

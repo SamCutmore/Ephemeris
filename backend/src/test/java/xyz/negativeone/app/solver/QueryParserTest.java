@@ -18,23 +18,23 @@ class QueryParserTest {
 
   @Test
   void parseExplicitColon() {
-    Query q = parser.parse("listMarketGroups: root");
-    assertEquals("listMarketGroups", q.token());
-    assertEquals("root", q.question());
+    Query q = parser.parse("login: alice;secret");
+    assertEquals("login", q.token());
+    assertEquals("alice;secret", q.question());
   }
 
   @Test
   void parseEncodedColonUpper() {
-    Query q = parser.parse("listTypes%3A 12");
-    assertEquals("listTypes", q.token());
-    assertEquals("12", q.question());
+    Query q = parser.parse("register%3A bob;secret;secret");
+    assertEquals("register", q.token());
+    assertEquals("bob;secret;secret", q.question());
   }
 
   @Test
   void parseEncodedColonLower() {
-    Query q = parser.parse("getOrderBook%3a 1001;1");
-    assertEquals("getOrderBook", q.token());
-    assertEquals("1001;1", q.question());
+    Query q = parser.parse("logout%3a " + "a".repeat(64));
+    assertEquals("logout", q.token());
+    assertEquals("a".repeat(64), q.question());
   }
 
   @Test

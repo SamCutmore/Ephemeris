@@ -3,7 +3,6 @@ import { useEffect } from 'react'
 type NoticePopupProps = {
   message: string
   onClose: () => void
-  /** Auto-dismiss after this many ms. Set 0 to keep until dismissed. */
   durationMs?: number
 }
 

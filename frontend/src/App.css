@@ -71,6 +71,13 @@
   min-height: 100svh;
 }
 
+.app-shell--auth-only {
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas:
+    'header'
+    'main';
+}
+
 .app-header {
   grid-area: header;
   display: flex;
@@ -183,7 +190,6 @@
   border-right: 1px solid var(--border);
   background: transparent;
   color: inherit;
-  cursor: pointer;
   text-align: left;
 }
 

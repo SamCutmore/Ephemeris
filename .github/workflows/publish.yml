@@ -19,12 +19,12 @@ jobs:
           context: ./frontend
           push: true
           tags: |
-            ${{ secrets.NEXUS_REGISTRY }}/negativeone-frontend:${{ github.sha }}
-            ${{ secrets.NEXUS_REGISTRY }}/negativeone-frontend:latest
+            ${{ secrets.NEXUS_REGISTRY }}/ephemeris-frontend:${{ github.sha }}
+            ${{ secrets.NEXUS_REGISTRY }}/ephemeris-frontend:latest
       - uses: docker/build-push-action@v6
         with:
           context: ./backend
           push: true
           tags: |
-            ${{ secrets.NEXUS_REGISTRY }}/negativeone-backend:${{ github.sha }}
-            ${{ secrets.NEXUS_REGISTRY }}/negativeone-backend:latest
+            ${{ secrets.NEXUS_REGISTRY }}/ephemeris-backend:${{ github.sha }}
+            ${{ secrets.NEXUS_REGISTRY }}/ephemeris-backend:latest
