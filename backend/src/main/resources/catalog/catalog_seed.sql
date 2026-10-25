@@ -5,17 +5,17 @@ SELECT 1, 2451545.0, 'ICRF', 'FRAME', 'TDB', 'JPL Horizons'
 WHERE NOT EXISTS (SELECT 1 FROM ephemeris_reference WHERE id = 1);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1, 'Sun', 'star', NULL, NULL, NULL, 1.32712440018e+20, 695700000.0, 4.993910588731375, 0.0, 0.0, 1.1147417932487782, 0.0, 0.0, 1.4691483511587469, 0.24756448241988369, 0.0
+SELECT 1, 'Sun', 'star', NULL, 1.32712440018e+20, 695700000.0, 4.993910588731375, 0.0, 0.0, 1.1147417932487782, 0.0, 0.0, 1.4691483511587469, 0.24756448241988369, 0.0
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 2, 'Mercury', 'planet', NULL, 1, NULL, 22031780000000.0, 2439700.0, 4.904554967017021, -0.0005724679946541401, 0.0, 1.0719026867585775, -8.552113334772214e-05, 0.0, 5.752584270622286, 0.10713722462923113, 0.0
+SELECT 2, 'Mercury', 'planet', 1, 22031780000000.0, 2439700.0, 4.904554967017021, -0.0005724679946541401, 0.0, 1.0719026867585775, -8.552113334772214e-05, 0.0, 5.752584270622286, 0.10713722462923113, 0.0
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 2);
 
 INSERT INTO orbits (
@@ -26,10 +26,10 @@ SELECT 2, 57909068294.52707, 0.2056302933705567, 0.4983308758398303, 0.191775869
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 2);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 3, 'Venus', 'planet', NULL, 1, NULL, 324858600000000.0, 6051800.0, 4.760560067739733, 0.0, 0.0, 1.1721631256393916, 0.0, 0.0, 2.7960174616949156, -0.025854762996317376, 0.0
+SELECT 3, 'Venus', 'planet', 1, 324858600000000.0, 6051800.0, 4.760560067739733, 0.0, 0.0, 1.1721631256393916, 0.0, 0.0, 2.7960174616949156, -0.025854762996317376, 0.0
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 3);
 
 INSERT INTO orbits (
@@ -40,10 +40,10 @@ SELECT 3, 108208168170.929, 0.006755786251885615, 0.4264371987680791, 0.13975500
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 3);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 4, 'Earth', 'planet', NULL, 1, NULL, 398600441800000.0, 6371000.0, 0.0, -0.011187560505283653, 0.0, 1.5707963267948966, -0.009721483933608416, 0.0, 3.3186912127896577, 6.3003876824396166, 0.0
+SELECT 4, 'Earth', 'planet', 1, 398600441800000.0, 6371000.0, 0.0, -0.011187560505283653, 0.0, 1.5707963267948966, -0.009721483933608416, 0.0, 3.3186912127896577, 6.3003876824396166, 0.0
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 4);
 
 INSERT INTO orbits (
@@ -54,10 +54,10 @@ SELECT 4, 149665014552.8626, 0.01711862906746885, 0.40908763696754263, 1.2954006
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 4);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 5, 'Moon', 'moon', NULL, 4, NULL, 4904869500000.0, 1737400.0, 4.712299968592838, 5.4105206811824215e-05, 0.0, 1.161328121643011, 0.00022689280275926284, 0.0, 0.668832858644503, 0.22997083313948888, -2.4434609527920614e-14
+SELECT 5, 'Moon', 'moon', 4, 4904869500000.0, 1737400.0, 4.712299968592838, 5.4105206811824215e-05, 0.0, 1.161328121643011, 0.00022689280275926284, 0.0, 0.668832858644503, 0.22997083313948888, -2.4434609527920614e-14
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 5);
 
 INSERT INTO orbits (
@@ -68,10 +68,10 @@ SELECT 5, 381874524.8499886, 0.06314721685094304, 0.3655121569144457, 0.21356613
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 5);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 6, 'Mars', 'planet', NULL, 1, NULL, 42828370000000.0, 3389500.0, 5.5373921900749785, -0.001907216743164288, 0.0, 0.9500266243444937, -0.0010170216810942417, 0.0, 3.0726497570349416, 6.12422041248567, 0.0
+SELECT 6, 'Mars', 'planet', 1, 42828370000000.0, 3389500.0, 5.5373921900749785, -0.001907216743164288, 0.0, 0.9500266243444937, -0.0010170216810942417, 0.0, 3.0726497570349416, 6.12422041248567, 0.0
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 6);
 
 INSERT INTO orbits (
@@ -82,10 +82,10 @@ SELECT 6, 227939132973.9321, 0.09331510145811761, 0.4306964715222178, 0.05888188
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 6);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 7, 'Jupiter', 'planet', NULL, 1, NULL, 1.26686534e+17, 69911000.0, 4.6784701644349695, -0.00011342894808711148, 0.0, 1.1256553894213766, 4.211479485062318e-05, 0.0, 4.973315703557842, 15.193719457141356, 0.0
+SELECT 7, 'Jupiter', 'planet', 1, 1.26686534e+17, 69911000.0, 4.6784701644349695, -0.00011342894808711148, 0.0, 1.1256553894213766, 4.211479485062318e-05, 0.0, 4.973315703557842, 15.193719457141356, 0.0
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 7);
 
 INSERT INTO orbits (
@@ -96,10 +96,10 @@ SELECT 7, 778557615696.126, 0.04878759429164036, 0.405530370429673, 0.0567787096
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 7);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 8, 'Saturn', 'planet', NULL, 1, NULL, 3.7931187e+16, 58232000.0, 0.7084116900919784, -0.0006283185307179586, 0.0, 1.457995697238503, -6.981317007977319e-05, 0.0, 0.6789330790257941, 14.151023151973554, 0.0
+SELECT 8, 'Saturn', 'planet', 1, 3.7931187e+16, 58232000.0, 0.7084116900919784, -0.0006283185307179586, 0.0, 1.457995697238503, -6.981317007977319e-05, 0.0, 0.6789330790257941, 14.151023151973554, 0.0
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 8);
 
 INSERT INTO orbits (
@@ -110,10 +110,10 @@ SELECT 8, 1433436205589.77, 0.05563834267345058, 0.39355954696728296, 0.10368388
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 8);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 9, 'Uranus', 'planet', NULL, 1, NULL, 5793939000000000.0, 25362000.0, 4.4909241515991285, 0.0, 0.0, -0.2648537139901395, 0.0, 0.0, 3.557155548489643, -8.746893698960328, 0.0
+SELECT 9, 'Uranus', 'planet', 1, 5793939000000000.0, 25362000.0, 4.4909241515991285, 0.0, 0.0, -0.2648537139901395, 0.0, 0.0, 3.557155548489643, -8.746893698960328, 0.0
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 9);
 
 INSERT INTO orbits (
@@ -124,10 +124,10 @@ SELECT 9, 2876789143055.6533, 0.04439276513323943, 0.4130009209714005, 0.0323039
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 9);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 10, 'Neptune', 'planet', NULL, 1, NULL, 6836529000000000.0, 24622000.0, 5.224817648770225, 0.0, 0.0, 0.7585200929167356, 0.0, 0.0, 4.362939157550385, 9.444670799468602, 0.0
+SELECT 10, 'Neptune', 'planet', 1, 6836529000000000.0, 24622000.0, 5.224817648770225, 0.0, 0.0, 0.7585200929167356, 0.0, 0.0, 4.362939157550385, 9.444670799468602, 0.0
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 10);
 
 INSERT INTO orbits (
@@ -138,10 +138,10 @@ SELECT 10, 4501986736248.356, 0.0112035281453876, 0.38915013856381936, 0.0607497
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 10);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 20, 'Phobos', 'moon', NULL, 6, NULL, 711000.0, 11260.0, 5.544399941316208, -0.001892691938596266, 0.0, 0.9230395870244597, -0.0010707081834185127, 0.0, 0.6141419961301966, 19.702057793318815, 1.6643698911600935e-10
+SELECT 20, 'Phobos', 'moon', 6, 711000.0, 11260.0, 5.544399941316208, -0.001892691938596266, 0.0, 0.9230395870244597, -0.0010707081834185127, 0.0, 0.6141419961301966, 19.702057793318815, 1.6643698911600935e-10
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 20);
 
 INSERT INTO orbits (
@@ -152,10 +152,10 @@ SELECT 20, 9378610.328444507, 0.01469841851969655, 0.6293013058358787, 0.8379177
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 20);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 21, 'Deimos', 'moon', NULL, 6, NULL, 99000.0, 6200.0, 5.526708263174914, -0.0018357397507085887, 0.0, 0.9339242922383507, -0.0010435487658623783, 0.0, 1.3857797243489947, 4.977013864082068, 0.0
+SELECT 21, 'Deimos', 'moon', 6, 99000.0, 6200.0, 5.526708263174914, -0.0018357397507085887, 0.0, 0.9339242922383507, -0.0010435487658623783, 0.0, 1.3857797243489947, 4.977013864082068, 0.0
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 21);
 
 INSERT INTO orbits (
@@ -166,10 +166,10 @@ SELECT 21, 23458182.51161355, 0.0003299624878237082, 0.6550741433620605, 0.85575
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 21);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 30, 'Io', 'moon', NULL, 7, NULL, 5959000000000.0, 1821600.0, 4.678355059970801, -0.00015707963267948965, 0.0, 1.1257373675363425, 5.235987755982989e-05, 0.0, 3.4974652880714365, 3.551552235248627, 0.0
+SELECT 30, 'Io', 'moon', 7, 5959000000000.0, 1821600.0, 4.678355059970801, -0.00015707963267948965, 0.0, 1.1257373675363425, 5.235987755982989e-05, 0.0, 3.4974652880714365, 3.551552235248627, 0.0
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 30);
 
 INSERT INTO orbits (
@@ -180,10 +180,10 @@ SELECT 30, 422036431.48445976, 0.004715688921345897, 0.4448458070161872, 6.24790
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 30);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 31, 'Europa', 'moon', NULL, 7, NULL, 3203000000000.0, 1560800.0, 4.678878658746398, -0.00015707963267948965, 0.0, 1.125911900461542, 5.235987755982989e-05, 0.0, 0.6287025031533974, 1.7693227033738699, 0.0
+SELECT 31, 'Europa', 'moon', 7, 3203000000000.0, 1560800.0, 4.678878658746398, -0.00015707963267948965, 0.0, 1.125911900461542, 5.235987755982989e-05, 0.0, 0.6287025031533974, 1.7693227033738699, 0.0
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 31);
 
 INSERT INTO orbits (
@@ -194,10 +194,10 @@ SELECT 31, 671248497.6902213, 0.009812823575576082, 0.4370746034028, 6.249233275
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 31);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 32, 'Ganymede', 'moon', NULL, 7, NULL, 9887000000000.0, 2634100.0, 4.680973053848792, -0.00015707963267948965, 0.0, 1.1269590980127384, 5.235987755982989e-05, 0.0, 0.7690618815987814, 0.8782079330731682, 0.0
+SELECT 32, 'Ganymede', 'moon', 7, 9887000000000.0, 2634100.0, 4.680973053848792, -0.00015707963267948965, 0.0, 1.1269590980127384, 5.235987755982989e-05, 0.0, 0.7690618815987814, 0.8782079330731682, 0.0
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 32);
 
 INSERT INTO orbits (
@@ -208,10 +208,10 @@ SELECT 32, 1070497481.019323, 0.001457215292672099, 0.4462146341455134, 6.257266
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 32);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 33, 'Callisto', 'moon', NULL, 7, NULL, 7179000000000.0, 2410300.0, 4.690048765959163, -0.00015707963267948965, 0.0, 1.1314969540679238, 5.235987755982989e-05, 0.0, 4.529303941850484, 0.37648622085811195, 0.0
+SELECT 33, 'Callisto', 'moon', 7, 7179000000000.0, 2410300.0, 4.690048765959163, -0.00015707963267948965, 0.0, 1.1314969540679238, 5.235987755982989e-05, 0.0, 4.529303941850484, 0.37648622085811195, 0.0
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 33);
 
 INSERT INTO orbits (
@@ -222,10 +222,10 @@ SELECT 33, 1882772953.875105, 0.007439434600948234, 0.4419047194062034, 6.252275
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 33);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 34, 'Amalthea', 'moon', NULL, 7, NULL, 1390000000.0, 83500.0, 4.678355059970801, -0.00015707963267948965, 0.0, 1.125562834611143, 5.235987755982989e-05, 0.0, 4.043404278095263, 12.612298185680531, 0.0
+SELECT 34, 'Amalthea', 'moon', 7, 1390000000.0, 83500.0, 4.678355059970801, -0.00015707963267948965, 0.0, 1.125562834611143, 5.235987755982989e-05, 0.0, 4.043404278095263, 12.612298185680531, 0.0
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 34);
 
 INSERT INTO orbits (
@@ -236,10 +236,10 @@ SELECT 34, 181996734.0166628, 0.006131496682479541, 0.44662478950874157, 6.23445
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 34);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 35, 'Himalia', 'moon', NULL, 7, NULL, 2800000000.0, 85000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 35, 'Himalia', 'moon', 7, 2800000000.0, 85000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 35);
 
 INSERT INTO orbits (
@@ -250,10 +250,10 @@ SELECT 35, 11372112630.08802, 0.1661999684637328, 0.787884943971065, 0.694154762
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 35);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 40, 'Mimas', 'moon', NULL, 8, NULL, 2500000000.0, 198200.0, 0.7096508738608943, -0.0006283185307179586, 0.0, 1.457698991265664, -6.981317007977319e-05, 0.0, 5.819974923700291, 6.667062709440567, 0.0
+SELECT 40, 'Mimas', 'moon', 8, 2500000000.0, 198200.0, 0.7096508738608943, -0.0006283185307179586, 0.0, 1.457698991265664, -6.981317007977319e-05, 0.0, 5.819974923700291, 6.667062709440567, 0.0
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 40);
 
 INSERT INTO orbits (
@@ -264,10 +264,10 @@ SELECT 40, 186036822.3903924, 0.02175634846415301, 0.08565394206598866, 2.318277
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 40);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 41, 'Enceladus', 'moon', NULL, 8, NULL, 7200000000.0, 252100.0, 0.7096508738608943, -0.0006283185307179586, 0.0, 1.457698991265664, -6.981317007977319e-05, 0.0, 0.11030480872604163, 4.585536698039173, 0.0
+SELECT 41, 'Enceladus', 'moon', 8, 7200000000.0, 252100.0, 0.7096508738608943, -0.0006283185307179586, 0.0, 1.457698991265664, -6.981317007977319e-05, 0.0, 0.11030480872604163, 4.585536698039173, 0.0
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 41);
 
 INSERT INTO orbits (
@@ -278,10 +278,10 @@ SELECT 41, 238419868.8441309, 0.006351597350212341, 0.11290894936997861, 2.27802
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 41);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 42, 'Tethys', 'moon', NULL, 8, NULL, 412000000000.0, 531000.0, 0.7096508738608943, -0.0006283185307179586, 0.0, 1.457698991265664, -6.981317007977319e-05, 0.0, 0.1562069680534925, 3.328306379991881, 0.0
+SELECT 42, 'Tethys', 'moon', 8, 412000000000.0, 531000.0, 0.7096508738608943, -0.0006283185307179586, 0.0, 1.457698991265664, -6.981317007977319e-05, 0.0, 0.1562069680534925, 3.328306379991881, 0.0
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 42);
 
 INSERT INTO orbits (
@@ -292,10 +292,10 @@ SELECT 42, 294980253.0852608, 0.0009698778768676897, 0.11100456747032214, 2.1089
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 42);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 43, 'Dione', 'moon', NULL, 8, NULL, 730000000000.0, 561200.0, 0.7096508738608943, -0.0006283185307179586, 0.0, 1.457698991265664, -6.981317007977319e-05, 0.0, 6.241297405131723, 2.295717637805533, 0.0
+SELECT 43, 'Dione', 'moon', 8, 730000000000.0, 561200.0, 0.7096508738608943, -0.0006283185307179586, 0.0, 1.457698991265664, -6.981317007977319e-05, 0.0, 6.241297405131723, 2.295717637805533, 0.0
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 43);
 
 INSERT INTO orbits (
@@ -306,10 +306,10 @@ SELECT 43, 377652178.4818554, 0.002928360145096942, 0.11295937963034682, 2.27493
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 43);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 44, 'Rhea', 'moon', NULL, 8, NULL, 1530000000000.0, 763500.0, 0.7047639519553103, -0.0006283185307179586, 0.0, 1.4582225900412622, -6.981317007977319e-05, 0.0, 4.104316268989865, 1.3908537151816638, 0.0
+SELECT 44, 'Rhea', 'moon', 8, 1530000000000.0, 763500.0, 0.7047639519553103, -0.0006283185307179586, 0.0, 1.4582225900412622, -6.981317007977319e-05, 0.0, 4.104316268989865, 1.3908537151816638, 0.0
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 44);
 
 INSERT INTO orbits (
@@ -320,10 +320,10 @@ SELECT 44, 527225252.73155445, 0.0008002149724314739, 0.11820726790063167, 2.267
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 44);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 45, 'Titan', 'moon', NULL, 8, NULL, 8978000000000.0, 2574700.0, 0.6891031125771652, 0.0, 0.0, 1.456091543024577, 0.0, 0.0, 3.2565313114798795, 0.39404258030637335, 0.0
+SELECT 45, 'Titan', 'moon', 8, 8978000000000.0, 2574700.0, 0.6891031125771652, 0.0, 0.0, 1.456091543024577, 0.0, 0.0, 3.2565313114798795, 0.39404258030637335, 0.0
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 45);
 
 INSERT INTO orbits (
@@ -334,10 +334,10 @@ SELECT 45, 1221934800.9131708, 0.02860066256432539, 0.10997363890369313, 2.22870
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 45);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 46, 'Hyperion', 'moon', NULL, 8, NULL, 3700000000.0, 135000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 46, 'Hyperion', 'moon', 8, 3700000000.0, 135000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 46);
 
 INSERT INTO orbits (
@@ -348,10 +348,10 @@ SELECT 46, 1485060666.5038202, 0.126730863824527, 0.10904366222024756, 2.1224709
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 46);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 47, 'Iapetus', 'moon', NULL, 8, NULL, 1200000000000.0, 734600.0, 5.552939548145159, -0.06892305216125608, 0.0, 1.3095205377713455, -0.019949113350295186, 0.0, 6.199409503083858, 0.07920229445458282, 0.0
+SELECT 47, 'Iapetus', 'moon', 8, 1200000000000.0, 734600.0, 5.552939548145159, -0.06892305216125608, 0.0, 1.3095205377713455, -0.019949113350295186, 0.0, 6.199409503083858, 0.07920229445458282, 0.0
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 47);
 
 INSERT INTO orbits (
@@ -362,10 +362,10 @@ SELECT 47, 3562566556.811614, 0.02786249162022612, 0.26088740606848726, 0.837874
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 47);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 48, 'Phoebe', 'moon', NULL, 8, NULL, 5500000000.0, 106500.0, 6.229080100367762, 0.0, 0.0, 1.3578661580515883, 0.0, 0.0, 3.116808978211474, 16.26016798998745, 0.0
+SELECT 48, 'Phoebe', 'moon', 8, 5500000000.0, 106500.0, 6.229080100367762, 0.0, 0.0, 1.3578661580515883, 0.0, 0.0, 3.116808978211474, 16.26016798998745, 0.0
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 48);
 
 INSERT INTO orbits (
@@ -376,10 +376,10 @@ SELECT 48, 12943784544.865961, 0.165405199982644, 2.703610660795698, 3.420009172
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 48);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 50, 'Ariel', 'moon', NULL, 9, NULL, 900000000000.0, 578900.0, 4.493001093409003, 0.0, 0.0, -0.26354471705114374, 0.0, 0.0, 2.7265533574655416, -2.492952697630833, 0.0
+SELECT 50, 'Ariel', 'moon', 9, 900000000000.0, 578900.0, 4.493001093409003, 0.0, 0.0, -0.26354471705114374, 0.0, 0.0, 2.7265533574655416, -2.492952697630833, 0.0
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 50);
 
 INSERT INTO orbits (
@@ -390,10 +390,10 @@ SELECT 50, 190941346.9791884, 0.001520812328868678, 1.3059012345695564, 2.920103
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 50);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 51, 'Umbriel', 'moon', NULL, 9, NULL, 780000000000.0, 584700.0, 4.493001093409003, 0.0, 0.0, -0.26354471705114374, 0.0, 0.0, 1.885828256779873, -1.5161481881953498, 0.0
+SELECT 51, 'Umbriel', 'moon', 9, 780000000000.0, 584700.0, 4.493001093409003, 0.0, 0.0, -0.26354471705114374, 0.0, 0.0, 1.885828256779873, -1.5161481881953498, 0.0
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 51);
 
 INSERT INTO orbits (
@@ -404,10 +404,10 @@ SELECT 51, 266012188.748696, 0.004170165145635332, 1.3049866762635884, 2.9198872
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 51);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 52, 'Titania', 'moon', NULL, 9, NULL, 2300000000000.0, 788900.0, 4.493001093409003, 0.0, 0.0, -0.26354471705114374, 0.0, 0.0, 1.3568189605003917, -0.7217186318332268, 0.0
+SELECT 52, 'Titania', 'moon', 9, 2300000000000.0, 788900.0, 4.493001093409003, 0.0, 0.0, -0.26354471705114374, 0.0, 0.0, 1.3568189605003917, -0.7217186318332268, 0.0
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 52);
 
 INSERT INTO orbits (
@@ -418,10 +418,10 @@ SELECT 52, 436292675.59516376, 0.002479000317146799, 1.3076655522294784, 2.91976
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 52);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 53, 'Oberon', 'moon', NULL, 9, NULL, 2000000000000.0, 761400.0, 4.493001093409003, 0.0, 0.0, -0.26354471705114374, 0.0, 0.0, 0.1181587903600161, -0.4666921966546346, 0.0
+SELECT 53, 'Oberon', 'moon', 9, 2000000000000.0, 761400.0, 4.493001093409003, 0.0, 0.0, -0.26354471705114374, 0.0, 0.0, 0.1181587903600161, -0.4666921966546346, 0.0
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 53);
 
 INSERT INTO orbits (
@@ -432,10 +432,10 @@ SELECT 53, 583549944.051016, 0.0005523244847399845, 1.3084558115370195, 2.922314
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 53);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 54, 'Miranda', 'moon', NULL, 9, NULL, 44000000000.0, 235800.0, 4.493001093409003, 0.0, 0.0, -0.2631956512007449, 0.0, 0.0, 0.5358160803622591, -4.445191100713563, 0.0
+SELECT 54, 'Miranda', 'moon', 9, 44000000000.0, 235800.0, 4.493001093409003, 0.0, 0.0, -0.2631956512007449, 0.0, 0.0, 0.5358160803622591, -4.445191100713563, 0.0
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 54);
 
 INSERT INTO orbits (
@@ -446,10 +446,10 @@ SELECT 54, 129871755.1017135, 0.001509798566639019, 1.292221885454622, 2.9990777
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 54);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 60, 'Triton', 'moon', NULL, 10, NULL, 14280000000000.0, 1353400.0, 5.224817648770225, 0.0, 0.0, 0.7185520530460655, 0.0, 0.0, 5.175424830938785, -1.069140942327404, 0.0
+SELECT 60, 'Triton', 'moon', 10, 14280000000000.0, 1353400.0, 5.224817648770225, 0.0, 0.0, 0.7185520530460655, 0.0, 0.0, 5.175424830938785, -1.069140942327404, 0.0
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 60);
 
 INSERT INTO orbits (
@@ -460,10 +460,10 @@ SELECT 60, 354766061.92534107, 0.0001461079095879048, 1.9250977679818067, 3.6384
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 60);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 61, 'Nereid', 'moon', NULL, 10, NULL, 21000000000.0, 170000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 61, 'Nereid', 'moon', 10, 21000000000.0, 170000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 61);
 
 INSERT INTO orbits (
@@ -474,10 +474,10 @@ SELECT 61, 5511154829.106982, 0.7506509374056886, 0.47957980590844573, 6.1589404
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 61);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 62, 'Proteus', 'moon', NULL, 10, NULL, 34000000000.0, 210000.0, 5.22324685244343, 0.0, 0.0, 0.7489207820307667, 0.0, 0.0, 1.6297884555123048, 5.598412754411688, 0.0
+SELECT 62, 'Proteus', 'moon', 10, 34000000000.0, 210000.0, 5.22324685244343, 0.0, 0.0, 0.7489207820307667, 0.0, 0.0, 1.6297884555123048, 5.598412754411688, 0.0
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 62);
 
 INSERT INTO orbits (
@@ -488,10 +488,10 @@ SELECT 62, 117674797.6031349, 0.0004949303539595451, 0.8309045857323025, 0.51190
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 62);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 100, 'Ceres', 'dwarf_planet', NULL, 1, NULL, 62632500000.0, 469600.0, 5.0862035995768355, 0.0, 0.0, 1.165251621801494, 0.0, 0.0, 2.9784043685283237, 16.618208323400072, 0.0
+SELECT 100, 'Ceres', 'dwarf_planet', 1, 62632500000.0, 469600.0, 5.0862035995768355, 0.0, 0.0, 1.165251621801494, 0.0, 0.0, 2.9784043685283237, 16.618208323400072, 0.0
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 100);
 
 INSERT INTO orbits (
@@ -502,10 +502,10 @@ SELECT 100, 413861913891.1831, 0.0783756264716304, 0.4738690767821292, 0.4081982
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 100);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 101, 'Pluto', 'dwarf_planet', NULL, 1, NULL, 871000000000.0, 1188300.0, 2.3211657321048187, 0.0, 0.0, -0.10756464180041053, 0.0, 0.0, 5.283024379324235, 0.9837115923543857, 0.0
+SELECT 101, 'Pluto', 'dwarf_planet', 1, 871000000000.0, 1188300.0, 2.3211657321048187, 0.0, 0.0, -0.10756464180041053, 0.0, 0.0, 5.283024379324235, 0.9837115923543857, 0.0
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 101);
 
 INSERT INTO orbits (
@@ -516,10 +516,10 @@ SELECT 101, 5919776464668.313, 0.2494484952274253, 0.41112888035449524, 0.770543
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 101);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 102, 'Charon', 'moon', NULL, 101, NULL, 106000000000.0, 606000.0, 2.3211657321048187, 0.0, 0.0, -0.10756464180041053, 0.0, 0.0, 2.1414317257344426, 0.9837115923543857, 0.0
+SELECT 102, 'Charon', 'moon', 101, 106000000000.0, 606000.0, 2.3211657321048187, 0.0, 0.0, -0.10756464180041053, 0.0, 0.0, 2.1414317257344426, 0.9837115923543857, 0.0
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 102);
 
 INSERT INTO orbits (
@@ -530,10 +530,10 @@ SELECT 102, 19595762.04124312, 0.0001610672790944719, 1.6798095521560907, 3.8922
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 102);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 103, 'Eris', 'dwarf_planet', NULL, 1, NULL, 1100000000000.0, 1163000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 103, 'Eris', 'dwarf_planet', 1, 1100000000000.0, 1163000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 103);
 
 INSERT INTO orbits (
@@ -544,10 +544,10 @@ SELECT 103, 10193579260166.18, 0.4325050983099001, 1.1143867709504627, 0.4713940
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 103);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 104, 'Haumea', 'dwarf_planet', NULL, 1, NULL, 270000000000.0, 780000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 104, 'Haumea', 'dwarf_planet', 1, 270000000000.0, 780000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 104);
 
 INSERT INTO orbits (
@@ -558,10 +558,10 @@ SELECT 104, 6419133579383.321, 0.1999209495775153, 0.43236677504994325, 1.277420
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 104);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 105, 'Makemake', 'dwarf_planet', NULL, 1, NULL, 180000000000.0, 715000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 105, 'Makemake', 'dwarf_planet', 1, 180000000000.0, 715000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 105);
 
 INSERT INTO orbits (
@@ -572,10 +572,10 @@ SELECT 105, 6787563233624.084, 0.1645232903298833, 0.6973321283545673, 0.8356996
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 105);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 106, 'Quaoar', 'dwarf_planet', NULL, 1, NULL, 140000000000.0, 555000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 106, 'Quaoar', 'dwarf_planet', 1, 140000000000.0, 555000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 106);
 
 INSERT INTO orbits (
@@ -586,10 +586,10 @@ SELECT 106, 6452606018716.798, 0.03951002963353657, 0.2719737452568474, 6.201282
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 106);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 107, 'Gonggong', 'dwarf_planet', NULL, 1, NULL, 120000000000.0, 615000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 107, 'Gonggong', 'dwarf_planet', 1, 120000000000.0, 615000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 107);
 
 INSERT INTO orbits (
@@ -600,10 +600,10 @@ SELECT 107, 10030729336391.33, 0.4995737098841908, 0.9248754323561573, 6.0292682
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 107);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 108, 'Orcus', 'dwarf_planet', NULL, 1, NULL, 42000000000.0, 458000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 108, 'Orcus', 'dwarf_planet', 1, 42000000000.0, 458000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 108);
 
 INSERT INTO orbits (
@@ -614,10 +614,10 @@ SELECT 108, 5873589732871.808, 0.225751142405386, 0.5297830328306077, 5.51612148
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 108);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 109, 'Sedna', 'dwarf_planet', NULL, 1, NULL, 70000000000.0, 500000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 109, 'Sedna', 'dwarf_planet', 1, 70000000000.0, 500000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 109);
 
 INSERT INTO orbits (
@@ -628,10 +628,10 @@ SELECT 109, 82259870138217.9, 0.8609804671093849, 0.26746402574043016, 0.4735637
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 109);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 200, 'Voyager 1', 'spacecraft', NULL, 1, NULL, 1.0, 5.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 200, 'Voyager 1', 'spacecraft', 1, 1.0, 5.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 200);
 
 INSERT INTO orbits (
@@ -642,10 +642,10 @@ SELECT 200, -481844889375.2348, 3.707683477574522, 0.2161251589112767, 3.1057916
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 200);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 201, 'Voyager 2', 'spacecraft', NULL, 1, NULL, 1.0, 5.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 201, 'Voyager 2', 'spacecraft', 1, 1.0, 5.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 201);
 
 INSERT INTO orbits (
@@ -656,10 +656,10 @@ SELECT 201, -602275431738.5062, 6.284208583571169, 1.311296701074605, 1.67972529
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 201);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 202, 'Pioneer 10', 'spacecraft', NULL, 1, NULL, 1.0, 5.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 202, 'Pioneer 10', 'spacecraft', 1, 1.0, 5.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 202);
 
 INSERT INTO orbits (
@@ -670,10 +670,10 @@ SELECT 202, -1033935866239.176, 1.742428617334832, 0.458189588036598, 6.22476033
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 202);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 203, 'Pioneer 11', 'spacecraft', NULL, 1, NULL, 1.0, 5.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 203, 'Pioneer 11', 'spacecraft', 1, 1.0, 5.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 203);
 
 INSERT INTO orbits (
@@ -684,10 +684,10 @@ SELECT 203, -1220209535740.8682, 2.141710960078332, 0.1652878549928791, 0.619260
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 203);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 204, 'New Horizons', 'spacecraft', NULL, 1, NULL, 1.0, 5.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 204, 'New Horizons', 'spacecraft', 1, 1.0, 5.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 204);
 
 INSERT INTO orbits (
@@ -698,10 +698,10 @@ SELECT 204, -847059535082.5051, 1.399371248646464, 0.3837529553209055, 6.1995727
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 204);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 205, 'Juno', 'spacecraft', NULL, 1, NULL, 1.0, 5.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 205, 'Juno', 'spacecraft', 1, 1.0, 5.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 205);
 
 INSERT INTO orbits (
@@ -712,10 +712,10 @@ SELECT 205, 245223830897.3129, 0.3843016801603711, 0.40830447319391383, 0.002136
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 205);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 206, 'Dawn', 'spacecraft', NULL, 1, NULL, 1.0, 5.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 206, 'Dawn', 'spacecraft', 1, 1.0, 5.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 206);
 
 INSERT INTO orbits (
@@ -726,10 +726,10 @@ SELECT 206, 288179426215.828, 0.07823184114367074, 0.3957600664275757, 0.3038152
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 206);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 207, 'Cassini', 'spacecraft', NULL, 1, NULL, 1.0, 5.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 207, 'Cassini', 'spacecraft', 1, 1.0, 5.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 207);
 
 INSERT INTO orbits (
@@ -740,10 +740,10 @@ SELECT 207, 600647177213.6827, 0.7845778531509823, 0.3989819320647733, 0.0185057
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 207);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 208, 'Galileo', 'spacecraft', NULL, 1, NULL, 1.0, 5.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 208, 'Galileo', 'spacecraft', 1, 1.0, 5.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 208);
 
 INSERT INTO orbits (
@@ -754,10 +754,10 @@ SELECT 208, -2495980277390.6, 1.279374770326129, 0.39026968477632346, 0.02967740
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 208);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 209, 'Parker Solar Probe', 'spacecraft', NULL, 1, NULL, 1.0, 5.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 209, 'Parker Solar Probe', 'spacecraft', 1, 1.0, 5.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 209);
 
 INSERT INTO orbits (
@@ -768,10 +768,10 @@ SELECT 209, 82578146542.07808, 0.699470739412637, 0.4128985847347072, 0.14672625
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 209);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 210, 'JWST', 'spacecraft', NULL, 1, NULL, 1.0, 5.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 210, 'JWST', 'spacecraft', 1, 1.0, 5.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 210);
 
 INSERT INTO orbits (
@@ -782,10 +782,10 @@ SELECT 210, 152750256365.7605, 0.02908920223183022, 0.40585736395954247, 6.28245
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 210);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 211, 'Psyche', 'spacecraft', NULL, 1, NULL, 1.0, 5.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 211, 'Psyche', 'spacecraft', 1, 1.0, 5.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 211);
 
 INSERT INTO orbits (
@@ -796,10 +796,10 @@ SELECT 211, 262729989903.24368, 0.4320647007241271, 0.4259879598506328, 0.014682
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 211);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 212, 'Lucy', 'spacecraft', NULL, 1, NULL, 1.0, 5.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 212, 'Lucy', 'spacecraft', 1, 1.0, 5.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 212);
 
 INSERT INTO orbits (
@@ -810,10 +810,10 @@ SELECT 212, 149583155007.8748, 0.1621734443719213, 0.40559767010777736, 6.279539
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 212);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 213, 'Europa Clipper', 'spacecraft', NULL, 1, NULL, 1.0, 5.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 213, 'Europa Clipper', 'spacecraft', 1, 1.0, 5.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 213);
 
 INSERT INTO orbits (
@@ -824,10 +824,10 @@ SELECT 213, 276385491978.4805, 0.4622969519322672, 0.44203194414655284, 0.030197
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 213);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 214, 'OSIRIS-REx', 'spacecraft', NULL, 1, NULL, 1.0, 5.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 214, 'OSIRIS-REx', 'spacecraft', 1, 1.0, 5.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 214);
 
 INSERT INTO orbits (
@@ -838,10 +838,10 @@ SELECT 214, 145336323360.4997, 0.201804780242444, 0.40547353922659735, 0.0024236
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 214);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 215, 'Hayabusa2', 'spacecraft', NULL, 1, NULL, 1.0, 5.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 215, 'Hayabusa2', 'spacecraft', 1, 1.0, 5.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 215);
 
 INSERT INTO orbits (
@@ -852,10 +852,10 @@ SELECT 215, 149880214622.45602, 0.0871509819493863, 0.3852078292046406, 5.981335
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 215);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1000, 'Asteroid 2', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, 0.5759586531581288, 0.0, 0.0, -0.05235987755982989, 0.0, 0.0, 0.6632251157578453, 19.299913700406368, 0.0
+SELECT 1000, 'Asteroid 2', 'asteroid', 1, 100000000.0, 50000.0, 0.5759586531581288, 0.0, 0.0, -0.05235987755982989, 0.0, 0.0, 0.6632251157578453, 19.299913700406368, 0.0
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1000);
 
 INSERT INTO orbits (
@@ -866,10 +866,10 @@ SELECT 1000, 414733539167.0699, 0.2296435321697976, 0.20702035482725378, 2.80608
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1000);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1001, 'Asteroid 3', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1001, 'Asteroid 3', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1001);
 
 INSERT INTO orbits (
@@ -880,10 +880,10 @@ SELECT 1001, 399132340240.1237, 0.2584434725495511, 0.18983966819552436, 0.20438
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1001);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1002, 'Asteroid 4', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, 5.393608440730596, 0.0, 0.0, 0.7371398095798051, 0.0, 0.0, 4.980995152266617, 28.22778495282912, 0.0
+SELECT 1002, 'Asteroid 4', 'asteroid', 1, 100000000.0, 50000.0, 5.393608440730596, 0.0, 0.0, 0.7371398095798051, 0.0, 0.0, 4.980995152266617, 28.22778495282912, 0.0
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1002);
 
 INSERT INTO orbits (
@@ -894,10 +894,10 @@ SELECT 1002, 353280597820.6284, 0.09002244561937413, 0.3968330361800431, 0.31712
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1002);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1003, 'Asteroid 5', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1003, 'Asteroid 5', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1003);
 
 INSERT INTO orbits (
@@ -908,10 +908,10 @@ SELECT 1003, 385069157690.07214, 0.1922759408730323, 0.3402734520975569, 0.17458
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1003);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1004, 'Asteroid 6', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1004, 'Asteroid 6', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1004);
 
 INSERT INTO orbits (
@@ -922,10 +922,10 @@ SELECT 1004, 362751122867.26556, 0.2021512810081088, 0.2708601768970447, 0.67733
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1004);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1005, 'Asteroid 7', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1005, 'Asteroid 7', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1005);
 
 INSERT INTO orbits (
@@ -936,10 +936,10 @@ SELECT 1005, 356841337031.4552, 0.2303983806259771, 0.402835518104465, 6.0390350
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1005);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1006, 'Asteroid 8', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1006, 'Asteroid 8', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1006);
 
 INSERT INTO orbits (
@@ -950,10 +950,10 @@ SELECT 1006, 329356414918.9892, 0.1562146266399819, 0.38368583053414707, 0.25853
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1006);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1007, 'Asteroid 9', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1007, 'Asteroid 9', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1007);
 
 INSERT INTO orbits (
@@ -964,10 +964,10 @@ SELECT 1007, 357035032201.6129, 0.1216673976615281, 0.45267274893696263, 0.20902
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1007);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1008, 'Asteroid 10', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, 4.993910588731375, 0.0, 0.0, 1.1147417932487782, 0.0, 0.0, 1.4691483511587469, 0.24756448241988369, 0.0
+SELECT 1008, 'Asteroid 10', 'asteroid', 1, 100000000.0, 50000.0, 4.993910588731375, 0.0, 0.0, 1.1147417932487782, 0.0, 0.0, 1.4691483511587469, 0.24756448241988369, 0.0
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1008);
 
 INSERT INTO orbits (
@@ -978,10 +978,10 @@ SELECT 1008, 469501147557.58984, 0.1194647926154634, 0.4296238150973887, 6.12620
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1008);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1009, 'Asteroid 11', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1009, 'Asteroid 11', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1009);
 
 INSERT INTO orbits (
@@ -992,10 +992,10 @@ SELECT 1009, 366974358484.9651, 0.09915034700715133, 0.3676231301266821, 0.18318
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1009);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1010, 'Asteroid 12', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1010, 'Asteroid 12', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1010);
 
 INSERT INTO orbits (
@@ -1006,10 +1006,10 @@ SELECT 1010, 349257578919.92596, 0.2186782489109132, 0.34700039452257614, 5.9221
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1010);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1011, 'Asteroid 13', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1011, 'Asteroid 13', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1011);
 
 INSERT INTO orbits (
@@ -1020,10 +1020,10 @@ SELECT 1011, 385518226659.47314, 0.08490097481054934, 0.648277799122504, 0.32945
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1011);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1012, 'Asteroid 14', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1012, 'Asteroid 14', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1012);
 
 INSERT INTO orbits (
@@ -1034,10 +1034,10 @@ SELECT 1012, 386721651380.8576, 0.1672478372160958, 0.44622243496646546, 0.37477
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1012);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1013, 'Asteroid 15', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1013, 'Asteroid 15', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1013);
 
 INSERT INTO orbits (
@@ -1048,10 +1048,10 @@ SELECT 1013, 395498109342.7726, 0.1862036783937743, 0.5237470547003551, 5.900645
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1013);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1014, 'Asteroid 16', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1014, 'Asteroid 16', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1014);
 
 INSERT INTO orbits (
@@ -1062,10 +1062,10 @@ SELECT 1014, 436910364528.9265, 0.1382419363860605, 0.36304037926379323, 0.07497
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1014);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1015, 'Asteroid 17', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1015, 'Asteroid 17', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1015);
 
 INSERT INTO orbits (
@@ -1076,10 +1076,10 @@ SELECT 1015, 369481591195.51526, 0.1360259850682717, 0.3605888491533615, 0.22610
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1015);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1016, 'Asteroid 18', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1016, 'Asteroid 18', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1016);
 
 INSERT INTO orbits (
@@ -1090,10 +1090,10 @@ SELECT 1016, 343348518135.9419, 0.2180984447758915, 0.2687066582285804, 0.331424
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1016);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1017, 'Asteroid 19', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1017, 'Asteroid 19', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1017);
 
 INSERT INTO orbits (
@@ -1104,10 +1104,10 @@ SELECT 1017, 365423209737.0684, 0.158105000171227, 0.3859493779430177, 6.2451118
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1017);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1018, 'Asteroid 20', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1018, 'Asteroid 20', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1018);
 
 INSERT INTO orbits (
@@ -1118,10 +1118,10 @@ SELECT 1018, 360426459454.67255, 0.1423978280154417, 0.39811572797343253, 6.2689
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1018);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1019, 'Asteroid 21', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, 0.9075712110370514, 0.0, 0.0, 0.20943951023931956, 0.0, 0.0, 1.6406094968746698, 18.4612463429088, 0.0
+SELECT 1019, 'Asteroid 21', 'asteroid', 1, 100000000.0, 50000.0, 0.9075712110370514, 0.0, 0.0, 0.20943951023931956, 0.0, 0.0, 1.6406094968746698, 18.4612463429088, 0.0
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1019);
 
 INSERT INTO orbits (
@@ -1132,10 +1132,10 @@ SELECT 1019, 364380543660.2917, 0.1617134842289241, 0.4206569185343648, 0.129713
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1019);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1020, 'Asteroid 22', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1020, 'Asteroid 22', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1020);
 
 INSERT INTO orbits (
@@ -1146,10 +1146,10 @@ SELECT 1020, 435088990993.62897, 0.1014077132298231, 0.5483302938061949, 0.42992
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1020);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1021, 'Asteroid 23', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1021, 'Asteroid 23', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1021);
 
 INSERT INTO orbits (
@@ -1160,10 +1160,10 @@ SELECT 1021, 393005810234.5608, 0.2333013416901306, 0.5032223135296741, 0.343742
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1021);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1022, 'Asteroid 24', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1022, 'Asteroid 24', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1022);
 
 INSERT INTO orbits (
@@ -1174,10 +1174,10 @@ SELECT 1022, 467643938539.3775, 0.1343435563614502, 0.41990777073698987, 0.01919
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1022);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1023, 'Asteroid 25', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1023, 'Asteroid 25', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1023);
 
 INSERT INTO orbits (
@@ -1188,10 +1188,10 @@ SELECT 1023, 359050893208.76465, 0.2562023774012336, 0.2284447532968351, 5.12672
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1023);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1024, 'Asteroid 26', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1024, 'Asteroid 26', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1024);
 
 INSERT INTO orbits (
@@ -1202,10 +1202,10 @@ SELECT 1024, 397300052075.6775, 0.0883677298299584, 0.45439457171755754, 0.10191
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1024);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1025, 'Asteroid 27', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1025, 'Asteroid 27', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1025);
 
 INSERT INTO orbits (
@@ -1216,10 +1216,10 @@ SELECT 1025, 351051062476.6806, 0.1718349766840407, 0.4076518311335371, 0.069526
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1025);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1026, 'Asteroid 28', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1026, 'Asteroid 28', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1026);
 
 INSERT INTO orbits (
@@ -1230,10 +1230,10 @@ SELECT 1026, 415314776288.9981, 0.1501333170655468, 0.2904311146285603, 0.336663
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1026);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1027, 'Asteroid 29', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1027, 'Asteroid 29', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1027);
 
 INSERT INTO orbits (
@@ -1244,10 +1244,10 @@ SELECT 1027, 382120864038.0505, 0.07222845575302438, 0.5154516258302171, 6.27027
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1027);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1028, 'Asteroid 30', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1028, 'Asteroid 30', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1028);
 
 INSERT INTO orbits (
@@ -1258,10 +1258,10 @@ SELECT 1028, 353829242184.8213, 0.1268846777113357, 0.4325276712769509, 6.214312
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1028);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1029, 'Asteroid 33', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1029, 'Asteroid 33', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1029);
 
 INSERT INTO orbits (
@@ -1272,10 +1272,10 @@ SELECT 1029, 429211545312.5185, 0.3348084344918512, 0.4413753378007587, 0.011683
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1029);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1030, 'Asteroid 36', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1030, 'Asteroid 36', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1030);
 
 INSERT INTO orbits (
@@ -1286,10 +1286,10 @@ SELECT 1030, 411255639076.84393, 0.3024323621124022, 0.7304771611988821, 6.27105
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1030);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1031, 'Asteroid 37', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1031, 'Asteroid 37', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1031);
 
 INSERT INTO orbits (
@@ -1300,10 +1300,10 @@ SELECT 1031, 395307137965.18024, 0.1756533988247751, 0.46230964285780884, 0.0156
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1031);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1032, 'Asteroid 38', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1032, 'Asteroid 38', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1032);
 
 INSERT INTO orbits (
@@ -1314,10 +1314,10 @@ SELECT 1032, 410040547838.9826, 0.1532612363665765, 0.4743365132125471, 6.042809
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1032);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1033, 'Asteroid 39', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1033, 'Asteroid 39', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1033);
 
 INSERT INTO orbits (
@@ -1328,10 +1328,10 @@ SELECT 1033, 414372833520.25934, 0.111548829969287, 0.25158902926458154, 0.28344
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1033);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1034, 'Asteroid 40', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1034, 'Asteroid 40', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1034);
 
 INSERT INTO orbits (
@@ -1342,10 +1342,10 @@ SELECT 1034, 339224301490.5813, 0.04609479729768177, 0.4098626078699702, 0.18679
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1034);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1035, 'Asteroid 41', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1035, 'Asteroid 41', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1035);
 
 INSERT INTO orbits (
@@ -1356,10 +1356,10 @@ SELECT 1035, 413094474519.4425, 0.274448105435309, 0.13417971055750205, 0.058943
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1035);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1036, 'Asteroid 42', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1036, 'Asteroid 42', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1036);
 
 INSERT INTO orbits (
@@ -1370,10 +1370,10 @@ SELECT 1036, 365081360439.1585, 0.2242242582597836, 0.44704115292858954, 0.34895
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1036);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1037, 'Asteroid 43', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1037, 'Asteroid 43', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1037);
 
 INSERT INTO orbits (
@@ -1384,10 +1384,10 @@ SELECT 1037, 329521766174.1103, 0.1686706552746458, 0.4080781718485343, 6.130657
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1037);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1038, 'Asteroid 44', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1038, 'Asteroid 44', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1038);
 
 INSERT INTO orbits (
@@ -1398,10 +1398,10 @@ SELECT 1038, 362576572627.0564, 0.1480568293594275, 0.3691652070665139, 0.134169
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1038);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1039, 'Asteroid 45', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1039, 'Asteroid 45', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1039);
 
 INSERT INTO orbits (
@@ -1412,10 +1412,10 @@ SELECT 1039, 406934498788.98517, 0.08297482946003971, 0.31689064607073086, 0.197
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1039);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1040, 'Asteroid 46', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1040, 'Asteroid 46', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1040);
 
 INSERT INTO orbits (
@@ -1426,10 +1426,10 @@ SELECT 1040, 377685336410.4688, 0.1723666496760597, 0.36832260715519205, 6.28073
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1040);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1041, 'Asteroid 47', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1041, 'Asteroid 47', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1041);
 
 INSERT INTO orbits (
@@ -1440,10 +1440,10 @@ SELECT 1041, 431406477302.9552, 0.1327212687613701, 0.49601184682877775, 0.01088
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1041);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1042, 'Asteroid 48', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1042, 'Asteroid 48', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1042);
 
 INSERT INTO orbits (
@@ -1454,10 +1454,10 @@ SELECT 1042, 464912868893.2218, 0.07375068799435047, 0.295166072055566, 6.256098
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1042);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1043, 'Asteroid 49', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1043, 'Asteroid 49', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1043);
 
 INSERT INTO orbits (
@@ -1468,10 +1468,10 @@ SELECT 1043, 461125935110.92847, 0.2354185634417759, 0.4277548806216193, 6.15436
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1043);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1044, 'Asteroid 50', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1044, 'Asteroid 50', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1044);
 
 INSERT INTO orbits (
@@ -1482,10 +1482,10 @@ SELECT 1044, 396310248093.3374, 0.2869132146082829, 0.35993231559570543, 0.01510
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1044);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1045, 'Asteroid 51', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1045, 'Asteroid 51', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1045);
 
 INSERT INTO orbits (
@@ -1496,10 +1496,10 @@ SELECT 1045, 353887342595.16846, 0.06665758348154305, 0.23576900938513007, 0.048
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1045);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1046, 'Asteroid 52', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, 4.485496177625427, 0.0, 0.0, 0.20943951023931956, 0.0, 0.0, 0.9599310885968813, 26.78464682288849, 0.0
+SELECT 1046, 'Asteroid 52', 'asteroid', 1, 100000000.0, 50000.0, 4.485496177625427, 0.0, 0.0, 0.20943951023931956, 0.0, 0.0, 0.9599310885968813, 26.78464682288849, 0.0
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1046);
 
 INSERT INTO orbits (
@@ -1510,10 +1510,10 @@ SELECT 1046, 463586884678.5973, 0.1009760778950584, 0.3414570495653447, 0.306198
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1046);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1047, 'Asteroid 53', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1047, 'Asteroid 53', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1047);
 
 INSERT INTO orbits (
@@ -1524,10 +1524,10 @@ SELECT 1047, 391599210007.3327, 0.2048083359690333, 0.340373497407562, 0.1592987
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1047);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1048, 'Asteroid 54', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1048, 'Asteroid 54', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1048);
 
 INSERT INTO orbits (
@@ -1538,10 +1538,10 @@ SELECT 1048, 405412641665.2678, 0.1994420936413581, 0.5701319561831679, 6.004354
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1048);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1049, 'Asteroid 55', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1049, 'Asteroid 55', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1049);
 
 INSERT INTO orbits (
@@ -1552,10 +1552,10 @@ SELECT 1049, 412812336942.89923, 0.14241257941413, 0.5327595682005879, 0.0457192
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1049);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1050, 'Asteroid 56', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1050, 'Asteroid 56', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1050);
 
 INSERT INTO orbits (
@@ -1566,10 +1566,10 @@ SELECT 1050, 388559422793.34436, 0.2341048463532495, 0.27413909762876343, 6.1591
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1050);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1051, 'Asteroid 57', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1051, 'Asteroid 57', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1051);
 
 INSERT INTO orbits (
@@ -1580,10 +1580,10 @@ SELECT 1051, 471515325394.31177, 0.1204365362010185, 0.18039033056417803, 5.7751
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1051);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1052, 'Asteroid 58', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1052, 'Asteroid 58', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1052);
 
 INSERT INTO orbits (
@@ -1594,10 +1594,10 @@ SELECT 1052, 403947744241.65704, 0.04442213449234152, 0.32650039267038766, 0.087
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1052);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1053, 'Asteroid 59', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1053, 'Asteroid 59', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1053);
 
 INSERT INTO orbits (
@@ -1608,10 +1608,10 @@ SELECT 1053, 405849092952.1523, 0.1195690505042187, 0.26152151078316965, 0.09771
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1053);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1054, 'Asteroid 60', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1054, 'Asteroid 60', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1054);
 
 INSERT INTO orbits (
@@ -1622,10 +1622,10 @@ SELECT 1054, 358153052252.7783, 0.1821291606434166, 0.34781142384803543, 6.24530
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1054);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1055, 'Asteroid 61', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1055, 'Asteroid 61', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1055);
 
 INSERT INTO orbits (
@@ -1636,10 +1636,10 @@ SELECT 1055, 446455015679.0774, 0.16471243648234, 0.7075136672601992, 6.07066071
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1055);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1056, 'Asteroid 62', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1056, 'Asteroid 62', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1056);
 
 INSERT INTO orbits (
@@ -1650,10 +1650,10 @@ SELECT 1056, 466452702052.1814, 0.1807148105433615, 0.38761237052680014, 0.08337
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1056);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1057, 'Asteroid 63', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1057, 'Asteroid 63', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1057);
 
 INSERT INTO orbits (
@@ -1664,10 +1664,10 @@ SELECT 1057, 358384046015.8314, 0.1246133898696733, 0.504180739302613, 6.2054276
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1057);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1058, 'Asteroid 64', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1058, 'Asteroid 64', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1058);
 
 INSERT INTO orbits (
@@ -1678,10 +1678,10 @@ SELECT 1058, 401379684167.0603, 0.1251324579218091, 0.42400065975490214, 6.24050
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1058);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1059, 'Asteroid 65', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1059, 'Asteroid 65', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1059);
 
 INSERT INTO orbits (
@@ -1692,10 +1692,10 @@ SELECT 1059, 513699295940.4088, 0.1036043983033821, 0.35345811541642236, 0.07323
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1059);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1060, 'Asteroid 66', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1060, 'Asteroid 66', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1060);
 
 INSERT INTO orbits (
@@ -1706,10 +1706,10 @@ SELECT 1060, 395883652843.7527, 0.1722521701822739, 0.46182570731144723, 0.01608
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1060);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1061, 'Asteroid 67', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1061, 'Asteroid 67', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1061);
 
 INSERT INTO orbits (
@@ -1720,10 +1720,10 @@ SELECT 1061, 362178727897.2714, 0.1854992565480965, 0.3148387905914778, 6.150899
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1061);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1062, 'Asteroid 68', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1062, 'Asteroid 68', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1062);
 
 INSERT INTO orbits (
@@ -1734,10 +1734,10 @@ SELECT 1062, 416317438219.6634, 0.1858815869422929, 0.5169296087606111, 0.197412
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1062);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1063, 'Asteroid 69', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1063, 'Asteroid 69', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1063);
 
 INSERT INTO orbits (
@@ -1748,10 +1748,10 @@ SELECT 1063, 445818567275.0246, 0.1644460808349586, 0.2601710058630578, 6.230367
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1063);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1064, 'Asteroid 70', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1064, 'Asteroid 70', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1064);
 
 INSERT INTO orbits (
@@ -1762,10 +1762,10 @@ SELECT 1064, 391132985234.7687, 0.1836043857901025, 0.5635970506391546, 0.282852
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1064);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1065, 'Asteroid 71', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1065, 'Asteroid 71', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1065);
 
 INSERT INTO orbits (
@@ -1776,10 +1776,10 @@ SELECT 1065, 412617187240.7437, 0.1742570866879175, 0.7528536608791412, 5.872801
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1065);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1066, 'Asteroid 72', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1066, 'Asteroid 72', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1066);
 
 INSERT INTO orbits (
@@ -1790,10 +1790,10 @@ SELECT 1066, 338951645077.63293, 0.121344690300828, 0.328709413051304, 6.1445883
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1066);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1067, 'Asteroid 73', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1067, 'Asteroid 73', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1067);
 
 INSERT INTO orbits (
@@ -1804,10 +1804,10 @@ SELECT 1067, 398825214561.2223, 0.04298324006215397, 0.4502928345301665, 0.01219
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1067);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1068, 'Asteroid 74', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1068, 'Asteroid 74', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1068);
 
 INSERT INTO orbits (
@@ -1818,10 +1818,10 @@ SELECT 1068, 416147793676.77527, 0.2361345423155369, 0.342218658337052, 6.219513
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1068);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1069, 'Asteroid 75', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1069, 'Asteroid 75', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1069);
 
 INSERT INTO orbits (
@@ -1832,10 +1832,10 @@ SELECT 1069, 399384064921.67065, 0.308459247272077, 0.49665696185780167, 6.28180
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1069);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1070, 'Asteroid 76', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1070, 'Asteroid 76', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1070);
 
 INSERT INTO orbits (
@@ -1846,10 +1846,10 @@ SELECT 1070, 510486861961.4925, 0.1646613463209093, 0.37582128088338296, 6.24107
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1070);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1071, 'Asteroid 77', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1071, 'Asteroid 77', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1071);
 
 INSERT INTO orbits (
@@ -1860,10 +1860,10 @@ SELECT 1071, 399367704864.89056, 0.1307645532136053, 0.45155471214372533, 0.0023
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1071);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1072, 'Asteroid 78', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1072, 'Asteroid 78', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1072);
 
 INSERT INTO orbits (
@@ -1874,10 +1874,10 @@ SELECT 1072, 391987945788.47345, 0.2073904321389595, 0.5488021351401146, 6.15418
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1072);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1073, 'Asteroid 79', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1073, 'Asteroid 79', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1073);
 
 INSERT INTO orbits (
@@ -1888,10 +1888,10 @@ SELECT 1073, 365783222589.5947, 0.1919336330235188, 0.3389808813229903, 6.173441
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1073);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1074, 'Asteroid 80', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1074, 'Asteroid 80', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1074);
 
 INSERT INTO orbits (
@@ -1902,10 +1902,10 @@ SELECT 1074, 343517216949.7168, 0.2000238067024944, 0.3056338239814658, 5.963334
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1074);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1075, 'Asteroid 81', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1075, 'Asteroid 81', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1075);
 
 INSERT INTO orbits (
@@ -1916,10 +1916,10 @@ SELECT 1075, 426896496309.3894, 0.2130904061382649, 0.5455156885563642, 0.007151
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1075);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1076, 'Asteroid 82', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1076, 'Asteroid 82', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1076);
 
 INSERT INTO orbits (
@@ -1930,10 +1930,10 @@ SELECT 1076, 412922477972.43085, 0.2242601020962955, 0.45413191169452494, 0.0488
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1076);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1077, 'Asteroid 83', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1077, 'Asteroid 83', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1077);
 
 INSERT INTO orbits (
@@ -1944,10 +1944,10 @@ SELECT 1077, 364102050581.2, 0.08119069357497531, 0.48738823199228437, 0.0865643
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1077);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1078, 'Asteroid 84', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1078, 'Asteroid 84', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1078);
 
 INSERT INTO orbits (
@@ -1958,10 +1958,10 @@ SELECT 1078, 353300636606.9147, 0.2369169829075313, 0.553504647120511, 6.1179842
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1078);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1079, 'Asteroid 85', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1079, 'Asteroid 85', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1079);
 
 INSERT INTO orbits (
@@ -1972,10 +1972,10 @@ SELECT 1079, 397289560177.37683, 0.1917049223267556, 0.23206504452125415, 5.9154
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1079);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1080, 'Asteroid 86', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1080, 'Asteroid 86', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1080);
 
 INSERT INTO orbits (
@@ -1986,10 +1986,10 @@ SELECT 1080, 466472216415.3732, 0.2048848135237783, 0.42128908420210687, 0.20589
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1080);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1081, 'Asteroid 87', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1081, 'Asteroid 87', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1081);
 
 INSERT INTO orbits (
@@ -2000,10 +2000,10 @@ SELECT 1081, 521605320446.7804, 0.0799441939001803, 0.49583152736375796, 0.38910
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1081);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1082, 'Asteroid 88', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1082, 'Asteroid 88', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1082);
 
 INSERT INTO orbits (
@@ -2014,10 +2014,10 @@ SELECT 1082, 414141339425.4308, 0.1614258107569458, 0.42912771859775, 6.06425575
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1082);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1083, 'Asteroid 89', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1083, 'Asteroid 89', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1083);
 
 INSERT INTO orbits (
@@ -2028,10 +2028,10 @@ SELECT 1083, 381721003911.3769, 0.1815776897172982, 0.6303873415081211, 5.923485
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1083);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1084, 'Asteroid 90', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1084, 'Asteroid 90', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1084);
 
 INSERT INTO orbits (
@@ -2042,10 +2042,10 @@ SELECT 1084, 471763614755.9569, 0.1552804116255773, 0.42346043276156414, 0.08966
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1084);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1085, 'Asteroid 91', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1085, 'Asteroid 91', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1085);
 
 INSERT INTO orbits (
@@ -2056,10 +2056,10 @@ SELECT 1085, 387611938845.101, 0.1060562569133937, 0.44539511257443176, 0.016314
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1085);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1086, 'Asteroid 92', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1086, 'Asteroid 92', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1086);
 
 INSERT INTO orbits (
@@ -2070,10 +2070,10 @@ SELECT 1086, 478325240578.9594, 0.09700054302361698, 0.4077603549348604, 0.43780
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1086);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1087, 'Asteroid 93', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1087, 'Asteroid 93', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1087);
 
 INSERT INTO orbits (
@@ -2084,10 +2084,10 @@ SELECT 1087, 411961744098.5867, 0.1399953034572653, 0.5581772752628571, 0.022390
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1087);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1088, 'Asteroid 94', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1088, 'Asteroid 94', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1088);
 
 INSERT INTO orbits (
@@ -2098,10 +2098,10 @@ SELECT 1088, 473219699926.9914, 0.08315773695501315, 0.5482620686510572, 0.01331
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1088);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1089, 'Asteroid 95', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1089, 'Asteroid 95', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1089);
 
 INSERT INTO orbits (
@@ -2112,10 +2112,10 @@ SELECT 1089, 459491096782.8609, 0.1449770397323606, 0.36539115790610815, 5.68571
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1089);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1090, 'Asteroid 96', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1090, 'Asteroid 96', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1090);
 
 INSERT INTO orbits (
@@ -2126,10 +2126,10 @@ SELECT 1090, 458223922629.5578, 0.1323722398311632, 0.6497539967825815, 6.000258
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1090);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1091, 'Asteroid 97', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1091, 'Asteroid 97', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1091);
 
 INSERT INTO orbits (
@@ -2140,10 +2140,10 @@ SELECT 1091, 399398114413.1432, 0.2560502392713447, 0.22690963749684923, 0.31838
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1091);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1092, 'Asteroid 98', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1092, 'Asteroid 98', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1092);
 
 INSERT INTO orbits (
@@ -2154,10 +2154,10 @@ SELECT 1092, 401678890382.4674, 0.188516042012186, 0.6807189164147802, 6.2397293
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1092);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1093, 'Asteroid 99', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1093, 'Asteroid 99', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1093);
 
 INSERT INTO orbits (
@@ -2168,10 +2168,10 @@ SELECT 1093, 398112157923.58234, 0.1988841913947814, 0.6104026104141136, 0.28358
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1093);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1094, 'Asteroid 100', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1094, 'Asteroid 100', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1094);
 
 INSERT INTO orbits (
@@ -2182,10 +2182,10 @@ SELECT 1094, 463937594913.6932, 0.1576308337564998, 0.35145596838148807, 0.25917
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1094);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1095, 'Asteroid 101', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1095, 'Asteroid 101', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1095);
 
 INSERT INTO orbits (
@@ -2196,10 +2196,10 @@ SELECT 1095, 386464345999.8534, 0.1409707761382316, 0.5817376590583055, 6.191954
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1095);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1096, 'Asteroid 102', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1096, 'Asteroid 102', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1096);
 
 INSERT INTO orbits (
@@ -2210,10 +2210,10 @@ SELECT 1096, 397793207999.5968, 0.255246856249131, 0.33480836055101476, 6.141361
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1096);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1097, 'Asteroid 103', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1097, 'Asteroid 103', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1097);
 
 INSERT INTO orbits (
@@ -2224,10 +2224,10 @@ SELECT 1097, 404279238148.9229, 0.08071092528206847, 0.34649676508434213, 0.1933
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1097);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1098, 'Asteroid 104', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1098, 'Asteroid 104', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1098);
 
 INSERT INTO orbits (
@@ -2238,10 +2238,10 @@ SELECT 1098, 472246971567.92596, 0.1488015201583128, 0.446552767783406, 0.075641
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1098);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1099, 'Asteroid 105', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1099, 'Asteroid 105', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1099);
 
 INSERT INTO orbits (
@@ -2252,10 +2252,10 @@ SELECT 1099, 354963340703.4446, 0.1763590851860781, 0.06609097939377545, 5.32218
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1099);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1100, 'Asteroid 106', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1100, 'Asteroid 106', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1100);
 
 INSERT INTO orbits (
@@ -2266,10 +2266,10 @@ SELECT 1100, 473474271247.0617, 0.1761914299560805, 0.4517737946199545, 0.164189
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1100);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1101, 'Asteroid 107', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1101, 'Asteroid 107', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1101);
 
 INSERT INTO orbits (
@@ -2280,10 +2280,10 @@ SELECT 1101, 519754192061.2487, 0.07949928415228956, 0.23580923031393047, 0.0888
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1101);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1102, 'Asteroid 108', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1102, 'Asteroid 108', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1102);
 
 INSERT INTO orbits (
@@ -2294,10 +2294,10 @@ SELECT 1102, 485678346870.7542, 0.05209639638218982, 0.48238769210497867, 6.2569
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1102);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1103, 'Asteroid 109', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1103, 'Asteroid 109', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1103);
 
 INSERT INTO orbits (
@@ -2308,10 +2308,10 @@ SELECT 1103, 403708081217.2832, 0.2955144337864081, 0.5465179345113845, 0.015073
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1103);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1104, 'Asteroid 110', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1104, 'Asteroid 110', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1104);
 
 INSERT INTO orbits (
@@ -2322,10 +2322,10 @@ SELECT 1104, 408638424425.2802, 0.08078395794676854, 0.47351318225174227, 0.1926
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1104);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1105, 'Asteroid 111', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1105, 'Asteroid 111', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1105);
 
 INSERT INTO orbits (
@@ -2336,10 +2336,10 @@ SELECT 1105, 387962336578.937, 0.1020485554651524, 0.46447580489206347, 6.127529
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1105);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1106, 'Asteroid 112', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1106, 'Asteroid 112', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1106);
 
 INSERT INTO orbits (
@@ -2350,10 +2350,10 @@ SELECT 1106, 364211060422.81903, 0.1290159675337297, 0.4466234665888008, 6.22103
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1106);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1107, 'Asteroid 113', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1107, 'Asteroid 113', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1107);
 
 INSERT INTO orbits (
@@ -2364,10 +2364,10 @@ SELECT 1107, 355405642998.6936, 0.08876340868400033, 0.3673743999833417, 0.20491
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1107);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1108, 'Asteroid 114', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1108, 'Asteroid 114', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1108);
 
 INSERT INTO orbits (
@@ -2378,10 +2378,10 @@ SELECT 1108, 400735180892.4092, 0.1362120052160499, 0.32686525553813967, 0.07197
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1108);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1109, 'Asteroid 115', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1109, 'Asteroid 115', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1109);
 
 INSERT INTO orbits (
@@ -2392,10 +2392,10 @@ SELECT 1109, 355948490709.1975, 0.1920195976864024, 0.5581502834433664, 5.984493
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1109);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1110, 'Asteroid 116', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1110, 'Asteroid 116', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1110);
 
 INSERT INTO orbits (
@@ -2406,10 +2406,10 @@ SELECT 1110, 413967850326.1062, 0.1395440201433475, 0.43973468591020964, 0.13205
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1110);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1111, 'Asteroid 117', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1111, 'Asteroid 117', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1111);
 
 INSERT INTO orbits (
@@ -2420,10 +2420,10 @@ SELECT 1111, 447387628912.8742, 0.02505212305364771, 0.6663417771353717, 6.20449
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1111);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1112, 'Asteroid 118', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1112, 'Asteroid 118', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1112);
 
 INSERT INTO orbits (
@@ -2434,10 +2434,10 @@ SELECT 1112, 364547287699.4659, 0.1631306400665828, 0.5092976706632867, 0.206165
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1112);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1113, 'Asteroid 119', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1113, 'Asteroid 119', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1113);
 
 INSERT INTO orbits (
@@ -2448,10 +2448,10 @@ SELECT 1113, 386088791884.16895, 0.08118661388398227, 0.3193934582709198, 6.1535
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1113);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1114, 'Asteroid 120', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1114, 'Asteroid 120', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1114);
 
 INSERT INTO orbits (
@@ -2462,10 +2462,10 @@ SELECT 1114, 465996415802.8703, 0.0626427725332855, 0.5255874476146336, 6.206841
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1114);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1115, 'Asteroid 121', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1115, 'Asteroid 121', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1115);
 
 INSERT INTO orbits (
@@ -2476,10 +2476,10 @@ SELECT 1115, 514800116468.58295, 0.1460650289223713, 0.4632978393799119, 0.28699
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1115);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1116, 'Asteroid 122', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1116, 'Asteroid 122', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1116);
 
 INSERT INTO orbits (
@@ -2490,10 +2490,10 @@ SELECT 1116, 481223085914.7253, 0.04647534330425319, 0.3805230718661104, 0.00164
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1116);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1117, 'Asteroid 123', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1117, 'Asteroid 123', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1117);
 
 INSERT INTO orbits (
@@ -2504,10 +2504,10 @@ SELECT 1117, 403136908805.92694, 0.1209403933696509, 0.48577976350823715, 6.0931
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1117);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1118, 'Asteroid 124', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1118, 'Asteroid 124', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1118);
 
 INSERT INTO orbits (
@@ -2518,10 +2518,10 @@ SELECT 1118, 393351902773.1803, 0.07814597398711876, 0.35824656335112665, 6.2617
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1118);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1119, 'Asteroid 125', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1119, 'Asteroid 125', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1119);
 
 INSERT INTO orbits (
@@ -2532,10 +2532,10 @@ SELECT 1119, 410449436058.83435, 0.07794574945976558, 0.32952307503532635, 0.046
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1119);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1120, 'Asteroid 126', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1120, 'Asteroid 126', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1120);
 
 INSERT INTO orbits (
@@ -2546,10 +2546,10 @@ SELECT 1120, 364858674450.35175, 0.105424282676637, 0.4563057565051625, 0.046290
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1120);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1121, 'Asteroid 127', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1121, 'Asteroid 127', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1121);
 
 INSERT INTO orbits (
@@ -2560,10 +2560,10 @@ SELECT 1121, 412037151645.78217, 0.06616800566531855, 0.5368854965284897, 0.1474
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1121);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1122, 'Asteroid 128', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1122, 'Asteroid 128', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1122);
 
 INSERT INTO orbits (
@@ -2574,10 +2574,10 @@ SELECT 1122, 411373733410.08, 0.1275899214776085, 0.44665167595889954, 0.2477067
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1122);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1123, 'Asteroid 129', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1123, 'Asteroid 129', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1123);
 
 INSERT INTO orbits (
@@ -2588,10 +2588,10 @@ SELECT 1123, 428928842916.57697, 0.2141119161855819, 0.29169676373469117, 0.5316
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1123);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1124, 'Asteroid 130', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1124, 'Asteroid 130', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1124);
 
 INSERT INTO orbits (
@@ -2602,10 +2602,10 @@ SELECT 1124, 466433228909.3123, 0.2138128134725777, 0.23176552127013822, 1.25562
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1124);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1125, 'Asteroid 131', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1125, 'Asteroid 131', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1125);
 
 INSERT INTO orbits (
@@ -2616,10 +2616,10 @@ SELECT 1125, 364065133095.2072, 0.06610358007176546, 0.45109688110591545, 0.1817
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1125);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1126, 'Asteroid 132', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1126, 'Asteroid 132', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1126);
 
 INSERT INTO orbits (
@@ -2630,10 +2630,10 @@ SELECT 1126, 390393201256.21436, 0.3878549029481579, 0.5287785599707531, 5.31491
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1126);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1127, 'Asteroid 133', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1127, 'Asteroid 133', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1127);
 
 INSERT INTO orbits (
@@ -2644,10 +2644,10 @@ SELECT 1127, 457688644266.62775, 0.1409285999378348, 0.5110436093420235, 6.11444
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1127);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1128, 'Asteroid 134', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1128, 'Asteroid 134', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1128);
 
 INSERT INTO orbits (
@@ -2658,10 +2658,10 @@ SELECT 1128, 383491775439.28125, 0.1167242980238377, 0.6072960747157469, 6.19964
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1128);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1129, 'Asteroid 135', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1129, 'Asteroid 135', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1129);
 
 INSERT INTO orbits (
@@ -2672,10 +2672,10 @@ SELECT 1129, 363473498334.97766, 0.2042216833904014, 0.4478644307797899, 6.25772
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1129);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1130, 'Asteroid 136', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1130, 'Asteroid 136', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1130);
 
 INSERT INTO orbits (
@@ -2686,10 +2686,10 @@ SELECT 1130, 342047179206.9735, 0.08425647667911439, 0.24381985462072941, 6.2036
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1130);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1131, 'Asteroid 137', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1131, 'Asteroid 137', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1131);
 
 INSERT INTO orbits (
@@ -2700,10 +2700,10 @@ SELECT 1131, 465730575656.192, 0.2219759116494665, 0.21133315477159853, 5.845902
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1131);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1132, 'Asteroid 138', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1132, 'Asteroid 138', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1132);
 
 INSERT INTO orbits (
@@ -2714,10 +2714,10 @@ SELECT 1132, 366282856120.28625, 0.1628580981883259, 0.443402358518665, 0.107243
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1132);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1133, 'Asteroid 139', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1133, 'Asteroid 139', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1133);
 
 INSERT INTO orbits (
@@ -2728,10 +2728,10 @@ SELECT 1133, 416417388015.6972, 0.1744544898948528, 0.5997556356714802, 0.012986
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1133);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1134, 'Asteroid 140', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1134, 'Asteroid 140', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1134);
 
 INSERT INTO orbits (
@@ -2742,10 +2742,10 @@ SELECT 1134, 408733883278.89417, 0.2160451717612228, 0.39585386426163854, 0.1381
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1134);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1135, 'Asteroid 141', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1135, 'Asteroid 141', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1135);
 
 INSERT INTO orbits (
@@ -2756,10 +2756,10 @@ SELECT 1135, 398814537049.44525, 0.2158016165578601, 0.5805611003783129, 6.03353
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1135);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1136, 'Asteroid 142', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1136, 'Asteroid 142', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1136);
 
 INSERT INTO orbits (
@@ -2770,10 +2770,10 @@ SELECT 1136, 361707803679.2384, 0.1374000199332385, 0.42482203305341926, 6.19485
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1136);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1137, 'Asteroid 143', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1137, 'Asteroid 143', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1137);
 
 INSERT INTO orbits (
@@ -2784,10 +2784,10 @@ SELECT 1137, 413193216354.8313, 0.0725653335058408, 0.594345407526543, 6.1228748
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1137);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1138, 'Asteroid 144', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1138, 'Asteroid 144', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1138);
 
 INSERT INTO orbits (
@@ -2798,10 +2798,10 @@ SELECT 1138, 397428036545.1007, 0.2326828597058319, 0.43571439838447446, 0.19458
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1138);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1139, 'Asteroid 145', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1139, 'Asteroid 145', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1139);
 
 INSERT INTO orbits (
@@ -2812,10 +2812,10 @@ SELECT 1139, 400125638934.6248, 0.1437085899526792, 0.502263189715672, 0.4592928
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1139);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1140, 'Asteroid 146', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1140, 'Asteroid 146', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1140);
 
 INSERT INTO orbits (
@@ -2826,10 +2826,10 @@ SELECT 1140, 406733701343.55743, 0.06593309970309533, 0.48492800733461194, 0.504
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1140);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1141, 'Asteroid 147', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1141, 'Asteroid 147', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1141);
 
 INSERT INTO orbits (
@@ -2840,10 +2840,10 @@ SELECT 1141, 468838410274.4151, 0.03514480663529269, 0.39803738818339013, 6.2019
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1141);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1142, 'Asteroid 148', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1142, 'Asteroid 148', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1142);
 
 INSERT INTO orbits (
@@ -2854,10 +2854,10 @@ SELECT 1142, 414423287479.8152, 0.1871756833504404, 0.2489582588211765, 1.417327
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1142);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1143, 'Asteroid 149', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1143, 'Asteroid 149', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1143);
 
 INSERT INTO orbits (
@@ -2868,10 +2868,10 @@ SELECT 1143, 325325608621.0254, 0.0649271616501259, 0.3938117665830309, 0.014801
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1143);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1144, 'Asteroid 150', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1144, 'Asteroid 150', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1144);
 
 INSERT INTO orbits (
@@ -2882,10 +2882,10 @@ SELECT 1144, 445894849544.0204, 0.1313873520292732, 0.37519201560271953, 6.23654
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1144);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1145, 'Asteroid 151', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1145, 'Asteroid 151', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1145);
 
 INSERT INTO orbits (
@@ -2896,10 +2896,10 @@ SELECT 1145, 387575337856.4634, 0.03526652815207795, 0.5012261979835975, 0.14814
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1145);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1146, 'Asteroid 152', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1146, 'Asteroid 152', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1146);
 
 INSERT INTO orbits (
@@ -2910,10 +2910,10 @@ SELECT 1146, 470078982014.0881, 0.07099131766681833, 0.5861479588809706, 0.24756
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1146);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1147, 'Asteroid 153', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1147, 'Asteroid 153', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1147);
 
 INSERT INTO orbits (
@@ -2924,10 +2924,10 @@ SELECT 1147, 594525033888.7312, 0.1425124601342207, 0.3334995202480912, 5.966245
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1147);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1148, 'Asteroid 154', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1148, 'Asteroid 154', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1148);
 
 INSERT INTO orbits (
@@ -2938,10 +2938,10 @@ SELECT 1148, 476310056801.2495, 0.08934252356214697, 0.735027785749277, 0.330369
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1148);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1149, 'Asteroid 155', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1149, 'Asteroid 155', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1149);
 
 INSERT INTO orbits (
@@ -2952,10 +2952,10 @@ SELECT 1149, 412734949987.3523, 0.2736422455987838, 0.5731343297508228, 0.242027
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1149);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1150, 'Asteroid 156', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1150, 'Asteroid 156', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1150);
 
 INSERT INTO orbits (
@@ -2966,10 +2966,10 @@ SELECT 1150, 408627038559.0738, 0.2238655394051728, 0.36093527875386877, 5.84450
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1150);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1151, 'Asteroid 157', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1151, 'Asteroid 157', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1151);
 
 INSERT INTO orbits (
@@ -2980,10 +2980,10 @@ SELECT 1151, 386357749139.3566, 0.1951183612659025, 0.5398111851179658, 0.370640
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1151);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1152, 'Asteroid 158', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1152, 'Asteroid 158', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1152);
 
 INSERT INTO orbits (
@@ -2994,10 +2994,10 @@ SELECT 1152, 429026473517.5337, 0.05450178260930531, 0.4120842135590345, 6.23989
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1152);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1153, 'Asteroid 159', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1153, 'Asteroid 159', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1153);
 
 INSERT INTO orbits (
@@ -3008,10 +3008,10 @@ SELECT 1153, 463580587853.1743, 0.1111093522705447, 0.34248439589866314, 0.22903
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1153);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1154, 'Asteroid 160', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1154, 'Asteroid 160', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1154);
 
 INSERT INTO orbits (
@@ -3022,10 +3022,10 @@ SELECT 1154, 407853211976.7202, 0.06694353741536478, 0.47516861101650976, 0.0227
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1154);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1155, 'Asteroid 161', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1155, 'Asteroid 161', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1155);
 
 INSERT INTO orbits (
@@ -3036,10 +3036,10 @@ SELECT 1155, 355792256988.6877, 0.1388157156902137, 0.5607818719133782, 0.095667
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1155);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1156, 'Asteroid 162', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1156, 'Asteroid 162', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1156);
 
 INSERT INTO orbits (
@@ -3050,10 +3050,10 @@ SELECT 1156, 452906655781.0214, 0.1761010942323287, 0.4984238592701483, 0.132678
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1156);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1157, 'Asteroid 163', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1157, 'Asteroid 163', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1157);
 
 INSERT INTO orbits (
@@ -3064,10 +3064,10 @@ SELECT 1157, 354255926917.4278, 0.1902120408628814, 0.3312400693225017, 0.086503
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1157);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1158, 'Asteroid 164', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1158, 'Asteroid 164', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1158);
 
 INSERT INTO orbits (
@@ -3078,10 +3078,10 @@ SELECT 1158, 394161078577.471, 0.3433460722783989, 0.6459317648515452, 0.7363267
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1158);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1159, 'Asteroid 165', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1159, 'Asteroid 165', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1159);
 
 INSERT INTO orbits (
@@ -3092,10 +3092,10 @@ SELECT 1159, 468277062675.8055, 0.08018532345530478, 0.5392853292767834, 5.95863
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1159);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1160, 'Asteroid 166', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1160, 'Asteroid 166', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1160);
 
 INSERT INTO orbits (
@@ -3106,10 +3106,10 @@ SELECT 1160, 401574010321.2649, 0.2128131618467078, 0.31859508669384096, 0.54094
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1160);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1161, 'Asteroid 167', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1161, 'Asteroid 167', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1161);
 
 INSERT INTO orbits (
@@ -3120,10 +3120,10 @@ SELECT 1161, 426866959417.0792, 0.03672596503578013, 0.37172813340542343, 0.0248
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1161);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1162, 'Asteroid 168', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1162, 'Asteroid 168', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1162);
 
 INSERT INTO orbits (
@@ -3134,10 +3134,10 @@ SELECT 1162, 505066373538.25867, 0.0595273708222103, 0.33927042584233025, 6.1726
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1162);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1163, 'Asteroid 169', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1163, 'Asteroid 169', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1163);
 
 INSERT INTO orbits (
@@ -3148,10 +3148,10 @@ SELECT 1163, 352871945408.2353, 0.1313081391900323, 0.5049354240479375, 6.265651
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1163);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1164, 'Asteroid 170', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1164, 'Asteroid 170', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1164);
 
 INSERT INTO orbits (
@@ -3162,10 +3162,10 @@ SELECT 1164, 381944481452.876, 0.06356441743144242, 0.5792696308725761, 5.885270
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1164);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1165, 'Asteroid 171', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1165, 'Asteroid 171', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1165);
 
 INSERT INTO orbits (
@@ -3176,10 +3176,10 @@ SELECT 1165, 468876063624.1397, 0.1263559797514521, 0.4031424769906071, 0.111461
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1165);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1166, 'Asteroid 172', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1166, 'Asteroid 172', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1166);
 
 INSERT INTO orbits (
@@ -3190,10 +3190,10 @@ SELECT 1166, 355970217893.05035, 0.1135872536865293, 0.5695804266502394, 6.13212
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1166);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1167, 'Asteroid 173', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1167, 'Asteroid 173', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1167);
 
 INSERT INTO orbits (
@@ -3204,10 +3204,10 @@ SELECT 1167, 410305459578.2678, 0.2071690047651419, 0.23473205886709525, 0.58471
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1167);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1168, 'Asteroid 174', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1168, 'Asteroid 174', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1168);
 
 INSERT INTO orbits (
@@ -3218,10 +3218,10 @@ SELECT 1168, 427861327682.8687, 0.14378895597915, 0.5983437431389367, 6.08352258
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1168);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1169, 'Asteroid 175', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1169, 'Asteroid 175', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1169);
 
 INSERT INTO orbits (
@@ -3232,10 +3232,10 @@ SELECT 1169, 476765219164.84393, 0.2320951200676154, 0.4618298064393932, 0.04611
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1169);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1170, 'Asteroid 176', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1170, 'Asteroid 176', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1170);
 
 INSERT INTO orbits (
@@ -3246,10 +3246,10 @@ SELECT 1170, 477757866246.7492, 0.1624695774216679, 0.1426389891415231, 4.990977
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1170);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1171, 'Asteroid 177', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1171, 'Asteroid 177', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1171);
 
 INSERT INTO orbits (
@@ -3260,10 +3260,10 @@ SELECT 1171, 414713075626.4619, 0.2342619485075786, 0.43292619460513226, 6.27089
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1171);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1172, 'Asteroid 178', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1172, 'Asteroid 178', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1172);
 
 INSERT INTO orbits (
@@ -3274,10 +3274,10 @@ SELECT 1172, 367990688607.4635, 0.04393231141584048, 0.43059550024476084, 0.0620
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1172);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1173, 'Asteroid 179', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1173, 'Asteroid 179', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1173);
 
 INSERT INTO orbits (
@@ -3288,10 +3288,10 @@ SELECT 1173, 444537016275.9209, 0.1119122610079551, 0.38845123505793594, 5.93433
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1173);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1174, 'Asteroid 180', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1174, 'Asteroid 180', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1174);
 
 INSERT INTO orbits (
@@ -3302,10 +3302,10 @@ SELECT 1174, 407101345342.2708, 0.167989075464357, 0.41957498124424025, 6.255801
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1174);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1175, 'Asteroid 181', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1175, 'Asteroid 181', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1175);
 
 INSERT INTO orbits (
@@ -3316,10 +3316,10 @@ SELECT 1175, 469116547716.36865, 0.1979832911764, 0.23755119479866818, 0.9445843
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1175);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1176, 'Asteroid 182', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1176, 'Asteroid 182', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1176);
 
 INSERT INTO orbits (
@@ -3330,10 +3330,10 @@ SELECT 1176, 361501683700.3139, 0.1856907229239583, 0.40001325462276793, 0.08578
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1176);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1177, 'Asteroid 183', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1177, 'Asteroid 183', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1177);
 
 INSERT INTO orbits (
@@ -3344,10 +3344,10 @@ SELECT 1177, 417991285004.50684, 0.3480378643592347, 0.2775727725168667, 1.44936
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1177);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1178, 'Asteroid 184', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1178, 'Asteroid 184', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1178);
 
 INSERT INTO orbits (
@@ -3358,10 +3358,10 @@ SELECT 1178, 475162290585.2129, 0.0811853354010838, 0.42699490635965526, 6.26107
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1178);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1179, 'Asteroid 185', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1179, 'Asteroid 185', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1179);
 
 INSERT INTO orbits (
@@ -3372,10 +3372,10 @@ SELECT 1179, 409483142676.7434, 0.1288129643883385, 0.17802213826099578, 1.34508
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1179);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1180, 'Asteroid 186', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1180, 'Asteroid 186', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1180);
 
 INSERT INTO orbits (
@@ -3386,10 +3386,10 @@ SELECT 1180, 353379661423.6607, 0.151132545725878, 0.6339272202421136, 0.0991878
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1180);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1181, 'Asteroid 187', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1181, 'Asteroid 187', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1181);
 
 INSERT INTO orbits (
@@ -3400,10 +3400,10 @@ SELECT 1181, 408689407932.5223, 0.2371489372552712, 0.5844923636082238, 0.124863
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1181);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1182, 'Asteroid 188', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1182, 'Asteroid 188', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1182);
 
 INSERT INTO orbits (
@@ -3414,10 +3414,10 @@ SELECT 1182, 412942367005.50653, 0.1782516338667643, 0.35622590540305277, 5.7466
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1182);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1183, 'Asteroid 189', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1183, 'Asteroid 189', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1183);
 
 INSERT INTO orbits (
@@ -3428,10 +3428,10 @@ SELECT 1183, 366641490961.15546, 0.03565346270363619, 0.32827293543058467, 6.170
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1183);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1184, 'Asteroid 190', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1184, 'Asteroid 190', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1184);
 
 INSERT INTO orbits (
@@ -3442,10 +3442,10 @@ SELECT 1184, 596159923682.7675, 0.1670171880366856, 0.30185113891379134, 0.02479
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1184);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1185, 'Asteroid 191', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1185, 'Asteroid 191', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1185);
 
 INSERT INTO orbits (
@@ -3456,10 +3456,10 @@ SELECT 1185, 433408626290.9301, 0.08629288153930165, 0.2313080754585036, 0.30903
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1185);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1186, 'Asteroid 192', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1186, 'Asteroid 192', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1186);
 
 INSERT INTO orbits (
@@ -3470,10 +3470,10 @@ SELECT 1186, 359410453630.1491, 0.2469994999280132, 0.524317443714081, 6.2158007
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1186);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1187, 'Asteroid 193', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1187, 'Asteroid 193', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1187);
 
 INSERT INTO orbits (
@@ -3484,10 +3484,10 @@ SELECT 1187, 389374683546.9826, 0.2944477121354695, 0.6170551738051681, 6.222228
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1187);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1188, 'Asteroid 194', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1188, 'Asteroid 194', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1188);
 
 INSERT INTO orbits (
@@ -3498,10 +3498,10 @@ SELECT 1188, 391625695812.29663, 0.2365155798462895, 0.15278304377952154, 0.8139
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1188);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1189, 'Asteroid 195', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1189, 'Asteroid 195', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1189);
 
 INSERT INTO orbits (
@@ -3512,10 +3512,10 @@ SELECT 1189, 430390201165.11707, 0.03929035358720664, 0.5301140880120048, 0.0303
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1189);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1190, 'Asteroid 196', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1190, 'Asteroid 196', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1190);
 
 INSERT INTO orbits (
@@ -3526,10 +3526,10 @@ SELECT 1190, 465788647807.8864, 0.02500438214453124, 0.46197957233898174, 0.2738
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1190);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1191, 'Asteroid 197', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1191, 'Asteroid 197', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1191);
 
 INSERT INTO orbits (
@@ -3540,10 +3540,10 @@ SELECT 1191, 409632325436.4544, 0.1635032327512244, 0.45547708292524375, 0.35095
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1191);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1192, 'Asteroid 198', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1192, 'Asteroid 198', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1192);
 
 INSERT INTO orbits (
@@ -3554,10 +3554,10 @@ SELECT 1192, 367845137159.76764, 0.229906944424196, 0.4349549759786059, 5.889779
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1192);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1193, 'Asteroid 199', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, 4.904554967017021, -0.0005724679946541401, 0.0, 1.0719026867585775, -8.552113334772214e-05, 0.0, 5.752584270622286, 0.10713722462923113, 0.0
+SELECT 1193, 'Asteroid 199', 'asteroid', 1, 100000000.0, 50000.0, 4.904554967017021, -0.0005724679946541401, 0.0, 1.0719026867585775, -8.552113334772214e-05, 0.0, 5.752584270622286, 0.10713722462923113, 0.0
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1193);
 
 INSERT INTO orbits (
@@ -3568,10 +3568,10 @@ SELECT 1193, 478263253085.0818, 0.1631798850918088, 0.487823104117985, 0.5993649
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1193);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1194, 'Asteroid 200', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1194, 'Asteroid 200', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1194);
 
 INSERT INTO orbits (
@@ -3582,10 +3582,10 @@ SELECT 1194, 409690355524.468, 0.1315246334269171, 0.5120940571028224, 6.1412349
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1194);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1195, 'Asteroid 201', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1195, 'Asteroid 201', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1195);
 
 INSERT INTO orbits (
@@ -3596,10 +3596,10 @@ SELECT 1195, 400467491994.35443, 0.1822588721321788, 0.31862258643936986, 0.1245
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1195);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1196, 'Asteroid 202', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1196, 'Asteroid 202', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1196);
 
 INSERT INTO orbits (
@@ -3610,10 +3610,10 @@ SELECT 1196, 459680076209.31396, 0.09492270390265012, 0.31316025516105345, 0.345
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1196);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1197, 'Asteroid 203', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1197, 'Asteroid 203', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1197);
 
 INSERT INTO orbits (
@@ -3624,10 +3624,10 @@ SELECT 1197, 409591509835.3799, 0.05836964218071739, 0.4636105904705549, 6.25752
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1197);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1198, 'Asteroid 204', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1198, 'Asteroid 204', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1198);
 
 INSERT INTO orbits (
@@ -3638,10 +3638,10 @@ SELECT 1198, 399692809734.34845, 0.1743509376672363, 0.285103421954617, 6.062526
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1198);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1199, 'Asteroid 205', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1199, 'Asteroid 205', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1199);
 
 INSERT INTO orbits (
@@ -3652,10 +3652,10 @@ SELECT 1199, 415703322254.24243, 0.03679062735249887, 0.2688485347005241, 5.9023
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1199);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1200, 'Asteroid 206', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1200, 'Asteroid 206', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1200);
 
 INSERT INTO orbits (
@@ -3666,10 +3666,10 @@ SELECT 1200, 410081838476.7585, 0.03867754983151472, 0.35673035603003583, 0.1076
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1200);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1201, 'Asteroid 207', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1201, 'Asteroid 207', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1201);
 
 INSERT INTO orbits (
@@ -3680,10 +3680,10 @@ SELECT 1201, 341602104541.45715, 0.02896944251724497, 0.4680864712581122, 0.0722
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1201);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1202, 'Asteroid 208', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1202, 'Asteroid 208', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1202);
 
 INSERT INTO orbits (
@@ -3694,10 +3694,10 @@ SELECT 1202, 432833630483.1308, 0.01273955769727813, 0.43959310982297245, 0.0057
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1202);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1203, 'Asteroid 209', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1203, 'Asteroid 209', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1203);
 
 INSERT INTO orbits (
@@ -3708,10 +3708,10 @@ SELECT 1203, 470653078629.7112, 0.06524382493625112, 0.5344069921454132, 0.00375
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1203);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1204, 'Asteroid 210', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1204, 'Asteroid 210', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1204);
 
 INSERT INTO orbits (
@@ -3722,10 +3722,10 @@ SELECT 1204, 407030054905.5777, 0.1236864620174009, 0.488623009784943, 0.1065200
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1204);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1205, 'Asteroid 211', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1205, 'Asteroid 211', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1205);
 
 INSERT INTO orbits (
@@ -3736,10 +3736,10 @@ SELECT 1205, 454966670546.42334, 0.1609503211905923, 0.40713295002743033, 6.1122
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1205);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1206, 'Asteroid 212', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1206, 'Asteroid 212', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1206);
 
 INSERT INTO orbits (
@@ -3750,10 +3750,10 @@ SELECT 1206, 465428179430.8897, 0.1145165016647434, 0.4635118765235167, 6.162662
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1206);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1207, 'Asteroid 213', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1207, 'Asteroid 213', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1207);
 
 INSERT INTO orbits (
@@ -3764,10 +3764,10 @@ SELECT 1207, 411746861529.0276, 0.1465858884259977, 0.3592404952047084, 0.289031
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1207);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1208, 'Asteroid 214', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1208, 'Asteroid 214', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1208);
 
 INSERT INTO orbits (
@@ -3778,10 +3778,10 @@ SELECT 1208, 390530766970.42725, 0.03081183428081669, 0.4665088250613716, 6.2427
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1208);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1209, 'Asteroid 215', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1209, 'Asteroid 215', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1209);
 
 INSERT INTO orbits (
@@ -3792,10 +3792,10 @@ SELECT 1209, 413990175909.1512, 0.03416553353344542, 0.4359803416370088, 0.02966
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1209);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1210, 'Asteroid 216', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1210, 'Asteroid 216', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1210);
 
 INSERT INTO orbits (
@@ -3806,10 +3806,10 @@ SELECT 1210, 417715190251.9372, 0.2533871269420984, 0.2579774516826007, 5.736487
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1210);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1211, 'Asteroid 217', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1211, 'Asteroid 217', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1211);
 
 INSERT INTO orbits (
@@ -3820,10 +3820,10 @@ SELECT 1211, 429413301263.9082, 0.3077585688208679, 0.23962644874519123, 0.22357
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1211);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1212, 'Asteroid 218', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1212, 'Asteroid 218', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1212);
 
 INSERT INTO orbits (
@@ -3834,10 +3834,10 @@ SELECT 1212, 398756015656.15466, 0.1168488807917684, 0.1522003540069082, 0.27725
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1212);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1213, 'Asteroid 219', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1213, 'Asteroid 219', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1213);
 
 INSERT INTO orbits (
@@ -3848,10 +3848,10 @@ SELECT 1213, 352197651332.3468, 0.2243757701475382, 0.24158675023513843, 5.99750
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1213);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1214, 'Asteroid 220', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1214, 'Asteroid 220', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1214);
 
 INSERT INTO orbits (
@@ -3862,10 +3862,10 @@ SELECT 1214, 351477740781.887, 0.2565748693033869, 0.40207333474540646, 5.946588
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1214);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1215, 'Asteroid 221', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1215, 'Asteroid 221', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1215);
 
 INSERT INTO orbits (
@@ -3876,10 +3876,10 @@ SELECT 1215, 450641254892.5415, 0.0979591008227508, 0.2828478316023943, 0.426676
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1215);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1216, 'Asteroid 222', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1216, 'Asteroid 222', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1216);
 
 INSERT INTO orbits (
@@ -3890,10 +3890,10 @@ SELECT 1216, 468604005753.3505, 0.1437604075032922, 0.41691974443167357, 0.09191
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1216);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1217, 'Asteroid 223', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1217, 'Asteroid 223', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1217);
 
 INSERT INTO orbits (
@@ -3904,10 +3904,10 @@ SELECT 1217, 462985712333.73926, 0.1266491111868544, 0.43231425114897803, 0.0605
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1217);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1218, 'Asteroid 224', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1218, 'Asteroid 224', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1218);
 
 INSERT INTO orbits (
@@ -3918,10 +3918,10 @@ SELECT 1218, 395577842597.4022, 0.04413766016128352, 0.51046932030693, 6.2586798
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1218);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1219, 'Asteroid 225', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1219, 'Asteroid 225', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1219);
 
 INSERT INTO orbits (
@@ -3932,10 +3932,10 @@ SELECT 1219, 506097065470.09656, 0.2693423583244492, 0.12140805765122753, 5.2209
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1219);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1220, 'Asteroid 226', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1220, 'Asteroid 226', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1220);
 
 INSERT INTO orbits (
@@ -3946,10 +3946,10 @@ SELECT 1220, 405936335651.1472, 0.2032110953332568, 0.2846384993553123, 0.757923
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1220);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1221, 'Asteroid 227', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1221, 'Asteroid 227', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1221);
 
 INSERT INTO orbits (
@@ -3960,10 +3960,10 @@ SELECT 1221, 470040056553.5268, 0.2051401142357532, 0.5506442451185988, 6.122291
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1221);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1222, 'Asteroid 228', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1222, 'Asteroid 228', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1222);
 
 INSERT INTO orbits (
@@ -3974,10 +3974,10 @@ SELECT 1222, 329326021434.9264, 0.2412241993113604, 0.44075258650607263, 6.20791
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1222);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1223, 'Asteroid 229', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1223, 'Asteroid 229', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1223);
 
 INSERT INTO orbits (
@@ -3988,10 +3988,10 @@ SELECT 1223, 510819738413.5046, 0.1485389721319571, 0.44155672219597086, 0.04062
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1223);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1224, 'Asteroid 230', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1224, 'Asteroid 230', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1224);
 
 INSERT INTO orbits (
@@ -4002,10 +4002,10 @@ SELECT 1224, 356324507249.18994, 0.06094410535574488, 0.35493955837199065, 5.862
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1224);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1225, 'Asteroid 231', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1225, 'Asteroid 231', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1225);
 
 INSERT INTO orbits (
@@ -4016,10 +4016,10 @@ SELECT 1225, 436496464505.3399, 0.1579254135960234, 0.49722647723731034, 6.25384
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1225);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1226, 'Asteroid 232', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1226, 'Asteroid 232', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1226);
 
 INSERT INTO orbits (
@@ -4030,10 +4030,10 @@ SELECT 1226, 382073633293.13306, 0.1770834712583157, 0.3184046945867276, 0.15538
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1226);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1227, 'Asteroid 233', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1227, 'Asteroid 233', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1227);
 
 INSERT INTO orbits (
@@ -4044,10 +4044,10 @@ SELECT 1227, 398019321880.0558, 0.1004462271108843, 0.3222700219630282, 5.995717
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1227);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1228, 'Asteroid 234', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1228, 'Asteroid 234', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1228);
 
 INSERT INTO orbits (
@@ -4058,10 +4058,10 @@ SELECT 1228, 356999941098.7138, 0.243393995845851, 0.24276083360669007, 0.689503
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1228);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1229, 'Asteroid 235', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1229, 'Asteroid 235', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1229);
 
 INSERT INTO orbits (
@@ -4072,10 +4072,10 @@ SELECT 1229, 430929068846.3501, 0.05958574268396463, 0.4928167308694436, 0.30943
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1229);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1230, 'Asteroid 236', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1230, 'Asteroid 236', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1230);
 
 INSERT INTO orbits (
@@ -4086,10 +4086,10 @@ SELECT 1230, 418428439973.8808, 0.1912648860231834, 0.27591730839343065, 6.23002
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1230);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1231, 'Asteroid 237', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1231, 'Asteroid 237', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1231);
 
 INSERT INTO orbits (
@@ -4100,10 +4100,10 @@ SELECT 1231, 413103695900.1342, 0.07152866500046486, 0.45617840922619596, 0.3931
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1231);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1232, 'Asteroid 238', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1232, 'Asteroid 238', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1232);
 
 INSERT INTO orbits (
@@ -4114,10 +4114,10 @@ SELECT 1232, 434665946692.94354, 0.09039331586776968, 0.19370252355815057, 6.200
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1232);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1233, 'Asteroid 239', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1233, 'Asteroid 239', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1233);
 
 INSERT INTO orbits (
@@ -4128,10 +4128,10 @@ SELECT 1233, 444917774068.0862, 0.2289882198122344, 0.30156980915324705, 6.27705
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1233);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1234, 'Asteroid 240', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1234, 'Asteroid 240', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1234);
 
 INSERT INTO orbits (
@@ -4142,10 +4142,10 @@ SELECT 1234, 398854158100.7445, 0.2048145744636012, 0.3947441003954307, 0.086461
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1234);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1235, 'Asteroid 241', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1235, 'Asteroid 241', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1235);
 
 INSERT INTO orbits (
@@ -4156,10 +4156,10 @@ SELECT 1235, 456615218271.95886, 0.097319909751069, 0.4213956931830915, 6.045954
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1235);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1236, 'Asteroid 242', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1236, 'Asteroid 242', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1236);
 
 INSERT INTO orbits (
@@ -4170,10 +4170,10 @@ SELECT 1236, 427875290418.88617, 0.1228507572291681, 0.24992811167906231, 5.9080
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1236);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1237, 'Asteroid 243', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1237, 'Asteroid 243', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1237);
 
 INSERT INTO orbits (
@@ -4184,10 +4184,10 @@ SELECT 1237, 427803554982.1997, 0.04575543747843398, 0.4253728408464639, 6.25517
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1237);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1238, 'Asteroid 244', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1238, 'Asteroid 244', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1238);
 
 INSERT INTO orbits (
@@ -4198,10 +4198,10 @@ SELECT 1238, 325281641991.6809, 0.1373183317027782, 0.36654891317721977, 6.21575
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1238);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1239, 'Asteroid 245', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1239, 'Asteroid 245', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1239);
 
 INSERT INTO orbits (
@@ -4212,10 +4212,10 @@ SELECT 1239, 462642359434.08325, 0.2018008371713994, 0.4586536547600225, 0.18023
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1239);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1240, 'Asteroid 246', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1240, 'Asteroid 246', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1240);
 
 INSERT INTO orbits (
@@ -4226,10 +4226,10 @@ SELECT 1240, 403037048553.26685, 0.1079263141364908, 0.16853787843217416, 0.5029
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1240);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1241, 'Asteroid 247', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1241, 'Asteroid 247', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1241);
 
 INSERT INTO orbits (
@@ -4240,10 +4240,10 @@ SELECT 1241, 410199412990.761, 0.2435080111438607, 0.844980538792062, 0.00283719
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1241);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1242, 'Asteroid 248', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1242, 'Asteroid 248', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1242);
 
 INSERT INTO orbits (
@@ -4254,10 +4254,10 @@ SELECT 1242, 369769486930.10596, 0.06447273979076923, 0.38680773753428066, 6.109
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1242);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1243, 'Asteroid 249', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1243, 'Asteroid 249', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1243);
 
 INSERT INTO orbits (
@@ -4268,10 +4268,10 @@ SELECT 1243, 355655242312.651, 0.2168451913592572, 0.5657016909410089, 6.1502380
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1243);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1244, 'Asteroid 250', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1244, 'Asteroid 250', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1244);
 
 INSERT INTO orbits (
@@ -4282,10 +4282,10 @@ SELECT 1244, 471421289982.7882, 0.1243720491971168, 0.6200773254464929, 0.157109
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1244);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1245, 'Asteroid 251', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1245, 'Asteroid 251', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1245);
 
 INSERT INTO orbits (
@@ -4296,10 +4296,10 @@ SELECT 1245, 462377065245.221, 0.107355244377483, 0.25094126149310114, 0.2978964
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1245);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1246, 'Asteroid 252', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1246, 'Asteroid 252', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1246);
 
 INSERT INTO orbits (
@@ -4310,10 +4310,10 @@ SELECT 1246, 472074390463.3437, 0.07775875483363134, 0.2549494272947818, 6.01682
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1246);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1247, 'Asteroid 253', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1247, 'Asteroid 253', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1247);
 
 INSERT INTO orbits (
@@ -4324,10 +4324,10 @@ SELECT 1247, 396013358033.63257, 0.265473489452809, 0.29200412012075777, 0.00096
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1247);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1248, 'Asteroid 254', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1248, 'Asteroid 254', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1248);
 
 INSERT INTO orbits (
@@ -4338,10 +4338,10 @@ SELECT 1248, 328348077005.489, 0.1220154571598001, 0.47968765582314943, 0.081867
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1248);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1249, 'Asteroid 255', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1249, 'Asteroid 255', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1249);
 
 INSERT INTO orbits (
@@ -4352,10 +4352,10 @@ SELECT 1249, 410774660360.955, 0.0801715152964693, 0.5710748778447582, 0.0729034
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1249);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1250, 'Asteroid 256', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1250, 'Asteroid 256', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1250);
 
 INSERT INTO orbits (
@@ -4366,10 +4366,10 @@ SELECT 1250, 448494989413.2992, 0.07005735899080207, 0.17739234532871948, 6.2116
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1250);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1251, 'Asteroid 257', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1251, 'Asteroid 257', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1251);
 
 INSERT INTO orbits (
@@ -4380,10 +4380,10 @@ SELECT 1251, 465864218371.2847, 0.1206311605198127, 0.46268617666572404, 0.08170
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1251);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1252, 'Asteroid 258', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1252, 'Asteroid 258', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1252);
 
 INSERT INTO orbits (
@@ -4394,10 +4394,10 @@ SELECT 1252, 391394709566.77, 0.2036169197018621, 0.22030869159578936, 5.7278871
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1252);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1253, 'Asteroid 259', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1253, 'Asteroid 259', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1253);
 
 INSERT INTO orbits (
@@ -4408,10 +4408,10 @@ SELECT 1253, 471380175199.86304, 0.1164634056166304, 0.4564068803046327, 0.43817
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1253);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1254, 'Asteroid 260', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1254, 'Asteroid 260', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1254);
 
 INSERT INTO orbits (
@@ -4422,10 +4422,10 @@ SELECT 1254, 514390413927.1412, 0.1266018931865686, 0.30123648129263964, 0.09238
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1254);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1255, 'Asteroid 261', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1255, 'Asteroid 261', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1255);
 
 INSERT INTO orbits (
@@ -4436,10 +4436,10 @@ SELECT 1255, 348657280752.25104, 0.09098629533429074, 0.4062123125634781, 0.1599
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1255);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1256, 'Asteroid 262', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1256, 'Asteroid 262', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1256);
 
 INSERT INTO orbits (
@@ -4450,10 +4450,10 @@ SELECT 1256, 381666011939.8144, 0.2147792697769796, 0.5205509938467136, 0.169718
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1256);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1257, 'Asteroid 263', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1257, 'Asteroid 263', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1257);
 
 INSERT INTO orbits (
@@ -4464,10 +4464,10 @@ SELECT 1257, 431833810172.8714, 0.08058664118853616, 0.3909359970638658, 6.24725
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1257);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1258, 'Asteroid 264', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1258, 'Asteroid 264', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1258);
 
 INSERT INTO orbits (
@@ -4478,10 +4478,10 @@ SELECT 1258, 418398532543.2559, 0.1367261610480042, 0.5436889341096208, 0.270835
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1258);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1259, 'Asteroid 265', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1259, 'Asteroid 265', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1259);
 
 INSERT INTO orbits (
@@ -4492,10 +4492,10 @@ SELECT 1259, 361967549739.1362, 0.2681636772542286, 0.8359544941405945, 6.040521
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1259);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1260, 'Asteroid 266', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1260, 'Asteroid 266', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1260);
 
 INSERT INTO orbits (
@@ -4506,10 +4506,10 @@ SELECT 1260, 419772276086.5255, 0.1547033196996237, 0.3368153924014154, 5.661882
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1260);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1261, 'Asteroid 267', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1261, 'Asteroid 267', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1261);
 
 INSERT INTO orbits (
@@ -4520,10 +4520,10 @@ SELECT 1261, 415682180439.77277, 0.09872181490259162, 0.44885598669131105, 0.233
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1261);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1262, 'Asteroid 268', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1262, 'Asteroid 268', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1262);
 
 INSERT INTO orbits (
@@ -4534,10 +4534,10 @@ SELECT 1262, 462961396218.033, 0.1309281489387942, 0.3888141750285572, 0.0962810
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1262);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1263, 'Asteroid 269', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1263, 'Asteroid 269', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1263);
 
 INSERT INTO orbits (
@@ -4548,10 +4548,10 @@ SELECT 1263, 391301403469.671, 0.2142585803322823, 0.32325693489856683, 0.118421
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1263);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1264, 'Asteroid 270', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1264, 'Asteroid 270', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1264);
 
 INSERT INTO orbits (
@@ -4562,10 +4562,10 @@ SELECT 1264, 328856475471.7914, 0.1503248202468704, 0.4000553820094075, 6.180746
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1264);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1265, 'Asteroid 271', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1265, 'Asteroid 271', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1265);
 
 INSERT INTO orbits (
@@ -4576,10 +4576,10 @@ SELECT 1265, 450113170035.0938, 0.09614813838310773, 0.46618651576526865, 6.2266
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1265);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1266, 'Asteroid 272', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1266, 'Asteroid 272', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1266);
 
 INSERT INTO orbits (
@@ -4590,10 +4590,10 @@ SELECT 1266, 415630658487.95123, 0.028693187515613, 0.4727808951100707, 0.103864
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1266);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1267, 'Asteroid 273', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1267, 'Asteroid 273', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1267);
 
 INSERT INTO orbits (
@@ -4604,10 +4604,10 @@ SELECT 1267, 358357583588.5468, 0.160529819231989, 0.14433435187119978, 1.034608
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1267);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1268, 'Asteroid 274', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1268, 'Asteroid 274', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1268);
 
 INSERT INTO orbits (
@@ -4618,10 +4618,10 @@ SELECT 1268, 455036120887.1841, 0.1257880284548983, 0.41053789753509945, 0.16142
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1268);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1269, 'Asteroid 275', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1269, 'Asteroid 275', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1269);
 
 INSERT INTO orbits (
@@ -4632,10 +4632,10 @@ SELECT 1269, 414722576327.7199, 0.1619892846175732, 0.35569349329642563, 0.17167
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1269);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1270, 'Asteroid 276', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1270, 'Asteroid 276', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1270);
 
 INSERT INTO orbits (
@@ -4646,10 +4646,10 @@ SELECT 1270, 465451366704.59717, 0.07322849411755862, 0.21029853543281835, 5.109
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1270);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1271, 'Asteroid 277', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1271, 'Asteroid 277', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1271);
 
 INSERT INTO orbits (
@@ -4660,10 +4660,10 @@ SELECT 1271, 431537739885.478, 0.09036703508705597, 0.3969375527913625, 6.242153
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1271);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1272, 'Asteroid 278', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1272, 'Asteroid 278', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1272);
 
 INSERT INTO orbits (
@@ -4674,10 +4674,10 @@ SELECT 1272, 412664477137.22595, 0.1329086696784428, 0.4871620203243598, 0.26011
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1272);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1273, 'Asteroid 279', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1273, 'Asteroid 279', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1273);
 
 INSERT INTO orbits (
@@ -4688,10 +4688,10 @@ SELECT 1273, 641035024873.6477, 0.01073848202019396, 0.42228230646170556, 0.0956
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1273);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1274, 'Asteroid 280', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1274, 'Asteroid 280', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1274);
 
 INSERT INTO orbits (
@@ -4702,10 +4702,10 @@ SELECT 1274, 440824297297.39484, 0.1086393364020393, 0.537463861980639, 0.046071
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1274);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1275, 'Asteroid 281', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1275, 'Asteroid 281', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1275);
 
 INSERT INTO orbits (
@@ -4716,10 +4716,10 @@ SELECT 1275, 327310494706.9959, 0.1319437105619196, 0.4903095805390677, 0.102993
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1275);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1276, 'Asteroid 282', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1276, 'Asteroid 282', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1276);
 
 INSERT INTO orbits (
@@ -4730,10 +4730,10 @@ SELECT 1276, 349917967404.8256, 0.08042333213683812, 0.2933570842672467, 0.31566
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1276);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1277, 'Asteroid 283', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1277, 'Asteroid 283', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1277);
 
 INSERT INTO orbits (
@@ -4744,10 +4744,10 @@ SELECT 1277, 454962686579.8972, 0.1539864105388005, 0.5007636338291689, 6.042256
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1277);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1278, 'Asteroid 284', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1278, 'Asteroid 284', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1278);
 
 INSERT INTO orbits (
@@ -4758,10 +4758,10 @@ SELECT 1278, 352623554287.5676, 0.2240262488412159, 0.34475873589331557, 5.94060
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1278);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1279, 'Asteroid 285', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1279, 'Asteroid 285', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1279);
 
 INSERT INTO orbits (
@@ -4772,10 +4772,10 @@ SELECT 1279, 460782423567.78375, 0.2093403556883978, 0.6523283855730213, 5.90016
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1279);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1280, 'Asteroid 286', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1280, 'Asteroid 286', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1280);
 
 INSERT INTO orbits (
@@ -4786,10 +4786,10 @@ SELECT 1280, 477729930968.0441, 0.03626248452050536, 0.20936102995084307, 0.8547
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1280);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1281, 'Asteroid 287', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1281, 'Asteroid 287', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1281);
 
 INSERT INTO orbits (
@@ -4800,10 +4800,10 @@ SELECT 1281, 351999591788.7902, 0.02455283291794985, 0.28942283061595625, 0.3800
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1281);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1282, 'Asteroid 288', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1282, 'Asteroid 288', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1282);
 
 INSERT INTO orbits (
@@ -4814,10 +4814,10 @@ SELECT 1282, 412260816131.7745, 0.2095639228638619, 0.3759725334868389, 0.177915
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1282);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1283, 'Asteroid 289', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1283, 'Asteroid 289', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1283);
 
 INSERT INTO orbits (
@@ -4828,10 +4828,10 @@ SELECT 1283, 429721289556.40204, 0.2045265976673212, 0.29248715326736424, 6.2667
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1283);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1284, 'Asteroid 290', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1284, 'Asteroid 290', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1284);
 
 INSERT INTO orbits (
@@ -4842,10 +4842,10 @@ SELECT 1284, 349758705542.0409, 0.2588569274531938, 0.7947999919913313, 0.098718
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1284);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1285, 'Asteroid 291', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1285, 'Asteroid 291', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1285);
 
 INSERT INTO orbits (
@@ -4856,10 +4856,10 @@ SELECT 1285, 332414390745.07275, 0.09291161592248222, 0.3785146719669608, 0.0274
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1285);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1286, 'Asteroid 292', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1286, 'Asteroid 292', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1286);
 
 INSERT INTO orbits (
@@ -4870,10 +4870,10 @@ SELECT 1286, 378269659242.90106, 0.03220159461924946, 0.6224908293311646, 0.3104
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1286);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1287, 'Asteroid 293', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1287, 'Asteroid 293', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1287);
 
 INSERT INTO orbits (
@@ -4884,10 +4884,10 @@ SELECT 1287, 427993716776.8787, 0.1036333218718197, 0.5868926454609346, 0.440312
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1287);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1288, 'Asteroid 294', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1288, 'Asteroid 294', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1288);
 
 INSERT INTO orbits (
@@ -4898,10 +4898,10 @@ SELECT 1288, 469537822288.8299, 0.2469191676197025, 0.33774781866548503, 0.23091
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1288);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1289, 'Asteroid 295', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1289, 'Asteroid 295', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1289);
 
 INSERT INTO orbits (
@@ -4912,10 +4912,10 @@ SELECT 1289, 418416854848.3399, 0.1681929009629768, 0.4169259799029035, 6.167361
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1289);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1290, 'Asteroid 296', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1290, 'Asteroid 296', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1290);
 
 INSERT INTO orbits (
@@ -4926,10 +4926,10 @@ SELECT 1290, 333418244004.4771, 0.1600031583438089, 0.39391623747233095, 0.06765
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1290);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1291, 'Asteroid 297', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1291, 'Asteroid 297', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1291);
 
 INSERT INTO orbits (
@@ -4940,10 +4940,10 @@ SELECT 1291, 472640198235.0513, 0.1463027744673534, 0.5291335486072896, 6.161704
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1291);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1292, 'Asteroid 298', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1292, 'Asteroid 298', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1292);
 
 INSERT INTO orbits (
@@ -4954,10 +4954,10 @@ SELECT 1292, 338827316010.1979, 0.09552458016843968, 0.5178808709014645, 0.03230
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1292);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1293, 'Asteroid 299', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, 4.760560067739733, 0.0, 0.0, 1.1721631256393916, 0.0, 0.0, 2.7960174616949156, -0.025854762996317376, 0.0
+SELECT 1293, 'Asteroid 299', 'asteroid', 1, 100000000.0, 50000.0, 4.760560067739733, 0.0, 0.0, 1.1721631256393916, 0.0, 0.0, 2.7960174616949156, -0.025854762996317376, 0.0
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1293);
 
 INSERT INTO orbits (
@@ -4968,10 +4968,10 @@ SELECT 1293, 364089099585.98175, 0.06143530908778323, 0.3965549144227681, 6.2194
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1293);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1294, 'Asteroid 300', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1294, 'Asteroid 300', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1294);
 
 INSERT INTO orbits (
@@ -4982,10 +4982,10 @@ SELECT 1294, 479808622848.8946, 0.0480828497629311, 0.41872495233986795, 0.02186
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1294);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1295, 'Asteroid 433', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, 0.1980948701013564, 0.0, 0.0, 0.30054569719342356, 0.0, 0.0, 5.690995091977911, 28.612729617819042, 0.0
+SELECT 1295, 'Asteroid 433', 'asteroid', 1, 100000000.0, 50000.0, 0.1980948701013564, 0.0, 0.0, 0.30054569719342356, 0.0, 0.0, 5.690995091977911, 28.612729617819042, 0.0
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1295);
 
 INSERT INTO orbits (
@@ -4996,10 +4996,10 @@ SELECT 1295, 218164470168.3782, 0.2227585463818351, 0.5376614330947228, 5.975737
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1295);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1296, 'Asteroid 1566', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1296, 'Asteroid 1566', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1296);
 
 INSERT INTO orbits (
@@ -5010,10 +5010,10 @@ SELECT 1296, 161249706336.06992, 0.8267580940805248, 0.5729553607838301, 0.79837
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1296);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1297, 'Asteroid 1620', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1297, 'Asteroid 1620', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1297);
 
 INSERT INTO orbits (
@@ -5024,10 +5024,10 @@ SELECT 1297, 186326815205.64758, 0.3355378842748442, 0.630001063556206, 6.131755
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1297);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1298, 'Asteroid 1862', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1298, 'Asteroid 1862', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1298);
 
 INSERT INTO orbits (
@@ -5038,10 +5038,10 @@ SELECT 1298, 220093398111.0466, 0.5598098328296381, 0.5029378753488523, 0.135101
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1298);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1299, 'Asteroid 2062', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1299, 'Asteroid 2062', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1299);
 
 INSERT INTO orbits (
@@ -5052,10 +5052,10 @@ SELECT 1299, 144580387677.3581, 0.1825872889642443, 0.4296164759828957, 0.830100
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1299);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1300, 'Asteroid 3200', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1300, 'Asteroid 3200', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1300);
 
 INSERT INTO orbits (
@@ -5066,10 +5066,10 @@ SELECT 1300, 190207863345.94537, 0.8901580248742502, 0.5323263326471102, 5.45024
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1300);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1301, 'Asteroid 4179', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1301, 'Asteroid 4179', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1301);
 
 INSERT INTO orbits (
@@ -5080,10 +5080,10 @@ SELECT 1301, 375572911390.7748, 0.6342848715333349, 0.4040526168289122, 0.016349
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1301);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1302, 'Asteroid 25143', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, 1.5800465718304666, 0.0, 0.0, -1.1571532940722404, 0.0, 0.0, 0.0, 12.429240095029979, 0.0
+SELECT 1302, 'Asteroid 25143', 'asteroid', 1, 100000000.0, 50000.0, 1.5800465718304666, 0.0, 0.0, -1.1571532940722404, 0.0, 0.0, 0.0, 12.429240095029979, 0.0
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1302);
 
 INSERT INTO orbits (
@@ -5094,10 +5094,10 @@ SELECT 1302, 198209060228.61948, 0.2805282351306318, 0.4194561338089259, 0.06987
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1302);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1303, 'Asteroid 101955', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1303, 'Asteroid 101955', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1303);
 
 INSERT INTO orbits (
@@ -5108,10 +5108,10 @@ SELECT 1303, 168884531208.6791, 0.2046521729007511, 0.5141968937594522, 0.008113
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1303);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 1304, 'Asteroid 162173', 'asteroid', NULL, 1, NULL, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+SELECT 1304, 'Asteroid 162173', 'asteroid', 1, 100000000.0, 50000.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 1304);
 
 INSERT INTO orbits (
@@ -5122,10 +5122,10 @@ SELECT 1304, 177879939334.0463, 0.1900160691816476, 0.3886157034841649, 6.023340
 WHERE NOT EXISTS (SELECT 1 FROM orbits WHERE celestial_body_id = 1304);
 
 INSERT INTO celestial_bodies (
-    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,
+    id, name, type, parent_id, mu, radius,
     pole_ra_0, pole_ra_1, pole_ra_2, pole_dec_0, pole_dec_1, pole_dec_2, prime_meridian_0, prime_meridian_1, prime_meridian_2
 )
-SELECT 250, 'ISS', 'spacecraft', NULL, 4, NULL, 1.0, 55.994, 3.2363405625352075, 0.0, 0.0, 0.6702617440632511, 0.0, 0.0, 5.61418315159764, 98.20475292796117, 0.0
+SELECT 250, 'ISS', 'spacecraft', 4, 1.0, 55.994, 3.2363405625352075, 0.0, 0.0, 0.6702617440632511, 0.0, 0.0, 5.61418315159764, 98.20475292796117, 0.0
 WHERE NOT EXISTS (SELECT 1 FROM celestial_bodies WHERE id = 250);
 
 INSERT INTO orbits (

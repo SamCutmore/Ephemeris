@@ -8,12 +8,12 @@ reference:
   time_scale: TDB
   source: JPL Horizons
 
-# Local key → used as parent references below
+# Local key as parent references below
 bodies:
   - key: sun
     id: 1
     name: Sun
-    kind: star
+    type: star
     horizons: "10"
     parent: null
     mu: 1.32712440018e20
@@ -22,7 +22,7 @@ bodies:
   - key: mercury
     id: 2
     name: Mercury
-    kind: planet
+    type: planet
     horizons: "199"
     parent: sun
     center: "@10"
@@ -32,7 +32,7 @@ bodies:
   - key: venus
     id: 3
     name: Venus
-    kind: planet
+    type: planet
     horizons: "299"
     parent: sun
     center: "@10"
@@ -42,7 +42,7 @@ bodies:
   - key: earth
     id: 4
     name: Earth
-    kind: planet
+    type: planet
     horizons: "399"
     parent: sun
     center: "@10"
@@ -52,7 +52,7 @@ bodies:
   - key: moon
     id: 5
     name: Moon
-    kind: moon
+    type: moon
     horizons: "301"
     parent: earth
     center: "@399"
@@ -62,7 +62,7 @@ bodies:
   - key: mars
     id: 6
     name: Mars
-    kind: planet
+    type: planet
     horizons: "499"
     parent: sun
     center: "@10"
@@ -72,7 +72,7 @@ bodies:
   - key: jupiter
     id: 7
     name: Jupiter
-    kind: planet
+    type: planet
     horizons: "599"
     parent: sun
     center: "@10"
@@ -82,7 +82,7 @@ bodies:
   - key: saturn
     id: 8
     name: Saturn
-    kind: planet
+    type: planet
     horizons: "699"
     parent: sun
     center: "@10"
@@ -92,7 +92,7 @@ bodies:
   - key: uranus
     id: 9
     name: Uranus
-    kind: planet
+    type: planet
     horizons: "799"
     parent: sun
     center: "@10"
@@ -102,7 +102,7 @@ bodies:
   - key: neptune
     id: 10
     name: Neptune
-    kind: planet
+    type: planet
     horizons: "899"
     parent: sun
     center: "@10"
@@ -113,7 +113,7 @@ bodies:
   - key: phobos
     id: 20
     name: Phobos
-    kind: moon
+    type: moon
     horizons: "401"
     parent: mars
     center: "@499"
@@ -123,7 +123,7 @@ bodies:
   - key: deimos
     id: 21
     name: Deimos
-    kind: moon
+    type: moon
     horizons: "402"
     parent: mars
     center: "@499"
@@ -134,7 +134,7 @@ bodies:
   - key: io
     id: 30
     name: Io
-    kind: moon
+    type: moon
     horizons: "501"
     parent: jupiter
     center: "@599"
@@ -144,7 +144,7 @@ bodies:
   - key: europa
     id: 31
     name: Europa
-    kind: moon
+    type: moon
     horizons: "502"
     parent: jupiter
     center: "@599"
@@ -154,7 +154,7 @@ bodies:
   - key: ganymede
     id: 32
     name: Ganymede
-    kind: moon
+    type: moon
     horizons: "503"
     parent: jupiter
     center: "@599"
@@ -164,7 +164,7 @@ bodies:
   - key: callisto
     id: 33
     name: Callisto
-    kind: moon
+    type: moon
     horizons: "504"
     parent: jupiter
     center: "@599"
@@ -174,7 +174,7 @@ bodies:
   - key: amalthea
     id: 34
     name: Amalthea
-    kind: moon
+    type: moon
     horizons: "505"
     parent: jupiter
     center: "@599"
@@ -184,7 +184,7 @@ bodies:
   - key: himalia
     id: 35
     name: Himalia
-    kind: moon
+    type: moon
     horizons: "506"
     parent: jupiter
     center: "@599"
@@ -195,7 +195,7 @@ bodies:
   - key: mimas
     id: 40
     name: Mimas
-    kind: moon
+    type: moon
     horizons: "601"
     parent: saturn
     center: "@699"
@@ -205,7 +205,7 @@ bodies:
   - key: enceladus
     id: 41
     name: Enceladus
-    kind: moon
+    type: moon
     horizons: "602"
     parent: saturn
     center: "@699"
@@ -215,7 +215,7 @@ bodies:
   - key: tethys
     id: 42
     name: Tethys
-    kind: moon
+    type: moon
     horizons: "603"
     parent: saturn
     center: "@699"
@@ -225,7 +225,7 @@ bodies:
   - key: dione
     id: 43
     name: Dione
-    kind: moon
+    type: moon
     horizons: "604"
     parent: saturn
     center: "@699"
@@ -235,7 +235,7 @@ bodies:
   - key: rhea
     id: 44
     name: Rhea
-    kind: moon
+    type: moon
     horizons: "605"
     parent: saturn
     center: "@699"
@@ -245,7 +245,7 @@ bodies:
   - key: titan
     id: 45
     name: Titan
-    kind: moon
+    type: moon
     horizons: "606"
     parent: saturn
     center: "@699"
@@ -255,7 +255,7 @@ bodies:
   - key: hyperion
     id: 46
     name: Hyperion
-    kind: moon
+    type: moon
     horizons: "607"
     parent: saturn
     center: "@699"
@@ -265,7 +265,7 @@ bodies:
   - key: iapetus
     id: 47
     name: Iapetus
-    kind: moon
+    type: moon
     horizons: "608"
     parent: saturn
     center: "@699"
@@ -275,7 +275,7 @@ bodies:
   - key: phoebe
     id: 48
     name: Phoebe
-    kind: moon
+    type: moon
     horizons: "609"
     parent: saturn
     center: "@699"
@@ -286,7 +286,7 @@ bodies:
   - key: ariel
     id: 50
     name: Ariel
-    kind: moon
+    type: moon
     horizons: "701"
     parent: uranus
     center: "@799"
@@ -296,7 +296,7 @@ bodies:
   - key: umbriel
     id: 51
     name: Umbriel
-    kind: moon
+    type: moon
     horizons: "702"
     parent: uranus
     center: "@799"
@@ -306,7 +306,7 @@ bodies:
   - key: titania
     id: 52
     name: Titania
-    kind: moon
+    type: moon
     horizons: "703"
     parent: uranus
     center: "@799"
@@ -316,7 +316,7 @@ bodies:
   - key: oberon
     id: 53
     name: Oberon
-    kind: moon
+    type: moon
     horizons: "704"
     parent: uranus
     center: "@799"
@@ -326,7 +326,7 @@ bodies:
   - key: miranda
     id: 54
     name: Miranda
-    kind: moon
+    type: moon
     horizons: "705"
     parent: uranus
     center: "@799"
@@ -337,7 +337,7 @@ bodies:
   - key: triton
     id: 60
     name: Triton
-    kind: moon
+    type: moon
     horizons: "801"
     parent: neptune
     center: "@899"
@@ -347,7 +347,7 @@ bodies:
   - key: nereid
     id: 61
     name: Nereid
-    kind: moon
+    type: moon
     horizons: "802"
     parent: neptune
     center: "@899"
@@ -357,7 +357,7 @@ bodies:
   - key: proteus
     id: 62
     name: Proteus
-    kind: moon
+    type: moon
     horizons: "808"
     parent: neptune
     center: "@899"
@@ -368,7 +368,7 @@ bodies:
   - key: ceres
     id: 100
     name: Ceres
-    kind: dwarf_planet
+    type: dwarf_planet
     horizons: "1"
     parent: sun
     center: "@10"
@@ -378,7 +378,7 @@ bodies:
   - key: pluto
     id: 101
     name: Pluto
-    kind: dwarf_planet
+    type: dwarf_planet
     horizons: "999"
     parent: sun
     center: "@10"
@@ -388,7 +388,7 @@ bodies:
   - key: charon
     id: 102
     name: Charon
-    kind: moon
+    type: moon
     horizons: "901"
     parent: pluto
     center: "@999"
@@ -398,7 +398,7 @@ bodies:
   - key: eris
     id: 103
     name: Eris
-    kind: dwarf_planet
+    type: dwarf_planet
     horizons: "136199"
     parent: sun
     center: "@10"
@@ -408,7 +408,7 @@ bodies:
   - key: haumea
     id: 104
     name: Haumea
-    kind: dwarf_planet
+    type: dwarf_planet
     horizons: "136108"
     parent: sun
     center: "@10"
@@ -418,7 +418,7 @@ bodies:
   - key: makemake
     id: 105
     name: Makemake
-    kind: dwarf_planet
+    type: dwarf_planet
     horizons: "136472"
     parent: sun
     center: "@10"
@@ -428,7 +428,7 @@ bodies:
   - key: quaoar
     id: 106
     name: Quaoar
-    kind: dwarf_planet
+    type: dwarf_planet
     horizons: "50000"
     parent: sun
     center: "@10"
@@ -438,7 +438,7 @@ bodies:
   - key: gonggong
     id: 107
     name: Gonggong
-    kind: dwarf_planet
+    type: dwarf_planet
     horizons: "225088"
     parent: sun
     center: "@10"
@@ -448,7 +448,7 @@ bodies:
   - key: orcus
     id: 108
     name: Orcus
-    kind: dwarf_planet
+    type: dwarf_planet
     horizons: "90482"
     parent: sun
     center: "@10"
@@ -458,18 +458,18 @@ bodies:
   - key: sedna
     id: 109
     name: Sedna
-    kind: dwarf_planet
+    type: dwarf_planet
     horizons: "90377"
     parent: sun
     center: "@10"
     mu: 7e10
     radius: 5e5
 
-  # --- Deep-space craft (Horizons negative IDs). Prefer J2000; fallback epoch if needed. ---
+  # --- Deep-space craft (Horizons negative IDs). Prefer J2000 with fallback epoch. ---
   - key: voyager1
     id: 200
     name: Voyager 1
-    kind: spacecraft
+    type: spacecraft
     horizons: "-31"
     parent: sun
     center: "@10"
@@ -479,7 +479,7 @@ bodies:
   - key: voyager2
     id: 201
     name: Voyager 2
-    kind: spacecraft
+    type: spacecraft
     horizons: "-32"
     parent: sun
     center: "@10"
@@ -489,7 +489,7 @@ bodies:
   - key: pioneer10
     id: 202
     name: Pioneer 10
-    kind: spacecraft
+    type: spacecraft
     horizons: "-23"
     parent: sun
     center: "@10"
@@ -499,7 +499,7 @@ bodies:
   - key: pioneer11
     id: 203
     name: Pioneer 11
-    kind: spacecraft
+    type: spacecraft
     horizons: "-24"
     parent: sun
     center: "@10"
@@ -509,7 +509,7 @@ bodies:
   - key: new_horizons
     id: 204
     name: New Horizons
-    kind: spacecraft
+    type: spacecraft
     horizons: "-98"
     parent: sun
     center: "@10"
@@ -520,7 +520,7 @@ bodies:
   - key: juno
     id: 205
     name: Juno
-    kind: spacecraft
+    type: spacecraft
     horizons: "-61"
     parent: sun
     center: "@10"
@@ -531,7 +531,7 @@ bodies:
   - key: dawn
     id: 206
     name: Dawn
-    kind: spacecraft
+    type: spacecraft
     horizons: "-203"
     parent: sun
     center: "@10"
@@ -542,7 +542,7 @@ bodies:
   - key: cassini
     id: 207
     name: Cassini
-    kind: spacecraft
+    type: spacecraft
     horizons: "-82"
     parent: sun
     center: "@10"
@@ -552,7 +552,7 @@ bodies:
   - key: galileo
     id: 208
     name: Galileo
-    kind: spacecraft
+    type: spacecraft
     horizons: "-77"
     parent: sun
     center: "@10"
@@ -562,7 +562,7 @@ bodies:
   - key: parker
     id: 209
     name: Parker Solar Probe
-    kind: spacecraft
+    type: spacecraft
     horizons: "-96"
     parent: sun
     center: "@10"
@@ -573,7 +573,7 @@ bodies:
   - key: jwst
     id: 210
     name: JWST
-    kind: spacecraft
+    type: spacecraft
     horizons: "-170"
     parent: sun
     center: "@10"
@@ -584,7 +584,7 @@ bodies:
   - key: psyche
     id: 211
     name: Psyche
-    kind: spacecraft
+    type: spacecraft
     horizons: "-255"
     parent: sun
     center: "@10"
@@ -595,7 +595,7 @@ bodies:
   - key: lucy
     id: 212
     name: Lucy
-    kind: spacecraft
+    type: spacecraft
     horizons: "-49"
     parent: sun
     center: "@10"
@@ -606,7 +606,7 @@ bodies:
   - key: europa_clipper
     id: 213
     name: Europa Clipper
-    kind: spacecraft
+    type: spacecraft
     horizons: "-159"
     parent: sun
     center: "@10"
@@ -617,7 +617,7 @@ bodies:
   - key: osiris_rex
     id: 214
     name: OSIRIS-REx
-    kind: spacecraft
+    type: spacecraft
     horizons: "-64"
     parent: sun
     center: "@10"
@@ -628,7 +628,7 @@ bodies:
   - key: hayabusa2
     id: 215
     name: Hayabusa2
-    kind: spacecraft
+    type: spacecraft
     horizons: "-37"
     parent: sun
     center: "@10"
@@ -643,7 +643,7 @@ bodies:
   - key: iss
     id: 250
     name: ISS
-    kind: spacecraft
+    type: spacecraft
     horizons: "-125544"
     parent: earth
     mu: 1.0
@@ -664,7 +664,6 @@ bodies:
       prime_meridian: [321.669, 5626.717870897189, 0.0]
 
 # Numbered asteroids (Horizons COMMAND = number). Skip 1 (Ceres, listed as dwarf).
-# H≤10 notables + early numbered MBAs → ~300 bodies.
 asteroids:
   id_start: 1000
   parent: sun
@@ -672,7 +671,7 @@ asteroids:
   default_mu: 1.0e8
   default_radius: 5.0e4
   numbers:
-    # 2–100 (skip 1 = Ceres)
+    # 2–100 (skip Ceres)
     - 2
     - 3
     - 4
@@ -970,7 +969,7 @@ asteroids:
     - 298
     - 299
     - 300
-    # Named notables beyond 300
+    # Named notable bodies beyond 300
     - 433   # Eros
     - 1566  # Icarus
     - 1620  # Geographos

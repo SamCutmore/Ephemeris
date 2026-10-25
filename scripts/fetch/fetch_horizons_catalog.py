@@ -125,9 +125,9 @@ def parse_elements(text: str) -> dict[str, float]:
 def horizons_command(body: dict) -> str:
     """Disambiguate numbered small bodies from major-body IDs."""
     raw = str(body["horizons"]).strip()
-    kind = body.get("kind")
-    if kind == "asteroid" or (
-        kind == "dwarf_planet" and raw.isdigit() and int(raw) < 1000000 and raw not in {"999"}
+    body_type = body.get("type")
+    if body_type == "asteroid" or (
+        body_type == "dwarf_planet" and raw.isdigit() and int(raw) < 1000000 and raw not in {"999"}
     ):
         if not raw.endswith(";"):
             return f"{raw};"
@@ -175,7 +175,7 @@ def expand_manifest(manifest: dict) -> list[dict]:
             "key": key,
             "id": id_start + i,
             "name": f"Asteroid {num}",
-            "kind": "asteroid",
+            "type": "asteroid",
             "horizons": str(num),
             "parent": parent,
             "center": center,
@@ -208,7 +208,7 @@ def fetch_body_orbit(body: dict, ref_jd: float) -> tuple[dict[str, float], float
     fallback = body.get("fallback_jd")
     # Spacecraft often have no J2000 coverage. Try fallback epoch.
     jd_candidates: list[float] = []
-    if body.get("kind") == "spacecraft" and fallback is not None:
+    if body.get("type") == "spacecraft" and fallback is not None:
         jd_candidates.append(float(fallback))
     jd_candidates.append(ref_jd)
     if fallback is not None and float(fallback) not in jd_candidates:
@@ -327,13 +327,13 @@ def emit_sql(reference: dict, rows: list[dict]) -> str:
         parent_id = row["parent_id"]
         lines.append("INSERT INTO celestial_bodies (")
         lines.append(
-            "    id, name, kind, celestial_type, parent_id, celestial_index, mu, radius,"
+            "    id, name, type, parent_id, mu, radius,"
         )
         lines.append("    " + ", ".join(ROTATION_COLUMNS))
         lines.append(")")
         lines.append(
-            f"SELECT {int(b['id'])}, {sql_str(b['name'])}, {sql_str(b['kind'])}, NULL, "
-            f"{sql_int(parent_id)}, NULL, "
+            f"SELECT {int(b['id'])}, {sql_str(b['name'])}, {sql_str(b['type'])}, "
+            f"{sql_int(parent_id)}, "
             f"{sql_num(float(b['mu']))}, {sql_num(float(b.get('radius') or 1.0))}, "
             f"{rotation_sql(row.get('rotation'))}"
         )
@@ -442,7 +442,7 @@ def main() -> int:
                 "id": r["body"]["id"],
                 "key": r["body"]["key"],
                 "name": r["body"]["name"],
-                "kind": r["body"]["kind"],
+                "type": r["body"]["type"],
                 "horizons": r["body"].get("horizons"),
                 "parent_id": r["parent_id"],
                 "mu": r["body"]["mu"],
@@ -491,7 +491,7 @@ def apply_rotations(json_path: Path, sql_path: Path, pck_path: Path) -> int:
         body["rotation"] = rotation
         if rotation is not None:
             matched += 1
-        elif body.get("kind") in {"star", "planet", "dwarf_planet", "moon"}:
+        elif body.get("type") in {"star", "planet", "dwarf_planet", "moon"}:
             missing_named.append(f"{body['name']} ({body.get('horizons')})")
         rows.append(
             {

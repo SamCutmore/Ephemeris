@@ -22,8 +22,7 @@ CREATE TABLE IF NOT EXISTS ephemeris_reference (
     frame           VARCHAR(32) NOT NULL,
     plane           VARCHAR(32) NOT NULL,
     time_scale      VARCHAR(16) NOT NULL,
-    source          VARCHAR(128) NOT NULL,
-    fetched_at      TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT CURRENT_TIMESTAMP
+    source          VARCHAR(128) NOT NULL
 );
 
 -- Ephemeris bodies as tree of conics.
@@ -31,22 +30,16 @@ CREATE TABLE IF NOT EXISTS celestial_bodies (
     id              BIGSERIAL PRIMARY KEY,
     name            VARCHAR(255) NOT NULL UNIQUE,
 
-    kind            VARCHAR(32) NOT NULL
-                    CHECK (kind IN (
+    type            VARCHAR(32) NOT NULL
+                    CHECK (type IN (
                         'star', 'planet', 'moon', 'dwarf_planet',
                         'asteroid', 'spacecraft', 'other'
                     )),
-    celestial_type  VARCHAR(64) NULL,
-    type_id         INT NULL,
-    spectral_class  VARCHAR(32) NULL,
 
-    -- Tree
+    -- Solar system tree
     parent_id       BIGINT NULL REFERENCES celestial_bodies (id),
-    celestial_index INT NULL,
-    solar_system_id INT NULL,
-    orbit_id        BIGINT NULL,
 
-    -- Attractor / size
+    -- Attractor and size.
     mu              DOUBLE PRECISION NOT NULL CHECK (mu > 0),
     radius          DOUBLE PRECISION NULL CHECK (radius IS NULL OR radius >= 0),
 
@@ -62,39 +55,22 @@ CREATE TABLE IF NOT EXISTS celestial_bodies (
     pole_dec_2          DOUBLE PRECISION NULL,
     prime_meridian_0    DOUBLE PRECISION NULL,
     prime_meridian_1    DOUBLE PRECISION NULL,
-    prime_meridian_2    DOUBLE PRECISION NULL,
-
-    density             DOUBLE PRECISION NULL,
-    eccentricity        DOUBLE PRECISION NULL CHECK (eccentricity IS NULL OR eccentricity >= 0),
-    escape_velocity     DOUBLE PRECISION NULL,
-    mass_dust           DOUBLE PRECISION NULL,
-    mass_gas            DOUBLE PRECISION NULL,
-    orbit_period        DOUBLE PRECISION NULL,
-    orbit_radius        DOUBLE PRECISION NULL,
-    pressure            DOUBLE PRECISION NULL,
-    rotation_rate       DOUBLE PRECISION NULL,
-    surface_gravity     DOUBLE PRECISION NULL,
-    temperature         DOUBLE PRECISION NULL,
-    locked              BOOLEAN NOT NULL DEFAULT FALSE,
-    population          BOOLEAN NOT NULL DEFAULT FALSE,
-
-    height_map_1        INT NULL,
-    height_map_2        INT NULL,
-    shader_preset       INT NULL,
-
-    position_x          DOUBLE PRECISION NULL,
-    position_y          DOUBLE PRECISION NULL,
-    position_z          DOUBLE PRECISION NULL,
-
-    created_at          TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT CURRENT_TIMESTAMP
+    prime_meridian_2    DOUBLE PRECISION NULL
 );
 
 CREATE INDEX IF NOT EXISTS idx_celestial_bodies_parent_id
     ON celestial_bodies (parent_id);
-CREATE INDEX IF NOT EXISTS idx_celestial_bodies_kind
-    ON celestial_bodies (kind);
-CREATE INDEX IF NOT EXISTS idx_celestial_bodies_solar_system_id
-    ON celestial_bodies (solar_system_id);
+CREATE INDEX IF NOT EXISTS idx_celestial_bodies_type
+    ON celestial_bodies (type);
+
+-- Celestial body fact sheet.
+CREATE TABLE IF NOT EXISTS celestial_statistics (
+    celestial_body_id   BIGINT PRIMARY KEY
+                        REFERENCES celestial_bodies (id) ON DELETE CASCADE,
+    spectral_class      VARCHAR(32) NULL,
+    temperature         DOUBLE PRECISION NULL CHECK (temperature IS NULL OR temperature >= 0),
+    pressure            DOUBLE PRECISION NULL CHECK (pressure IS NULL OR pressure >= 0)
+);
 
 -- Osculating Kepler elements about parent. Negative when hyperbolic.
 -- epoch is seconds relative to ephemeris_reference.
@@ -107,6 +83,5 @@ CREATE TABLE IF NOT EXISTS orbits (
     long_asc_node         DOUBLE PRECISION NOT NULL DEFAULT 0,
     arg_periapsis         DOUBLE PRECISION NOT NULL DEFAULT 0,
     mean_anomaly_at_epoch DOUBLE PRECISION NOT NULL DEFAULT 0,
-    epoch                 DOUBLE PRECISION NOT NULL DEFAULT 0,
-    updated_at            TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT CURRENT_TIMESTAMP
+    epoch                 DOUBLE PRECISION NOT NULL DEFAULT 0
 );
