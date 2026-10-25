@@ -8,10 +8,12 @@
 
 ## Local
 
-```bash
 # backend
+```bash
 cd backend && ./mvnw spring-boot:run -Dspring-boot.run.profiles=dev
+```
 
 # frontend
+```bash
 cd frontend && npm install && npm run dev
 ```
