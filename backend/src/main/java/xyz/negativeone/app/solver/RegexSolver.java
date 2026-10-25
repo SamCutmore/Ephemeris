@@ -1,8 +1,7 @@
-package xyz.negativeone.app.solver.solvers;
+package xyz.negativeone.app.solver;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import xyz.negativeone.app.solver.Query;
 
 public abstract class RegexSolver implements ISolver {
 

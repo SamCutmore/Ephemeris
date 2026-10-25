@@ -1,4 +1,4 @@
-package xyz.negativeone.app;
+package xyz.negativeone.app.web;
 
 import java.util.Map;
 import org.slf4j.Logger;

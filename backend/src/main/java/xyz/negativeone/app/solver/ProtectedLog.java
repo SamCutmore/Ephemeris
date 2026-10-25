@@ -1,11 +1,11 @@
-package xyz.negativeone.app.solver.solvers;
+package xyz.negativeone.app.solver;
 
 /** Helpers for ProtectedSolver. */
-final class ProtectedLog {
+public final class ProtectedLog {
 
   private ProtectedLog() {}
 
-  static String redactLastField(String token, String question) {
+  public static String redactLastField(String token, String question) {
     String rest = question == null ? "" : question.trim();
     int last = rest.lastIndexOf(';');
     if (last < 0) {
@@ -14,7 +14,7 @@ final class ProtectedLog {
     return token + ": " + rest.substring(0, last + 1) + "***";
   }
 
-  static String keepFirstField(String token, String question) {
+  public static String keepFirstField(String token, String question) {
     String rest = question == null ? "" : question.trim();
     int semi = rest.indexOf(';');
     if (semi < 0) {
@@ -23,7 +23,7 @@ final class ProtectedLog {
     return token + ": " + rest.substring(0, semi) + ";***";
   }
 
-  static String redactAll(String token) {
+  public static String redactAll(String token) {
     return token + ": ***";
   }
 }

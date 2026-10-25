@@ -2,7 +2,6 @@ package xyz.negativeone.app.password;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import org.junit.jupiter.api.Test;
 
 /** Ported from SPRE PasswordManagement.PasswordConfigurationTest. */

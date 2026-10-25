@@ -1,4 +1,4 @@
-package xyz.negativeone.app.solver.solvers;
+package xyz.negativeone.app.solver.auth;
 
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -12,7 +12,10 @@ import xyz.negativeone.app.auth.SessionService;
 import xyz.negativeone.app.password.PasswordCredentialService;
 import xyz.negativeone.app.persistence.User;
 import xyz.negativeone.app.persistence.UserRepository;
+import xyz.negativeone.app.solver.ProtectedLog;
 import xyz.negativeone.app.solver.Query;
+import xyz.negativeone.app.solver.ProtectedSolver;
+import xyz.negativeone.app.solver.RegexSolver;
 
 /**
  * Ported from SPRE ClientController.handleLogin, plus session token. q=login: username;password →

@@ -1,6 +1,4 @@
-package xyz.negativeone.app.solver.solvers;
-
-import xyz.negativeone.app.solver.Query;
+package xyz.negativeone.app.solver;
 
 /** Solvers that carry secrets. */
 public interface ProtectedSolver extends ISolver {

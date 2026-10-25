@@ -1,10 +1,13 @@
-package xyz.negativeone.app.solver.solvers;
+package xyz.negativeone.app.solver.auth;
 
 import java.util.regex.Matcher;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import xyz.negativeone.app.auth.SessionService;
 import xyz.negativeone.app.solver.Query;
+import xyz.negativeone.app.solver.ProtectedLog;
+import xyz.negativeone.app.solver.ProtectedSolver;
+import xyz.negativeone.app.solver.RegexSolver;
 
 /** q=logout: &lt;token&gt; */
 public class LogoutSolver extends RegexSolver implements ProtectedSolver {
