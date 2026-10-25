@@ -401,5 +401,21 @@ $RECYCLE.BIN/
 # .nfs files are created when an open file is removed but is still being accessed
 .nfs*
 
+# === Python.gitignore ===
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
 # Log files created by default by the nohup command
 nohup.out
+
+# NASA SVS Deep Star Maps 2020 | scripts/fetch/fetch_starfield.sh
+frontend/public/starfield/*.exr
+frontend/public/starfield/*.exr.partial
+
+# Body maps | scripts/fetch/fetch_planet_textures.sh
+frontend/public/starfield/bodies/*
+
+# NASA ISS glTF | scripts/fetch/fetch_iss_model.sh
+frontend/public/starfield/iss/*.glb
